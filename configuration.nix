@@ -108,7 +108,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
   	git
-	neovim
 	steam
 	discord
 	wget
@@ -118,11 +117,15 @@
 	neofetch
 	alacritty
 	flameshot
+	go
   ];
 
   programs.neovim = {
 	enable = true;
 	defaultEditor = true;
+	withNodeJs = true;
+	withPython3 = true;
+	#extraPackages = [pkgs.ripgrep pkgs.go];
   };
 
   programs.steam = {
