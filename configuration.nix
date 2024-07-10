@@ -93,6 +93,14 @@
     #media-session.enable = true;
   };
 
+  # Bluetooth with bluez
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true;
+
   ### NVIDIA
 
   # Enable opengl
