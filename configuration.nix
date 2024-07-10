@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, callPackage, ... }:
 
 {
   imports =
@@ -30,12 +30,40 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  # Enable the X11 windowing system.
+  environment.pathsToLink = [ "/libexec" ]; # Links /libexec from derivations to /run/current-system/sw
+
+  services.xserver = {
+        enable = true;
+
+        desktopManager = {
+            xterm.enable = false;
+        };
+        
+        /*
+        displayManager = {
+            defaultSession = "none+i3";
+        };
+        */
+
+        windowManager.i3 = {
+            enable = true;
+            extraPackages = with pkgs; [
+                rofi
+                i3status
+                i3lock
+            ];
+        };
+  };
+
+  services.displayManager.defaultSession = "none+i3";
+
+  /*# Enable the X11 windowing system.
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  */
 
   # Configure keymap in X11
   services.xserver.xkb = {
