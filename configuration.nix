@@ -39,12 +39,6 @@
             xterm.enable = false;
         };
         
-        /*
-        displayManager = {
-            defaultSession = "none+i3";
-        };
-        */
-
         windowManager.i3 = {
             enable = true;
             extraPackages = with pkgs; [
@@ -56,14 +50,6 @@
   };
 
   services.displayManager.defaultSession = "none+i3";
-
-  /*# Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  */
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -101,13 +87,6 @@
 
   services.blueman.enable = true;
 
-  ### NVIDIA
-
-  # Enable opengl
-#  hardware.opengl = {
-#	enabled = true;
-#  };
-
   # Load nvidia driver for xorg and wayland
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -119,10 +98,6 @@
 	nvidiaSettings = true; # Enable 'nvidia-settings' menu
 	package = config.boot.kernelPackages.nvidiaPackages.production; # Specify which drivers
   };
-
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.krs = {
@@ -140,8 +115,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
   	git
 	steam
