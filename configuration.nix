@@ -154,6 +154,7 @@
 	alacritty
 	flameshot
 	go
+    pavucontrol
   ];
 
   programs.neovim = {
