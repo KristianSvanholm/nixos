@@ -134,17 +134,15 @@
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
   	git
-	steam
-	discord
 	wget
-	modrinth-app
 	htop
 	nvtopPackages.full
 	neofetch
-	alacritty
-	flameshot
 	go
-    pavucontrol
+    libgcc
+    discord
+    steam
+    modrinth-app
   ];
 
   programs.neovim = {

@@ -19,7 +19,7 @@
           inputs.home-manager.nixosModules.default
         ];
       };
-      # Other hosts here
+      # future  hosts here
     };
   };
 }
