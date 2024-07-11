@@ -15,6 +15,7 @@
       ../../modules/nixos/boot.nix
       ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/nvidia.nix
+      ../../modules/nixos/audio.nix
       inputs.home-manager.nixosModules.default
     ];
 
