@@ -12,12 +12,11 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/nixos/boot.nix
+      ../../modules/nixos/bluetooth.nix
+      ../../modules/nixos/nvidia.nix
       inputs.home-manager.nixosModules.default
     ];
-
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -71,42 +70,6 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-    # If you want to use JACK applications, uncomment this
-    #jack.enable = true;
-
-    # use the example session manager (no others are packaged yet so this is enabled by default,
-    # no need to redefine it in your config for now)
-    #media-session.enable = true;
-  };
-
-  # Bluetooth with bluez
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-  };
-
-  services.blueman.enable = true;
-
-  # Load nvidia driver for xorg and wayland
-  services.xserver.videoDrivers = ["nvidia"];
-
-  hardware.nvidia = {
-	modesetting.enable = true;
-	powerManagement.enable = false; # Enable if graphical corruption
-	powerManagement.finegrained = false; # Turns off gpu when not in use (EXP)
-	open = false; # Use nvidia open source kernel module
-	nvidiaSettings = true; # Enable 'nvidia-settings' menu
-	package = config.boot.kernelPackages.nvidiaPackages.production; # Specify which drivers
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.krs = {
