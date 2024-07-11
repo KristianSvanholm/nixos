@@ -16,6 +16,7 @@
       ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/audio.nix
+      ../../modules/nixos/i3.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -36,26 +37,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   environment.pathsToLink = [ "/libexec" ]; # Links /libexec from derivations to /run/current-system/sw
-
-  services.xserver = {
-        enable = true;
-
-        desktopManager = {
-            xterm.enable = false;
-        };
-        
-        windowManager.i3 = {
-            enable = true;
-            extraPackages = with pkgs; [
-                rofi
-                i3status
-                i3lock
-            ];
-        };
-  };
-
-  services.displayManager.defaultSession = "none+i3";
-    
+   
   services.autorandr = {
     enable = true;
   };
