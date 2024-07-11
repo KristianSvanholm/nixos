@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, callPackage, inputs, ... }:
+{ config, lib, pkgs, callPackage, inputs, userSettings, systemSettings, ... }:
 
 {
 
@@ -17,15 +17,10 @@
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/audio.nix
       ../../modules/nixos/i3.nix
-      inputs.home-manager.nixosModules.default
+      ../../modules/nixos/steam.nix
     ];
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = systemSettings.hostname; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -38,10 +33,6 @@
 
   environment.pathsToLink = [ "/libexec" ]; # Links /libexec from derivations to /run/current-system/sw
    
-  services.autorandr = {
-    enable = true;
-  };
-
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "no";
@@ -55,20 +46,11 @@
   services.printing.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.krs = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "krs";
+    description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
-
-  home-manager = {
-        extraSpecialArgs = { inherit inputs; };
-        users = {
-            "krs" = import ./home.nix;
-        };
+    packages = with pkgs; [];
   };
 
   # Install firefox.
@@ -79,7 +61,7 @@
 
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
-  	git
+    git
 	wget
 	htop
 	nvtopPackages.full
@@ -87,8 +69,8 @@
 	go
     libgcc
     discord
-    steam
     modrinth-app
+    home-manager
   ];
 
   programs.neovim = {
@@ -98,26 +80,6 @@
 	withPython3 = true;
 	#extraPackages = [pkgs.ripgrep pkgs.go];
   };
-
-  programs.steam = {
-	enable = true;
-	remotePlay.openFirewall = true; # Open ports in fw for steam remote play
-	dedicatedServer.openFirewall = true; # Open ports in fw for Source dedicated server
-	localNetworkGameTransfers.openFirewall = true; # Open ports in fw for steam local network game transfers
-};
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

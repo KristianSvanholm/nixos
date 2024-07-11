@@ -6,6 +6,9 @@
   home.username = "krs";
   home.homeDirectory = "/home/krs";
 
+  imports = [
+    ../../modules/home-manager/git.nix
+  ];
 /*  nixpkgs =  {
     config = {
         allowUnfree = true;
