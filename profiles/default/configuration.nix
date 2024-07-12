@@ -67,8 +67,13 @@
 	nvtopPackages.full
 	neofetch
 	go
-    libgccjit
+    binutils
     home-manager
+    gcc
+    gnumake
+    cmake
+    autoconf
+    automake
   ];
 
   programs.neovim = {
