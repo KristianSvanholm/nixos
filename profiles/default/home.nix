@@ -1,20 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "krs";
-  home.homeDirectory = "/home/krs";
+  home.username = userSettings.username;
+  home.homeDirectory = "/home/" + userSettings.username;
 
   imports = [
     ../../modules/home-manager/git.nix
   ];
-/*  nixpkgs =  {
-    config = {
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-    };
-  };*/
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
