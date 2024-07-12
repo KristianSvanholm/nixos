@@ -67,9 +67,7 @@
 	nvtopPackages.full
 	neofetch
 	go
-    libgcc
-    discord
-    modrinth-app
+    libgccjit
     home-manager
   ];
 
