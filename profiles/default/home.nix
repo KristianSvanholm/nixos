@@ -27,7 +27,6 @@
     alacritty
     pavucontrol
     bat
-    modrinth-app
     discord
     arandr
     zoxide

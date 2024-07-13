@@ -31,8 +31,6 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  environment.pathsToLink = [ "/libexec" ]; # Links /libexec from derivations to /run/current-system/sw
-   
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "no";
@@ -62,7 +60,6 @@
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
     git
-	wget
 	htop
 	nvtopPackages.full
 	neofetch
@@ -70,10 +67,6 @@
     binutils
     home-manager
     gcc
-    gnumake
-    cmake
-    autoconf
-    automake
   ];
 
   programs.neovim = {
