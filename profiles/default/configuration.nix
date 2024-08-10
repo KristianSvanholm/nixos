@@ -67,7 +67,6 @@
     binutils
     home-manager
     gcc
-    modrinth-app
   ];
 
   programs.neovim = {
