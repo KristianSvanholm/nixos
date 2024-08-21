@@ -37,6 +37,9 @@
     variant = "";
   };
 
+  # vpn
+  services.mullvad-vpn.enable = true;
+
   # Configure console keymap
   console.keyMap = "no";
 
@@ -60,13 +63,14 @@
   # List packages installed in system profile. 
   environment.systemPackages = with pkgs; [
     git
-	htop
-	nvtopPackages.full
-	neofetch
-	go
+    htop
+    nvtopPackages.full
+    neofetch
+    go
     binutils
     home-manager
     gcc
+    mullvad-vpn
   ];
 
   programs.neovim = {
@@ -74,7 +78,12 @@
 	defaultEditor = true;
 	withNodeJs = true;
 	withPython3 = true;
-	#extraPackages = [pkgs.ripgrep pkgs.go];
+  };
+
+  fileSystems."/jellyfin" = {
+    device = "192.168.3.112:/jellyfin";
+    fsType = "nfs";
+    options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "user"];
   };
 
   # Open ports in the firewall.
