@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    stylix.url = "github:danth/stylix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -12,21 +13,22 @@
 
   outputs = { self, nixpkgs, ... }@inputs:
     {
-    nixosConfigurations = {
-    	default = nixpkgs.lib.nixosSystem {
-      		specialArgs = {inherit inputs;};
-      		modules = [
-        		./hosts/default/configuration.nix
-        		inputs.home-manager.nixosModules.default
-      		];
-    	};
-	server = nixpkgs.lib.nixosSystem {
-		specialArgs = {inherit inputs;};
-		modules = [
-			./hosts/server/configuration.nix
-			inputs.home-manager.nixosModules.server
-		];
+      nixosConfigurations = {
+	default = nixpkgs.lib.nixosSystem {
+	  specialArgs = {inherit inputs;};
+	    modules = [
+	      ./hosts/default/configuration.nix
+	      inputs.stylix.nixosModules.stylix
+	      inputs.home-manager.nixosModules.default
+	    ];
 	};
+	server = nixpkgs.lib.nixosSystem {
+	  specialArgs = {inherit inputs;};
+	    modules = [
+	      ./hosts/server/configuration.nix
+	      inputs.home-manager.nixosModules.server
+	    ];
+	};
+      };
     };
-  };
 }

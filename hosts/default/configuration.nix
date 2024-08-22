@@ -38,6 +38,10 @@
     variant = "";
   };
 
+  stylix.enable = false;
+  stylix.image = "../../wallpapers/sword.jpg";
+  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+
   # vpn
   services.mullvad-vpn.enable = true;
 
