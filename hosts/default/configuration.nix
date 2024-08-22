@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, lib, pkgs, callPackage, inputs, userSettings, systemSettings, ... }:
+{ config, lib, pkgs, callPackage, inputs, ... }:
 
 {
 
@@ -12,6 +12,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
       ../../modules/nixos/boot.nix
       ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/nvidia.nix
@@ -20,7 +21,7 @@
       ../../modules/nixos/steam.nix
     ];
 
-  networking.hostName = systemSettings.hostname; # Define your hostname.
+  networking.hostName = "nixos"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -47,12 +48,19 @@
   services.printing.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.${userSettings.username} = {
+  users.users.krs = {
     isNormalUser = true;
-    description = userSettings.name;
+    description = "krs";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
+
+  home-manager = {
+	specialArgs= { inherit inputs; };
+	users = {
+	  "krs" = import ./home.nix;
+	};
+  }:
 
   # Install firefox.
   programs.firefox.enable = true;
