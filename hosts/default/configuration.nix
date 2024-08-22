@@ -56,11 +56,12 @@
   };
 
   home-manager = {
-	specialArgs= { inherit inputs; };
+  	useGlobalPkgs = true;
+	extraSpecialArgs= { inherit inputs; };
 	users = {
 	  "krs" = import ./home.nix;
 	};
-  }:
+  };
 
   # Install firefox.
   programs.firefox.enable = true;
