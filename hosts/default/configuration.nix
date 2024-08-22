@@ -14,6 +14,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/boot.nix
+      ../../modules/nixos/stylix.nix
       ../../modules/nixos/bluetooth.nix
       ../../modules/nixos/nvidia.nix
       ../../modules/nixos/audio.nix
@@ -37,10 +38,6 @@
     layout = "no";
     variant = "";
   };
-
-  stylix.enable = false;
-  stylix.image = "../../wallpapers/sword.jpg";
-  stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
   # vpn
   services.mullvad-vpn.enable = true;
