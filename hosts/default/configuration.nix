@@ -80,15 +80,17 @@
     binutils
     home-manager
     gcc
+    ripgrep
+    fd
     mullvad-vpn
   ];
 
-  programs.neovim = {
-	enable = true;
-	defaultEditor = true;
-	withNodeJs = true;
-	withPython3 = true;
-  };
+#  programs.neovim = {
+#	enable = true;
+#	defaultEditor = true;
+#	withNodeJs = true;
+#	withPython3 = true;
+ # };
 
   fileSystems."/jellyfin" = {
     device = "192.168.3.112:/jellyfin";

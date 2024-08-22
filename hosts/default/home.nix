@@ -7,6 +7,7 @@
 
   imports = [ 
 	../../modules/home-manager/git.nix
+	../../modules/home-manager/nixvim.nix
   ];
 
   # This value determines the Home Manager release that your configuration is compatible with. This helps avoid breakage when a new Home Manager release introduces backwards incompatible changes.
@@ -37,11 +38,11 @@
     # '')
   ];
 
-  programs.neovim = { 
-    enable = true; 
-    defaultEditor = true; 
-    extraPackages = [pkgs.ripgrep pkgs.go];
-  };
+ # programs.neovim = { 
+ #   enable = true; 
+ #   defaultEditor = true; 
+ #   extraPackages = [pkgs.ripgrep pkgs.go];
+ # };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage plain files is through 'home.file'.
   home.file = {
