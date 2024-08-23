@@ -3,7 +3,7 @@
 {
   stylix = {
 	enable = true;
-  	base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+  	base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
   	image = ../../wallpapers/sword.jpg;
   	cursor.package = pkgs.bibata-cursors;
   	cursor.name = "Bibata-Modern-Ice";
