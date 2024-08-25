@@ -12,7 +12,6 @@
         windowManager.i3 = {
             enable = true;
             extraPackages = with pkgs; [
-                rofi
                 i3status
                 i3lock
             ];

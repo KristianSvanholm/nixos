@@ -81,6 +81,7 @@
 	gcc
 	ripgrep
 	fd
+	loupe
 	mullvad-vpn
     ];
   
