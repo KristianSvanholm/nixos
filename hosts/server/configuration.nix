@@ -46,6 +46,8 @@
 	vim 
    	wget
 	tmux
+	docker
+	docker-compose
 	mullvad
     ];
 
