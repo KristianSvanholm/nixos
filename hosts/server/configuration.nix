@@ -26,7 +26,7 @@
     users.users.srv = {
 	isNormalUser = true;
 	description = "srv";
-	extraGroups = [ "networkmanager" "wheel" ];
+	extraGroups = [ "networkmanager" "docker" "wheel" ];
     };
 
     home-manager = {
@@ -50,6 +50,11 @@
 	docker-compose
 	mullvad
     ];
+
+    virtualisation.docker.rootless = {
+	enable = true;
+	setSocketVariable = true;
+    };
 
     # Open ports in the firewall.
     networking.firewall = {
