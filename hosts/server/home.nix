@@ -4,8 +4,8 @@
     home.homeDirectory = "/home/srv";
 
     imports = [
-	../../modules/home-manager/git.nix
-	../../modules/home-manager/nixvim.nix
+	../../modules/home/git.nix
+	../../modules/home/nixvim.nix
     ];
 
     home.stateVersion = "24.05";

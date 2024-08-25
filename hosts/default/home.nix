@@ -5,10 +5,10 @@
     home.homeDirectory = "/home/krs";
 
     imports = [ 
-	../../modules/home-manager/git.nix
-	#../../modules/home-manager/i3.nix
-	../../modules/home-manager/rofi.nix
-	../../modules/home-manager/nixvim.nix
+	../../modules/home/git.nix
+	#../../modules/home/i3.nix
+	../../modules/home/rofi.nix
+	../../modules/home/nixvim.nix
     ];
 
     home.stateVersion = "24.05"; # Please read the comment before changing.
