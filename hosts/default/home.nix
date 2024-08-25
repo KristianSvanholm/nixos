@@ -8,6 +8,7 @@
 	../../modules/home/git.nix
 	#../../modules/home/i3.nix
 	../../modules/home/rofi.nix
+	../../modules/home/flameshot.nix
 	../../modules/home/nixvim.nix
     ];
 
@@ -16,7 +17,6 @@
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
 	firefox 
-	flameshot 
 	pavucontrol 
 	bat
 	discord
