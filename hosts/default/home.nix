@@ -10,6 +10,7 @@
 	../../modules/home/rofi.nix
 	../../modules/home/flameshot.nix
 	../../modules/home/nixvim.nix
+	../../modules/home/eza.nix
     ];
 
     home.stateVersion = "24.05"; # Please read the comment before changing.

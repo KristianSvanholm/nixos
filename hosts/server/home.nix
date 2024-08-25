@@ -6,6 +6,7 @@
     imports = [
 	../../modules/home/git.nix
 	../../modules/home/nixvim.nix
+	../../modules/home/eza.nix
     ];
 
     home.stateVersion = "24.05";
