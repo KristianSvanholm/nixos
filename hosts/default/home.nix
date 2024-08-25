@@ -6,6 +6,8 @@
 
     imports = [ 
 	../../modules/home-manager/git.nix
+	#../../modules/home-manager/i3.nix
+	../../modules/home-manager/rofi.nix
 	../../modules/home-manager/nixvim.nix
     ];
 
