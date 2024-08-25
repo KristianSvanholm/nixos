@@ -9,10 +9,10 @@
 	./hardware-configuration.nix
 	inputs.home-manager.nixosModules.default
 	../../modules/nixos/boot.nix
-	../../modules/nixos/ssh.nix
-	../../modules/nixos/jellyfin.nix
-	../../modules/nixos/qbittorrent-nox.nix
-	../../modules/nixos/nfs.nix
+	../../modules/nixos/server/ssh.nix
+	../../modules/nixos/server/jellyfin.nix
+	../../modules/nixos/server/qbittorrent-nox.nix
+	../../modules/nixos/server/nfs.nix
     ];
 	
     # Enable networking
