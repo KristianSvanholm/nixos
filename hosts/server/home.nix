@@ -15,7 +15,6 @@
 	zoxide
 	fzf
 	unzip
-	alacritty
     ];
 
     home.file = {};
