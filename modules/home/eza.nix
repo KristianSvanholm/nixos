@@ -2,7 +2,7 @@
 {
     programs.eza = {
 	enable = true;
-	enableBashIntegration = true;
+	enableZshIntegration = true;
 	extraOptions = ["--icons" "--git"];
 	git = true;
 	icons = true;
