@@ -14,6 +14,7 @@
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
       ../../modules/nixos/boot.nix
+      ../../modules/nixos/ssh.nix
     ];
 	
   # Enable networking
@@ -81,15 +82,6 @@
   	'';
 
   };
-
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
-
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = true;
 
   # Open ports in the firewall.
   # ssh: 22, jellyfin: 8096, nfs: 2049
