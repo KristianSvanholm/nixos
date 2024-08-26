@@ -1,7 +1,7 @@
 { ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ];
+    imports = [ ./eza.nix ./zoxide.nix ./thefuck.nix ];
 
     programs.zsh = {
 	enable = true;
@@ -16,6 +16,12 @@
 
 	history = {
 	    size = 10000;
+	};
+
+	oh-my-zsh = {
+	    enable = true;
+	    plugins = [ "git" "thefuck" ];
+	    theme = "fishy";
 	};
     };    
 
