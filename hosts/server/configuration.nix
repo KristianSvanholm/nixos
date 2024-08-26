@@ -19,6 +19,9 @@
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
 
+    users.defaultUserShell = pkgs.zsh;
+    programs.zsh.enable = true;
+
     # Time zone and locale.
     time.timeZone = "Europe/Oslo";
     i18n.defaultLocale = "en_US.UTF-8";
