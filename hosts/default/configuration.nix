@@ -25,6 +25,8 @@
     ];
 
     networking.hostName = "nixos"; # Define your hostname.
+    networking.firewall.enable = true;
+    networking.enableIPv6 = true;
 
     # Enable networking
     networking.networkmanager.enable = true;
