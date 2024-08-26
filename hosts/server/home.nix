@@ -6,14 +6,13 @@
     imports = [
 	../../modules/home/git.nix
 	../../modules/home/nixvim.nix
-	../../modules/home/eza.nix
+	../../modules/home/zsh.nix
     ];
 
     home.stateVersion = "24.05";
 
     home.packages = with pkgs; [
 	bat
-	zoxide
 	fzf
 	unzip
     ];

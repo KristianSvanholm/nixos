@@ -22,7 +22,6 @@
 	bat
 	discord
 	arandr
-	zoxide
 	fzf
 	modrinth-app
 	unzip
