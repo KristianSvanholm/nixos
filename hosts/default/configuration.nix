@@ -89,6 +89,8 @@
 	fd
 	loupe
 	mullvad-vpn
+	libreoffice
+	teams-for-linux
     ];
   
     fileSystems."/jellyfin" = {
