@@ -33,6 +33,7 @@
             shiftwidth = 4;
 	    signcolumn = "yes";
 	    background = "";
+	    termguicolors = true;
 	};
 
 	plugins = { 
@@ -41,7 +42,7 @@
 	    treesitter = {
 		enable = true;
 		settings.auto_install = true;
-		settings.ensure_installed = [ "go" "rust" "python" "lua" ];
+		settings.ensure_installed = [ "go" "nix" "rust" "python" "lua" ];
 	    };
 	    gitsigns = {
 		enable = true;
@@ -61,6 +62,16 @@
 	    cmp = {
 		enable = true;
 		autoEnableSources = true;
+		settings.mapping = {
+		    "<C-Space>" = "cmp.mapping.complete()";
+		    "<C-d>" = "cmp.mapping.scroll_docs(-4)";
+		    "<C-e>" = "cmp.mapping.close()";
+		    "<C-f>" = "cmp.mapping.scroll_docs(4)";
+		    "<CR>" = "cmp.mapping.confirm({ select = true })";
+		    "<S-Tab>" = "cmp.mapping(cmp.mapping.select_prev_item(), {'i', 's'})";
+		    "<Tab>" = "cmp.mapping(cmp.mapping.select_next_item(), {'i', 's'})";
+		};
+		settings.sources = [{name = "nvim_lsp";}];
 	    };
 	};
 
@@ -79,15 +90,30 @@
 		key = "<leader>sf";
 	    }
 	];
-
+	
+	/*
 	colorschemes.kanagawa.enable = true;
 	colorschemes.kanagawa.settings = {
-	    theme = "wave";
+	    theme = "dragon";
 	    commentStyle.italic = true;
 	    compile = false;
 	    terminalColors = true;
 	    transparent = false;
 	    undercurl = false;
+	};
+	*/
+
+	colorschemes.catppuccin.enable = true;
+	colorschemes.catppuccin.settings = {
+	    flavour = "mocha";
+	    integrations = {
+		cmp = true;
+		gitsigns = true;
+		treesitter = true;
+	    };
+	    disable_underline = true;
+	    term_clors = true;
+
 	};
     };
 }
