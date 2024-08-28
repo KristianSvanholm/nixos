@@ -78,7 +78,6 @@
     # List packages installed in system profile. 
     environment.systemPackages = with pkgs; [
 	git
-	htop
 	nvtopPackages.full
 	neofetch
 	go
@@ -91,6 +90,7 @@
 	mullvad-vpn
 	libreoffice
 	teams-for-linux
+	btop
     ];
   
     fileSystems."/jellyfin" = {

@@ -2,7 +2,16 @@
 
 {
     # Audio w/ pipewire
-    hardware.pulseaudio.enable = false;
+    security.rtkit.enable = true;
+    services.pipewire = {
+	enable = true;
+	alsa.enable = true;
+	alsa.support32Bit = true;
+	pulse.enable = true;
+	jack.enable = true;
+    };
+
+    /*hardware.pulseaudio.enable = false;
         security.rtkit.enable = true;
         services.pipewire = {
         enable = true;
@@ -16,4 +25,5 @@
         # no need to redefine it in your config for now)
         #media-session.enable = true;
     };
+    */
 }

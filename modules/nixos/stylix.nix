@@ -3,7 +3,7 @@
 {
   stylix = {
 	enable = true;
-  	base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+  	base16Scheme = "${pkgs.base16-schemes}/share/themes/ayu-mirage.yaml";
   	image = ../../wallpapers/moonlight.jpg;
   	cursor.package = pkgs.bibata-cursors;
   	cursor.name = "Bibata-Modern-Ice";
