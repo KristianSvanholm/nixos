@@ -35,7 +35,10 @@
 
     home.file = {};
 
-    home.sessionVariables = { EDITOR = "nvim"; };
+    home.sessionVariables = { 
+	EDITOR = "nvim"; 
+	WEBKIT_DISABLE_DMABUF_RENDERER = 1; 
+    };
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
