@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     #steam
@@ -9,4 +9,5 @@
         localNetworkGameTransfers.openFirewall = true; # Open ports in fw for steam local network game transfers
     };
 
+    environment.systemPackages = with pkgs; [ gamemode ];
 }
