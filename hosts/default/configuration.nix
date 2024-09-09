@@ -77,20 +77,22 @@
 
     # List packages installed in system profile. 
     environment.systemPackages = with pkgs; [
-	git
 	nvtopPackages.full
-	neofetch
 	go
 	binutils
 	home-manager
 	gcc
 	ripgrep
-	fd
-	loupe
+
+	# Should prolly be moved to home.nix
 	mullvad-vpn
+	vlc
 	libreoffice
 	teams-for-linux
+	neofetch
 	btop
+	lf
+	imv
     ];
   
     fileSystems."/jellyfin" = {
