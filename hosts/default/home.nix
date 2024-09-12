@@ -27,6 +27,16 @@
 	unzip
 	qbittorrent
 	zoom-us
+	networkmanagerapplet
+	mullvad-vpn
+	vlc
+	libreoffice
+	teams-for-linux
+	neofetch
+	btop
+	lf
+	imv
+
     ];
 
     programs = { 

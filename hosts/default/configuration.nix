@@ -83,16 +83,6 @@
 	home-manager
 	gcc
 	ripgrep
-
-	# Should prolly be moved to home.nix
-	mullvad-vpn
-	vlc
-	libreoffice
-	teams-for-linux
-	neofetch
-	btop
-	lf
-	imv
     ];
   
     fileSystems."/jellyfin" = {
