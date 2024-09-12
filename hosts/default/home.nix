@@ -41,6 +41,7 @@
 
     programs = { 
 	alacritty.enable = true;
+	fastfetch.enable = true;
     };
 
     home.file = {};
