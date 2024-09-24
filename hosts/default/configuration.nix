@@ -22,6 +22,7 @@
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/virtualbox.nix
+	../../modules/nixos/iik3100.nix
     ];
 
     networking.hostName = "nixos"; # Define your hostname.
