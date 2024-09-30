@@ -44,6 +44,8 @@
 	fastfetch.enable = true;
     };
 
+    services.mpris-proxy.enable = true; # Bluetooth media controls
+
     home.file = {};
 
     home.sessionVariables = { 
