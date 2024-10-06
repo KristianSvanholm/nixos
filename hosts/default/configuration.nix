@@ -14,6 +14,7 @@
 	./hardware-configuration.nix
 	inputs.home-manager.nixosModules.default
 	../../modules/nixos/boot.nix
+	../../modules/nixos/vfio.nix
 	../../modules/nixos/stylix.nix
 	../../modules/nixos/bluetooth.nix
 	../../modules/nixos/nvidia.nix
