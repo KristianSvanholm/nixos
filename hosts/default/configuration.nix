@@ -60,7 +60,7 @@
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users.krs = {
 	isNormalUser = true;
-	extraGroups = [ "networkmanager" "wheel" ];
+	extraGroups = [ "networkmanager" "wheel" "libvirtd"];
     };
 
     home-manager = {
