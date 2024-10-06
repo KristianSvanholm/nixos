@@ -86,11 +86,13 @@
 	ripgrep
     ];
   
+    /*
     fileSystems."/jellyfin" = {
 	device = "192.168.3.112:/jellyfin";
 	fsType = "nfs";
 	options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "user"];
     };
+    */
  
     system.stateVersion = "24.05"; # Don't touch
 }
