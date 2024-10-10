@@ -24,6 +24,7 @@
 	../../modules/nixos/virt.nix
 	../../modules/nixos/iik3100.nix
 	../../modules/nixos/ly.nix
+	../../modules/nixos/picom.nix
     ];
 
     networking.hostName = "nixos"; # Define your hostname.
