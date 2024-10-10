@@ -7,4 +7,6 @@
 	display-drun = "λ";
 	drun-display-format = "{icon} {name}";
     };
+    
+    programs.wofi.enable = true;
 }

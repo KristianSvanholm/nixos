@@ -19,6 +19,7 @@
 	../../modules/nixos/nvidia.nix
 	../../modules/nixos/audio.nix
 	../../modules/nixos/i3.nix
+	../../modules/nixos/hyprland.nix
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/virt.nix
