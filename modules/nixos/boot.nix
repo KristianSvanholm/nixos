@@ -6,7 +6,16 @@
     boot.loader.efi.canTouchEfiVariables = true;
 
     # Enable BBR congestion control
-    boot.kernelModules = [ "tcp_bbr" "kvm-intel" "vfio_virqfd" "vfio_pci" "vfio_iommu_type1" "vfio" ];
+    boot.kernelModules = [ "tcp_bbr" 
+			   "kvm-intel" 
+			   "vfio_virqfd" 
+			   "vfio_pci" 
+			   "vfio_iommu_type1" 
+			   "vfio" 
+			   "intel_iommu=on" 
+			   "iommu=pt" 
+			 ];
+
     boot.kernel.sysctl = {
 	"net.ipv4.tcp_congestion_control" = "bbr";
 	"net.core.default_qdisc" = "fq";

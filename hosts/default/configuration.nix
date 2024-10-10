@@ -14,7 +14,6 @@
 	./hardware-configuration.nix
 	inputs.home-manager.nixosModules.default
 	../../modules/nixos/boot.nix
-	../../modules/nixos/vfio.nix
 	../../modules/nixos/stylix.nix
 	../../modules/nixos/bluetooth.nix
 	../../modules/nixos/nvidia.nix
@@ -22,8 +21,9 @@
 	../../modules/nixos/i3.nix
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
-	../../modules/nixos/virtualbox.nix
+	../../modules/nixos/virt.nix
 	../../modules/nixos/iik3100.nix
+	../../modules/nixos/ly.nix
     ];
 
     networking.hostName = "nixos"; # Define your hostname.
