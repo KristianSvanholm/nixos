@@ -68,6 +68,8 @@
 		"SUPER, E, exec, thunar"
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -modi drun,run -show drun"
+		"SUPER, B, exec, pkill waybar || waybar"
+		    
 		"SUPER, P, pseudo," # dwindle
 		"SUPER, J, togglesplit," # dwindle
 
