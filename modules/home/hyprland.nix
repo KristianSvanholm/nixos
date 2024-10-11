@@ -22,8 +22,7 @@
 
 	    general = {
 		gaps_in = 5;
-		gaps_out = 15;
-	    };
+		gaps_out = 15; };
 
 	    misc = {
 		disable_hyprland_logo = true;
@@ -65,10 +64,10 @@
 		"SUPER SHIFT, Q, killactive,"
 		"SUPER, M, exit,"
 		"SUPER,F,fullscreen"
-		"ALT, TAB, exec, flameshot gui"
+		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, E, exec, thunar"
 		"SUPER, V, togglefloating,"
-		"SUPER, Space, exec, rofi -modi drun,run -show drun"
+		"SUPER, D, exec, rofi -modi drun,run -show drun"
 		"SUPER, P, pseudo," # dwindle
 		"SUPER, J, togglesplit," # dwindle
 

@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+
+    imports = [
+	../../modules/nixos/wayshot.nix
+    ];
+
     programs.hyprland = {
 	enable = true;
 	xwayland.enable = true;
