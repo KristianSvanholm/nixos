@@ -10,6 +10,10 @@
 	};
 
 	settings = {
+	    
+	    env = [
+		"WEBKIT_DISABLE_DMABUF_RENDERER,1"
+	    ];
 
 	    input = {
 		kb_layout = "no";
@@ -24,6 +28,9 @@
 	    misc = {
 		disable_hyprland_logo = true;
 		disable_splash_rendering = true;
+
+		enable_swallow = true;
+		swallow_regex = "^(Alacritty)$";
 	    };
 
 	    decoration = {
@@ -32,6 +39,7 @@
 		    enabled = true;
 		    size = 3;
 		    passes = 3;
+		    new_optimizations = true;
 		};
 		
 		active_opacity = 1;
