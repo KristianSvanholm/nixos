@@ -2,7 +2,7 @@
 {
     programs.rofi = {
 	enable = true;
-	package = pkgs.rofi-wayland; # This needs to be removed if on x11
+	package = pkgs.rofi-wayland; # This works on both xorg and wayland :D
 	extraConfig = {
 	    modi = "drun";
 	    show-icons = true;

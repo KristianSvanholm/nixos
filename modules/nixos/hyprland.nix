@@ -13,10 +13,6 @@
     environment.systemPackages = with pkgs; [
 	waybar
 	(waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ]; }) )
-
-	wofi
-	dunst
-	libnotify
     ];
 
     xdg.portal.enable = true;
