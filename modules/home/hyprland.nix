@@ -1,9 +1,14 @@
 { ... }: 
 {
+
+    imports = [
+	./hyprlock.nix
+    ];
+
     wayland.windowManager.hyprland = {
 	enable = true;
 	xwayland.enable = true;
-	
+
 	systemd = {
 	    enable = true;
 	    variables = [ "-all" ];
@@ -50,7 +55,7 @@
 		enabled = false;
 	    };
     
-	    exec-once = "waybar";
+	    exec-once = [ "waybar" ];
 
 	    monitor = [
 		"DP-2, 2560x1440@144, 0x0, 1"
