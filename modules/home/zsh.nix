@@ -16,6 +16,7 @@
 
 	history = {
 	    size = 10000;
+	    ignoreDups = true;
 	};
 
 	oh-my-zsh = {
