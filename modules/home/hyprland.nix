@@ -3,6 +3,8 @@
 
     imports = [
 	./hyprlock.nix
+	./hyprpaper.nix
+	./waybar.nix
     ];
 
     wayland.windowManager.hyprland = {
@@ -26,8 +28,9 @@
 	    };
 
 	    general = {
-		gaps_in = 5;
-		gaps_out = 15; };
+		gaps_in = 0;
+		gaps_out = 0; 
+	    };
 
 	    misc = {
 		disable_hyprland_logo = true;
@@ -60,6 +63,19 @@
 	    monitor = [
 		"DP-2, 2560x1440@144, 0x0, 1"
 		"DP-1, 1920x1080@144, 2560x0, 1"
+	    ];
+
+	    workspace = [
+		"1,monitor:DP-2"
+		"2,monitor:DP-1"
+		"3,monitor:DP-2"
+		"4,monitor:DP-1"
+		"5,monitor:DP-2"
+		"6,monitor:DP-1"
+		"7,monitor:DP-2"
+		"8,monitor:DP-1"
+		"9,monitor:DP-2"
+		"0,monitor:DP-1"
 	    ];
 
 	    bind = [

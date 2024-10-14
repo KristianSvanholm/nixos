@@ -11,8 +11,4 @@
     };
 
     security.pam.services.hyprlock = {}; # Enable PAM for hyprlock
-
-    environment.systemPackages = with pkgs; [
-	waybar
-    ];
 }
