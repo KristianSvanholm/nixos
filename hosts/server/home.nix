@@ -15,6 +15,7 @@
 	bat
 	fzf
 	unzip
+	btop
     ];
 
     home.file = {};

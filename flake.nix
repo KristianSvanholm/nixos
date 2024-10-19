@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
+    
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {

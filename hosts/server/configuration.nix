@@ -13,6 +13,7 @@
 	../../modules/nixos/server/jellyfin.nix
 	../../modules/nixos/server/qbittorrent-nox.nix
 	../../modules/nixos/server/nfs.nix
+	../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
     # Enable networking
@@ -52,6 +53,7 @@
 	docker
 	docker-compose
 	mullvad
+	ripgrep
     ];
 
     virtualisation.docker.rootless = {
@@ -67,10 +69,12 @@
 	    8096 # Jellyfin 
 	    111 2049 4000 4001 4002 20048 # NFS
 	    6969 # Qbittorrent-nox
+	    25565 # Minecraft
 	];
 	allowedUDPPorts = [ 
 	    111 2049 4000 4001 4002 20048 # NFS
 	    6969 # Qbittorrent-nox
+	    19132 24454 # Minecraft (default + proxchat)
 	];
     };
 

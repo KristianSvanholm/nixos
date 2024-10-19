@@ -1,7 +1,7 @@
 { ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ./thefuck.nix ];
+    imports = [ ./eza.nix /*./zoxide.nix*/ ./thefuck.nix ];
 
     programs.zsh = {
 	enable = true;
@@ -12,6 +12,7 @@
 	shellAliases = {
 	    srv = "ssh srv@192.168.3.112";
 	    switch = "sudo nixos-rebuild switch";
+	    tmc = "sudo tmux -S /run/minecraft/winter-gaming.sock attach";
 	};
 
 	history = {
