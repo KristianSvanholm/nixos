@@ -87,6 +87,8 @@
 	home-manager
 	gcc
 	ripgrep
+	zulu17
+	maven
     ];
   
     /*
