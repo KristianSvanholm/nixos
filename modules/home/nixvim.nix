@@ -4,6 +4,12 @@
 	inputs.nixvim.homeManagerModules.nixvim
     ];
 
+    home.packages = with pkgs; [ 
+	fd
+	ripgrep
+	nodejs
+    ];
+
     programs.nixvim = {
 	enable = true;
 	defaultEditor = true;
