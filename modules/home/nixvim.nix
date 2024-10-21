@@ -18,20 +18,20 @@
 
 	    servers = {
 
-		lua-ls = {
+		lua_ls = {
 		    enable = true;
 		    settings.telemetry.enable = false;
 		};
 
 		gopls.enable = true;
 
-		rust-analyzer = {
+		rust_analyzer = {
 		    enable = true;
                     installCargo = true;
 		    installRustc = true;
 		};
 
-		java-language-server = {
+		java_language_server = {
 		    enable = true;
 		};
 	    };
@@ -49,8 +49,16 @@
 	plugins = { 
 	    lualine.enable = true;
 	    telescope.enable = true;
+	    /*mini = {
+		enable = true;
+		mockDevIcons = true;
+		modules.icons = {
+		    style = "glyph";
+		};
+	    };*/
 	    treesitter = {
 		enable = true;
+		settings.highlight.enable = true;
 		settings.auto_install = true;
 		settings.ensure_installed = [ "go" "nix" "rust" "python" "lua" ];
 	    };
@@ -113,6 +121,9 @@
 	};
 	*/
 
+	#colorschemes.gruvbox.enable = true;
+	#colorschemes.gruvbox.settings.terminal_colors = true;
+	
 	colorschemes.catppuccin.enable = true;
 	colorschemes.catppuccin.settings = {
 	    flavour = "mocha";
