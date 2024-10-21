@@ -16,6 +16,9 @@
 	    memory = {
 		format = "mem: {percentage}%";
 	    };
+	    clock = {
+		format = "{:%d.%m.%Y   %H:%M}";
+	    };
 	}];
     };
 
