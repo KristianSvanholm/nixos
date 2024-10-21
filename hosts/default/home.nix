@@ -37,7 +37,7 @@
 	btop
 	lf
 	imv
-
+	postman
     ];
 
     programs = { 
