@@ -81,6 +81,7 @@
 
     # List packages installed in system profile. 
     environment.systemPackages = with pkgs; [
+	inputs.zen-browser.packages.x86_64-linux.specific
 	nvtopPackages.full
 	go
 	binutils
