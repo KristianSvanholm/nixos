@@ -123,7 +123,7 @@
 
 	#colorschemes.gruvbox.enable = true;
 	#colorschemes.gruvbox.settings.terminal_colors = true;
-	
+	/*		
 	colorschemes.catppuccin.enable = true;
 	colorschemes.catppuccin.settings = {
 	    flavour = "mocha";
@@ -136,5 +136,6 @@
 	    term_clors = true;
 
 	};
+	*/
     };
 }
