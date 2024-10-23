@@ -88,7 +88,8 @@
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, E, exec, thunar"
 		"SUPER, V, togglefloating,"
-		"SUPER, D, exec, rofi -modi drun,run -show drun"
+		"SUPER, D, exec, rofi -show drun"
+		"SUPER, W, exec, rofi -show window"
 		"SUPER, B, exec, pkill waybar || waybar"
 		    
 		"SUPER, P, pseudo," # dwindle
