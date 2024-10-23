@@ -12,6 +12,7 @@
 	shellAliases = {
 	    srv = "ssh srv@192.168.3.112";
 	    switch = "sudo nixos-rebuild switch";
+	    test = "sudo nixos-rebuild test";
 	    tmc = "sudo tmux -S /run/minecraft/winter-gaming.sock attach";
 	};
 
