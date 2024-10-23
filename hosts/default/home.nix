@@ -39,6 +39,7 @@
 	imv
 	postman
 	obsidian
+	spotify
     ];
 
     programs = { 
