@@ -38,6 +38,7 @@
 	lf
 	imv
 	postman
+	obsidian
     ];
 
     programs = { 
