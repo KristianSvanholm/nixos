@@ -9,6 +9,9 @@
 	ripgrep
 	nodejs
     ];
+ 
+    # Ensure nixd uses same pkgs as system
+    nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 
     programs.nixvim = {
 	enable = true;
@@ -17,23 +20,33 @@
 	    enable = true;
 
 	    servers = {
+		gopls.enable = true;
+		
+		nixd = {
+		    enable = true;
+		    settings = {
+			formatting.command = [ "alejandra" ];
+			nixpkgs.expr = "import (builtins.fetFlake \"/home/krs/nixos\").inputs.nixpkgs { }";
+			options = {
+			    nixos.expr = "(builtins.getFlake \"/home/krs/nixos\").nixosConfiguration.default.options";
+			    home_manager.expr = "(builtins.getFlake \"/home/krs/nixos\").nixosConfiguration.default.options)";
+			};
+		    };
+		};
 
-		lua_ls = {
+		java-language-server.enable = true;
+
+		lua-ls = {
 		    enable = true;
 		    settings.telemetry.enable = false;
 		};
 
-		gopls.enable = true;
-
-		rust_analyzer = {
+		rust-analyzer = {
 		    enable = true;
                     installCargo = true;
 		    installRustc = true;
 		};
 
-		java_language_server = {
-		    enable = true;
-		};
 	    };
 	};
 
