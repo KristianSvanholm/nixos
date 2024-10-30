@@ -40,7 +40,6 @@
 	postman
 	obsidian
 	spotify
-	signal-desktop
     ];
 
     programs = { 
