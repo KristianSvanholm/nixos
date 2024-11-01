@@ -40,6 +40,7 @@
 	postman
 	obsidian
 	spotify
+	ganttproject-bin
     ];
 
     programs = { 
