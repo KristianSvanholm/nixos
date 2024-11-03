@@ -5,6 +5,6 @@
 	enableZshIntegration = true;
 	extraOptions = ["--icons" "--git"];
 	git = true;
-	icons = true;
+	icons = "auto";
     };
 }

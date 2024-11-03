@@ -3,11 +3,11 @@
     programs.waybar = {
 	enable = true;
 	settings = [{
-	    mainbar = {
+	    /*mainbar = {
 		layer = "bottom";
 		position = "bottom"; 
 		margin-bottom = -1;
-	    };
+	    };*/
 	    modules-left = [ "hyprland/workspaces" ]; 
 	    modules-right = [ "cpu" "memory" "temperature" "clock" ];
 	    cpu = {

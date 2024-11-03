@@ -35,14 +35,14 @@
 		    };
 		};
 
-		java-language-server.enable = true;
+		java_language_server.enable = true;
 
-		lua-ls = {
+		lua_ls = {
 		    enable = true;
 		    settings.telemetry.enable = false;
 		};
 
-		rust-analyzer = {
+		rust_analyzer = {
 		    enable = true;
                     installCargo = true;
 		    installRustc = true;
@@ -63,6 +63,7 @@
 	plugins = { 
 	    lualine.enable = true;
 	    telescope.enable = true;
+	    web-devicons.enable = true;
 	    /*mini = {
 		enable = true;
 		mockDevIcons = true;

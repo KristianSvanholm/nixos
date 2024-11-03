@@ -54,6 +54,10 @@
 		drop_shadow = false;
 	    };
 
+	    cursor = {
+		no_hardware_cursors = true;
+	    };
+
 	    animations = {
 		enabled = false;
 	    };
