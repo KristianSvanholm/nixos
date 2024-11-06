@@ -8,6 +8,7 @@
 	fd
 	ripgrep
 	nodejs
+	rustup
     ];
  
     # Ensure nixd uses same pkgs as system
