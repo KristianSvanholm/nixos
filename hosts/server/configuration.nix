@@ -51,6 +51,8 @@
    	wget
 	tmux
 	docker
+	binutils
+	gcc
 	docker-compose
 	mullvad
 	ripgrep
