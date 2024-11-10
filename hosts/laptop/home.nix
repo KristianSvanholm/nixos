@@ -7,7 +7,7 @@
     imports = [ 
 	../../modules/home/git.nix
 	#../../modules/home/i3.nix
-	../../modules/home/hyprland.nix
+	#../../modules/home/hyprland.nix
 	../../modules/home/rofi.nix
 	../../modules/home/flameshot.nix
 	../../modules/home/nixvim.nix
