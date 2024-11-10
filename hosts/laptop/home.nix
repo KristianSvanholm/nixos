@@ -7,6 +7,7 @@
     imports = [ 
 	../../modules/home/git.nix
 	#../../modules/home/i3.nix
+	../../modules/home/hyprland.nix
 	../../modules/home/rofi.nix
 	../../modules/home/flameshot.nix
 	../../modules/home/nixvim.nix
@@ -24,10 +25,17 @@
 	arandr
 	fzf
 	unzip
+	zoom-us
+	lf
+	btop
+	libreoffice
+	teams-for-linux
+	imv
     ];
 
     programs = { 
 	alacritty.enable = true;
+	fastfetch.enable = true;
     };
 
     home.file = {};
@@ -41,7 +49,6 @@
     programs.home-manager.enable = true;
 
     stylix.targets = { 
-	nixvim.enable = false;
 	neovim.enable = false;
     };
   

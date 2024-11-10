@@ -5,8 +5,7 @@
 { config, lib, pkgs, callPackage, inputs, ... }:
 
 {
-
-    # Activate flakes
+# Activate flakes
     nix.settings.experimental-features = [ "nix-command" "flakes"];
 
     imports =
@@ -19,6 +18,8 @@
 #	../../modules/nixos/nvidia.nix
 	../../modules/nixos/audio.nix
 	../../modules/nixos/i3.nix
+	../../modules/nixos/hyprland.nix
+	../../modules/nixos/ly.nix
 #	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
 #	../../modules/nixos/virtualbox.nix
@@ -77,29 +78,12 @@
 
     # List packages installed in system profile. 
     environment.systemPackages = with pkgs; [
-	nvtopPackages.full
 	go
 	binutils
 	home-manager
 	gcc
 	ripgrep
-
-	# Should prolly be moved to home.nix
-	mullvad-vpn
-	vlc
-	libreoffice
-	teams-for-linux
-	neofetch
-	btop
-	lf
-	imv
     ];
-  
-    fileSystems."/jellyfin" = {
-	device = "192.168.3.112:/jellyfin";
-	fsType = "nfs";
-	options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "user"];
-    };
  
     system.stateVersion = "24.05"; # Don't touch
 }
