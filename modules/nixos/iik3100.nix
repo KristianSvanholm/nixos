@@ -6,6 +6,8 @@
 	netcat
 	thc-hydra
 	python312Packages.censys
+	gdb
+	ghidra
     ];
 }
 
