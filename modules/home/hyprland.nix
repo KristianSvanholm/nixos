@@ -90,6 +90,7 @@
 		"SUPER, M, exit,"
 		"SUPER,F,fullscreen"
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
+		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
 		"SUPER, E, exec, thunar"
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
