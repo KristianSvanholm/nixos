@@ -61,7 +61,6 @@
     programs.home-manager.enable = true;
 
     stylix.targets = { 
-	nixvim.enable = true;
 	neovim.enable = false;
     };
   
