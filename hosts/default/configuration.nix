@@ -23,7 +23,6 @@
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/virt.nix
-	../../modules/nixos/iik3100.nix
 	../../modules/nixos/ly.nix
 	../../modules/nixos/picom.nix
     ];

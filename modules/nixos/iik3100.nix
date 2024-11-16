@@ -8,6 +8,9 @@
 	python312Packages.censys
 	gdb
 	ghidra
+	burpsuite
+	hashcat
+	sqlmap
     ];
 }
 
