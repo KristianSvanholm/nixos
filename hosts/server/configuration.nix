@@ -16,9 +16,12 @@
 	../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
-    # Enable networking
-    networking.hostName = "nixos";
-    networking.networkmanager.enable = true;
+    # Networking setup
+    networking = {
+	hostname = "nixos";
+	networkmanager.enable = true;
+	eno1.wakeOnLan.enable = true;
+    };
 
     users.defaultUserShell = pkgs.zsh;
     programs.zsh.enable = true;
