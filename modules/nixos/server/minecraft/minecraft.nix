@@ -106,6 +106,10 @@
 			BCLib = fetchurl { url = "https://cdn.modrinth.com/data/BgNRHReB/versions/TPC86Pyz/bclib-3.0.14.jar"; sha512 = "bc35cc37a221fbc6f7fca293e72aad0877d8c9d07067ff0b4c8f51dcddbb82ac7cbbb86d1550eef7690bcd1ecf09625f0389f39ae9a252eec5d8511ba7deec4a"; };
 			WTHIT = fetchurl { url = "https://cdn.modrinth.com/data/6AQIaxuO/versions/BSZMYd4G/wthit-fabric-8.15.2.jar"; sha512 = "9636327d041d6fee42f93160db08a753f7a1d323aaa8b36556644e4896284ded5b7da52d809a0752024c17eedd76ee11afe9d3b6a0be32956a5d90dd0e38c520"; };
 			BadPackets = fetchurl { url = "https://cdn.modrinth.com/data/ftdbN0KK/versions/JjLWLyDz/badpackets-fabric-0.4.3.jar"; sha512 = "2375bf680a6bc716808735e4258408212609480c1088c6249c8a6dbb450429e81de02891a4b412fcafe588d3b521e68f33918b8f99bb425e7dc79f212c924b9c"; };
+			CCTweaked = fetchurl { url = "https://cdn.modrinth.com/data/gu7yAYhd/versions/Zoo9N9Dv/cc-tweaked-1.20.1-fabric-1.113.1.jar"; sha512 = "a5024ac6da3004396c8aaa275ee6096802ac0fc8fb2fbf8aa6b6287e45820b8f6c1bd1f922340b8750010b1051739547c1abf1b003f437a223624fe4f1a88891"; };
+			Camerapture = fetchurl { url = "https://cdn.modrinth.com/data/9dzLWnmZ/versions/H54gG8cJ/Camerapture-1.6.4%2Bmc1.20.1.jar"; sha512 = "e6e2cb033b428d8506bf4d51b41c1892100fe7a550b41484aca5efec20b8a3b9c1173a603ca833bdca68b45410b9e35cce9cc44383b2cd9efdb5db9bb3e666a8"; };
+			AutocrafterEarly = fetchurl { url = "https://cdn.modrinth.com/data/pAONjoSH/versions/213IPd8u/crafter-1.0.2-1.20.1.jar"; sha512 = "57af47847f15746521084759e02a3888da137511652793507fc7b70d41e05ac72d6cc7cbdf6f88d934649e37cee31f139c76219d6786fc2df449fce842ebf917"; };
+			Ribbits = fetchurl { url = "https://cdn.modrinth.com/data/8YcE8y4T/versions/RLSQKSBU/Ribbits-1.20.1-Fabric-3.0.0.jar"; sha512 = "850cc9a05bfde077b9f94a3050d5f61b7b19da9613310459eeba564f542ebe67f739a790630e333fc3e3093b1079c3a7dbce6876a054853f12ad3065f450236e"; };
 		    });
 		};
 	    };
