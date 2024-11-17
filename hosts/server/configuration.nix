@@ -20,6 +20,8 @@
     networking = {
 	hostName = "nixos";
 	networkmanager.enable = true;
+	
+	# Remember to update interface name for new devices
 	interfaces.eno1.wakeOnLan.enable = true;
     };
 
