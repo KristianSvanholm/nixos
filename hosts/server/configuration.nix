@@ -20,7 +20,7 @@
     networking = {
 	hostname = "nixos";
 	networkmanager.enable = true;
-	eno1.wakeOnLan.enable = true;
+	interfaces.eno1.wakeOnLan.enable = true;
     };
 
     users.defaultUserShell = pkgs.zsh;
