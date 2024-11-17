@@ -41,6 +41,7 @@
 	obsidian
 	spotify
 	ganttproject-bin
+	wakeonlan
     ];
 
     programs = { 

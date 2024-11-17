@@ -18,7 +18,7 @@
 	
     # Networking setup
     networking = {
-	hostname = "nixos";
+	hostName = "nixos";
 	networkmanager.enable = true;
 	interfaces.eno1.wakeOnLan.enable = true;
     };
@@ -59,6 +59,7 @@
 	docker-compose
 	mullvad
 	ripgrep
+	ethtool
     ];
 
     virtualisation.docker.rootless = {
