@@ -1,11 +1,18 @@
-{ ... }:
+{ pkgs, lib, ... }:
 {
+
+    home.packages = with pkgs; [
+	hyprpaper
+    ];
+
     services.hyprpaper = {
-	enable = true;
+	enable = lib.mkForce true;
 	settings = { 
 	    ipc = "on";
-	    preload = [ "../../wallpapers/astro.jpg" ];
-	    wallpaper = ["DP-2,../../wallpapers/astro.jpg"];	    
+	    preload = [ "/home/krs/nixos/wallpapers/blue_waves.png" ];
+	    wallpaper = [
+		" , /home/krs/nixos/wallpapers/blue_waves.png"
+	    ];
 	};
 
     };

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
     imports = [ 
 	../../modules/home/git.nix
@@ -27,7 +27,10 @@
     # Bluetooth media controls
     services.mpris-proxy.enable = true;
     
-    stylix.targets.neovim.enable = false;
+    stylix.targets = {
+	neovim.enable = false;
+	hyprpaper.enable = lib.mkForce false;
+    };
 
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 

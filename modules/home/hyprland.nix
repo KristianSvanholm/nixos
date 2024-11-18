@@ -62,7 +62,7 @@
 		enabled = false;
 	    };
     
-	    exec-once = [ "waybar" ];
+	    exec-once = [ "waybar" "hyprpaper" ];
 
 	    monitor = [
 		"DP-2, 2560x1440@144, 0x0, 1"
