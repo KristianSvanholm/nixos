@@ -14,6 +14,7 @@
 	./hardware-configuration.nix
 	inputs.home-manager.nixosModules.default
 	../../modules/nixos/boot.nix
+	../../modules/nixos/localization.nix
 	../../modules/nixos/stylix.nix
 	../../modules/nixos/bluetooth.nix
 	../../modules/nixos/nvidia.nix
@@ -34,12 +35,6 @@
     programs.zsh.enable = true;
     users.defaultUserShell = pkgs.zsh;
 
-    # Set your time zone.
-    time.timeZone = "Europe/Oslo";
-
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-
     # Configure keymap in X11
     services.xserver.xkb = {
 	layout = "no";
@@ -48,9 +43,6 @@
 
     # vpn
     services.mullvad-vpn.enable = true;
-
-    # Configure console keymap
-    console.keyMap = "no";
 
     # Enable CUPS to print documents.
     services.printing.enable = true;

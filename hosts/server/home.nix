@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
     home.username = "srv";
     home.homeDirectory = "/home/srv";
@@ -17,8 +17,6 @@
 	unzip
 	btop
     ];
-
-    home.file = {};
 
     home.sessionVariables = { EDITOR = "nvim"; };
 

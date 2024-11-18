@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 {
 
     # Activate flakes
@@ -9,6 +9,7 @@
 	./hardware-configuration.nix
 	inputs.home-manager.nixosModules.default
 	../../modules/nixos/boot.nix
+	../../modules/nixos/localization.nix
 	../../modules/nixos/server/ssh.nix
 	../../modules/nixos/server/jellyfin.nix
 	../../modules/nixos/server/qbittorrent-nox.nix
@@ -27,10 +28,6 @@
 
     users.defaultUserShell = pkgs.zsh;
     programs.zsh.enable = true;
-
-    # Time zone and locale.
-    time.timeZone = "Europe/Oslo";
-    i18n.defaultLocale = "en_US.UTF-8";
 
     users.users.srv = {
 	isNormalUser = true;

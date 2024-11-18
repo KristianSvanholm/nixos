@@ -23,7 +23,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixvim, ... }@inputs:
+  outputs = { nixpkgs, ... }@inputs:
     {
       nixosConfigurations = {
 	default = nixpkgs.lib.nixosSystem {
@@ -39,14 +39,6 @@
 	    modules = [
 	      ./hosts/server/configuration.nix
 	      inputs.home-manager.nixosModules.default
-	    ];
-	};
-	laptop = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs;};
-	    modules = [
-	      ./hosts/laptop/configuration.nix
-	      inputs.home-manager.nixosModules.default
-	      inputs.stylix.nixosModules.stylix
 	    ];
 	};
       };
