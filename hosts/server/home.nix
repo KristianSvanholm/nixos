@@ -1,15 +1,18 @@
 { pkgs, ... }:
 {
-    home.username = "srv";
-    home.homeDirectory = "/home/srv";
-
     imports = [
 	../../modules/home/git.nix
 	../../modules/home/nixvim.nix
 	../../modules/home/zsh.nix
     ];
 
-    home.stateVersion = "24.05";
+    home = {
+	username = "srv";
+	homeDirectory = "/home/srv";
+	sessionVariables = { EDITOR = "nvim"; };
+    };
+
+    programs.home-manager.enable = true;
 
     home.packages = with pkgs; [
 	bat
@@ -18,7 +21,6 @@
 	btop
     ];
 
-    home.sessionVariables = { EDITOR = "nvim"; };
+    home.stateVersion = "24.05";
 
-    programs.home-manager.enable = true;
 }

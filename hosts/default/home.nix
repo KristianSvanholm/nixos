@@ -1,9 +1,5 @@
 { pkgs, ... }:
 {
-    # Home Manager needs a bit of information about you and the paths it should manage.
-    home.username = "krs"; 
-    home.homeDirectory = "/home/krs";
-
     imports = [ 
 	../../modules/home/git.nix
 	../../modules/home/hyprland.nix
@@ -11,8 +7,25 @@
 	../../modules/home/nixvim.nix
 	../../modules/home/zsh.nix
     ];
+ 
+    # Important
+    home = {
+	username = "krs"; 
+	homeDirectory = "/home/krs";
+	EDITOR = "nvim";
+	WEBKIT_DISABLE_DMABUF_RENDERER = 1;
+    };
 
-    home.stateVersion = "24.05"; # Please read the comment before changing.
+    programs = { 
+	alacritty.enable = true;
+	fastfetch.enable = true;
+	home-manager.enable = true; # Let Home Manager manage itself
+    };
+
+    # Bluetooth media controls
+    services.mpris-proxy.enable = true;
+    
+    stylix.targets.neovim.enable = false;
 
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
@@ -41,22 +54,6 @@
 	wakeonlan
     ];
 
-    programs = { 
-	alacritty.enable = true;
-	fastfetch.enable = true;
-    };
+    home.stateVersion = "24.05"; # Dont touch
 
-    services.mpris-proxy.enable = true; # Bluetooth media controls
-
-    home.sessionVariables = { 
-	EDITOR = "nvim"; 
-	WEBKIT_DISABLE_DMABUF_RENDERER = 1; 
-    };
-
-    # Let Home Manager install and manage itself.
-    programs.home-manager.enable = true;
-
-    stylix.targets = { 
-	neovim.enable = false;
-    };
 }
