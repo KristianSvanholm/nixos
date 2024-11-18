@@ -25,32 +25,30 @@
 	../../modules/nixos/ly.nix
     ];
 
-    networking.hostName = "nixos"; # Define your hostname.
-    networking.firewall.enable = true;
-    networking.enableIPv6 = true;
-
-    # Enable networking
-    networking.networkmanager.enable = true;
-
-    programs.zsh.enable = true;
-    users.defaultUserShell = pkgs.zsh;
-
-    # Configure keymap in X11
-    services.xserver.xkb = {
-	layout = "no";
-	variant = "";
+    networking = {
+	hostName = "nixos";
+	firewall.enable = true;
+	enableIPv6 = true;
+	networkmanager.enable = true;
     };
 
-    # vpn
-    services.mullvad-vpn.enable = true;
+    programs = {
+	firefox.enable = true;
+	zsh.enable = true;
+    };
+    
+    services = {
+	mullvad-vpn.enable = true;
+	printing.enable = true;
+    };
 
-    # Enable CUPS to print documents.
-    services.printing.enable = true;
+    users = {
+	users.krs = {
+	    isNormalUser = true;
+	    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+	};
 
-    # Define a user account. Don't forget to set a password with ‘passwd’.
-    users.users.krs = {
-	isNormalUser = true;
-	extraGroups = [ "networkmanager" "wheel" "libvirtd"];
+	defaultUserShell = pkgs.zsh;
     };
 
     home-manager = {
@@ -60,9 +58,6 @@
 	    "krs" = import ./home.nix;
 	};
     };
-
-    # Install firefox.
-    programs.firefox.enable = true;
 
     # Allow unfree packages
     nixpkgs.config.allowUnfree = true;

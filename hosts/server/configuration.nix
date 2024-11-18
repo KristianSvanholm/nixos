@@ -24,15 +24,40 @@
 	
 	# Remember to update interface name for new devices
 	interfaces.eno1.wakeOnLan.enable = true;
+
+	firewall = {
+	    enable = true;
+	    allowedTCPPorts = [
+		22 # SSH
+		8096 # Jellyfin 
+		111 2049 4000 4001 4002 20048 # NFS
+		6969 # Qbittorrent-nox
+		25565 # Minecraft
+	    ];
+	    allowedUDPPorts = [ 
+		111 2049 4000 4001 4002 20048 # NFS
+		6969 # Qbittorrent-nox
+		19132 24454 # Minecraft (default + proxchat)
+	    ];
+	};
     };
 
-    users.defaultUserShell = pkgs.zsh;
-    programs.zsh.enable = true;
+    programs = {
+	zsh.enable = true;
+    };
 
-    users.users.srv = {
-	isNormalUser = true;
-	description = "srv";
-	extraGroups = [ "networkmanager" "docker" "wheel" ];
+    services = {
+	getty.autologinUser = "srv";
+	mullvad-vpn.enable = true;
+    };
+  
+    users = {
+	users.srv = {
+	    isNormalUser = true;
+	    extraGroups = [ "networkmanager" "docker" "wheel" ];
+	};
+
+	defaultUserShell = pkgs.zsh;
     };
 
     home-manager = {
@@ -43,9 +68,11 @@
 	};
     };
 
-    services.getty.autologinUser = "srv";
-    services.mullvad-vpn.enable = true;
-  
+    virtualisation.docker.rootless = {
+	enable = true;
+	setSocketVariable = true;
+    };
+
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
@@ -60,28 +87,6 @@
 	ripgrep
 	ethtool
     ];
-
-    virtualisation.docker.rootless = {
-	enable = true;
-	setSocketVariable = true;
-    };
-
-    # Open ports in the firewall.
-    networking.firewall = {
-	enable = true;
-	allowedTCPPorts = [
-	    22 # SSH
-	    8096 # Jellyfin 
-	    111 2049 4000 4001 4002 20048 # NFS
-	    6969 # Qbittorrent-nox
-	    25565 # Minecraft
-	];
-	allowedUDPPorts = [ 
-	    111 2049 4000 4001 4002 20048 # NFS
-	    6969 # Qbittorrent-nox
-	    19132 24454 # Minecraft (default + proxchat)
-	];
-    };
 
     system.stateVersion = "24.05"; # Did you read the comment?
 
