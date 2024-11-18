@@ -6,10 +6,8 @@
 
     imports = [ 
 	../../modules/home/git.nix
-	#../../modules/home/i3.nix
 	../../modules/home/hyprland.nix
 	../../modules/home/rofi.nix
-	../../modules/home/flameshot.nix
 	../../modules/home/nixvim.nix
 	../../modules/home/zsh.nix
     ];
@@ -26,7 +24,6 @@
 	fzf
 	modrinth-app
 	unzip
-	qbittorrent
 	zoom-us
 	networkmanagerapplet
 	mullvad-vpn
@@ -51,8 +48,6 @@
 
     services.mpris-proxy.enable = true; # Bluetooth media controls
 
-    home.file = {};
-
     home.sessionVariables = { 
 	EDITOR = "nvim"; 
 	WEBKIT_DISABLE_DMABUF_RENDERER = 1; 
@@ -64,5 +59,4 @@
     stylix.targets = { 
 	neovim.enable = false;
     };
-  
 }

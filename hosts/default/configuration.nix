@@ -18,13 +18,10 @@
 	../../modules/nixos/bluetooth.nix
 	../../modules/nixos/nvidia.nix
 	../../modules/nixos/audio.nix
-	../../modules/nixos/i3.nix
 	../../modules/nixos/hyprland.nix
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
-	../../modules/nixos/virt.nix
 	../../modules/nixos/ly.nix
-	../../modules/nixos/picom.nix
     ];
 
     networking.hostName = "nixos"; # Define your hostname.
@@ -83,7 +80,6 @@
 	nvtopPackages.full
 	go
 	binutils
-	home-manager
 	gcc
 	zulu17
 	maven
