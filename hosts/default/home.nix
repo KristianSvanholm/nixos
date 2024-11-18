@@ -12,8 +12,10 @@
     home = {
 	username = "krs"; 
 	homeDirectory = "/home/krs";
-	EDITOR = "nvim";
-	WEBKIT_DISABLE_DMABUF_RENDERER = 1;
+	sessionVariables = {
+	    EDITOR = "nvim";
+	    WEBKIT_DISABLE_DMABUF_RENDERER = 1;
+	};
     };
 
     programs = { 
