@@ -9,7 +9,8 @@
 		margin-bottom = -1;
 	    };*/
 	    modules-left = [ "hyprland/workspaces" ]; 
-	    modules-right = [ "pulseaudio" "bluetooth" "cpu" "memory" "temperature" "clock" ];
+	    modules-center = [ "clock" ];
+	    modules-right = [ "pulseaudio" "bluetooth" "cpu" "memory" "temperature" ];
 	    pulseaudio = {
 		format = "vol: {volume}%";
 		on-click = "pavucontrol";
