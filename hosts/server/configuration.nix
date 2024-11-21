@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, username, ... }:
 {
 
     # Activate flakes
@@ -19,7 +19,7 @@
 	
     # Networking setup
     networking = {
-	hostName = "nixos";
+	hostName = "srv";
 	networkmanager.enable = true;
 	
 	# Remember to update interface name for new devices
@@ -47,12 +47,12 @@
     };
 
     services = {
-	getty.autologinUser = "srv";
+	getty.autologinUser = username;
 	mullvad-vpn.enable = true;
     };
   
     users = {
-	users.srv = {
+	users.${username} = {
 	    isNormalUser = true;
 	    extraGroups = [ "networkmanager" "docker" "wheel" ];
 	};
@@ -64,7 +64,7 @@
 	useGlobalPkgs = true;
 	extraSpecialArgs = { inherit inputs; };
 	users = { 
-	    "srv" = import ./home.nix;
+	    ${username} = import ./home.nix;
 	};
     };
 

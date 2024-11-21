@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, username, home, ... }:
 
 {
 
@@ -43,7 +43,7 @@
     };
 
     users = {
-	users.krs = {
+	users.${username} = {
 	    isNormalUser = true;
 	    extraGroups = [ "networkmanager" "wheel" "libvirtd"];
 	};
@@ -53,9 +53,9 @@
 
     home-manager = {
   	useGlobalPkgs = true;
-	extraSpecialArgs= { inherit inputs; };
+	extraSpecialArgs= { inherit inputs username home; };
 	users = {
-	    "krs" = import ./home.nix;
+	    ${username} = import ./home.nix;
 	};
     };
 

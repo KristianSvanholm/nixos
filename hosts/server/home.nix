@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, home, ... }:
 {
     imports = [
 	../../modules/home/git.nix
@@ -7,8 +7,8 @@
     ];
 
     home = {
-	username = "srv";
-	homeDirectory = "/home/srv";
+	username = username;
+	homeDirectory = home;
 	sessionVariables = { EDITOR = "nvim"; };
     };
 

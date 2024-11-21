@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, home, ... }:
 {
     imports = [
 	inputs.nixvim.homeManagerModules.nixvim
@@ -10,6 +10,8 @@
 	nodejs
 	rustup
     ];
+
+    stylix.targets.neovim.enable = false;
  
     # Ensure nixd uses same pkgs as system
     nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
@@ -28,10 +30,10 @@
 		    enable = true;
 		    settings = {
 			formatting.command = [ "alejandra" ];
-			nixpkgs.expr = "import (builtins.fetFlake \"/home/krs/nixos\").inputs.nixpkgs { }";
+			nixpkgs.expr = "import (builtins.fetFlake \"${home}/nixos\").inputs.nixpkgs { }";
 			options = {
-			    nixos.expr = "(builtins.getFlake \"/home/krs/nixos\").nixosConfiguration.default.options";
-			    home_manager.expr = "(builtins.getFlake \"/home/krs/nixos\").nixosConfiguration.default.options)";
+			    nixos.expr = "(builtins.getFlake \"${home}/nixos\").nixosConfiguration.default.options";
+			    home_manager.expr = "(builtins.getFlake \"${home}/nixos\").nixosConfiguration.default.options)";
 			};
 		    };
 		};

@@ -24,10 +24,14 @@
   };
 
   outputs = { nixpkgs, ... }@inputs:
+  let 
+    username = "krs";
+    home = "/home/krs";
+  in
     {
       nixosConfigurations = {
 	default = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs;};
+	  specialArgs = {inherit inputs username home;};
 	    modules = [
 	      ./hosts/default/configuration.nix
 	      inputs.stylix.nixosModules.stylix
@@ -35,7 +39,7 @@
 	    ];
 	};
 	server = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs;};
+	  specialArgs = {inherit inputs username home;};
 	    modules = [
 	      ./hosts/server/configuration.nix
 	      inputs.home-manager.nixosModules.default

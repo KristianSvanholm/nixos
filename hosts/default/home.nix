@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, username, home, lib, ... }:
 {
     imports = [ 
 	../../modules/home/git.nix
@@ -10,8 +10,8 @@
  
     # Important
     home = {
-	username = "krs"; 
-	homeDirectory = "/home/krs";
+	username = username; 
+	homeDirectory = home;
 	sessionVariables = {
 	    EDITOR = "nvim";
 	    WEBKIT_DISABLE_DMABUF_RENDERER = 1;
@@ -27,11 +27,6 @@
     # Bluetooth media controls
     services.mpris-proxy.enable = true;
     
-    stylix.targets = {
-	neovim.enable = false;
-	hyprpaper.enable = lib.mkForce false;
-    };
-
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
 	firefox 
