@@ -45,15 +45,9 @@
 
 	    decoration = {
 		rounding = 0;
-		blur = { 
-		    enabled = true;
-		    size = 3;
-		    passes = 3;
-		    new_optimizations = true;
-		};
+		blur.enabled = false;
+		shadow.enabled = false;
 
-		drop_shadow = false;
-		
 		active_opacity = 1;
 		inactive_opacity = 1;
 	    };
