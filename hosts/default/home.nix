@@ -44,7 +44,6 @@
 	libreoffice
 	teams-for-linux
 	neofetch
-	btop
 	lf
 	imv
 	postman

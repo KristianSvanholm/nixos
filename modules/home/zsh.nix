@@ -1,7 +1,7 @@
 { ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ./thefuck.nix ];
+    imports = [ ./eza.nix ./zoxide.nix ./thefuck.nix ./btop.nix ];
 
     programs.zsh = {
 	enable = true;

@@ -18,7 +18,6 @@
 	bat
 	fzf
 	unzip
-	btop
     ];
 
     home.stateVersion = "24.05";
