@@ -51,6 +51,8 @@
 		    passes = 3;
 		    new_optimizations = true;
 		};
+
+		drop_shadow = false;
 		
 		active_opacity = 1;
 		inactive_opacity = 1;
