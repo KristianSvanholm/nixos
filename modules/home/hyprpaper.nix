@@ -1,4 +1,4 @@
-{ pkgs, lib, home, ... }:
+{ pkgs, lib, config, ... }:
 {
 
     stylix.targets.hyprpaper.enable = lib.mkForce false;
@@ -11,9 +11,9 @@
 	enable = lib.mkForce true;
 	settings = { 
 	    ipc = "on";
-	    preload = [ "${home}/nixos/wallpapers/green_leafs.png" ];
+	    preload = [ "${config.stylix.image}" ];
 	    wallpaper = [
-		" , ${home}/nixos/wallpapers/green_leafs.png"
+		" , ${config.stylix.image}"
 	    ];
 	};
 
