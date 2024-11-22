@@ -30,8 +30,8 @@
 	    };
 
 	    general = {
-		gaps_in = 5;
-		gaps_out = 10;
+		gaps_in = 0;
+		gaps_out = 0;
 		"col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
 	    };
 
@@ -44,7 +44,7 @@
 	    };
 
 	    decoration = {
-		rounding = 5;
+		rounding = 0;
 		blur = { 
 		    enabled = true;
 		    size = 3;
