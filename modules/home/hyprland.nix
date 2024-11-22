@@ -1,4 +1,4 @@
-{ ... }: 
+{ config, ... }: 
 {
 
     imports = [
@@ -6,6 +6,8 @@
 	./hyprpaper.nix
 	./waybar.nix
     ];
+
+    stylix.targets.hyprland.enable = false;
 
     wayland.windowManager.hyprland = {
 	enable = true;
@@ -28,8 +30,9 @@
 	    };
 
 	    general = {
-		gaps_in = 0;
-		gaps_out = 0; 
+		gaps_in = 5;
+		gaps_out = 10;
+		"col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
 	    };
 
 	    misc = {
@@ -41,7 +44,7 @@
 	    };
 
 	    decoration = {
-		rounding = 0;
+		rounding = 5;
 		blur = { 
 		    enabled = true;
 		    size = 3;
@@ -51,7 +54,6 @@
 		
 		active_opacity = 1;
 		inactive_opacity = 1;
-		drop_shadow = false;
 	    };
 
 	    cursor = {
