@@ -4,8 +4,7 @@
   stylix = {
 	enable = true;
   	base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-  	#image = ../../wallpapers/astro.jpg;
-	image = ../../wallpapers/astro.jpg;
+  	image = ../../wallpapers/green-leafs.png;
   	cursor.package = pkgs.bibata-cursors;
   	cursor.name = "Bibata-Modern-Ice";
   	cursor.size = 16;
