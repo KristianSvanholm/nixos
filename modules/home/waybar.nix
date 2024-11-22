@@ -57,11 +57,10 @@
 	#workspaces button {
 	    padding: 0 2px;
 	    margin: 0px;
-	    font-weight: bold;
 	}
 	
 	#workspaces button.active {
-	    background: #6e6e6e;
+	    border-bottom: 1px solid #e4e4e4;
 	}
 
 	.modules-right * {
