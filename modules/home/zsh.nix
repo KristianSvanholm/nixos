@@ -1,7 +1,7 @@
 { ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ./thefuck.nix ./btop.nix ];
+    imports = [ ./eza.nix ./zoxide.nix ./btop.nix ];
 
     programs.zsh = {
 	enable = true;
@@ -23,11 +23,23 @@
 	    ignoreDups = true;
 	};
 
+	# Zsh config profiling
+	#initExtraFirst = "zmodload zsh/zprof\n";
+	#initExtra = "zprof\n";
+
+	completionInit = ''
+	    autoload -Uz compinit
+	    for dump in ~/.zcompdump(N.mh+24); do
+		compinit
+	    done
+	    compinit -C
+	'';
+
 	oh-my-zsh = {
 	    enable = true;
-	    plugins = [ "git" "thefuck" ];
+	    plugins = [ "git" ];
 	    theme = "fishy";
 	};
-    };    
+    };
 
 }
