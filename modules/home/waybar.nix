@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
 
     stylix.targets.waybar.enable = false;
@@ -64,7 +64,7 @@
 	}
 	
 	#workspaces button.active {
-	    border-bottom: 1px solid #e4e4e4;
+	    border-bottom: 1px solid;
 	}
 
 	.modules-right * {
@@ -73,7 +73,31 @@
 	}
 
 	#pulseaudio, #bluetooth, #cpu, #memory, #temperature, #clock.date {
-	    border-bottom: 1px solid #e4e4e4;
+	    border-bottom: 1px solid;
+	}
+
+	#pulseaudio {
+	    color: #${config.lib.stylix.colors.base08};
+	}
+
+	#bluetooth {
+	    color: #${config.lib.stylix.colors.base09};
+	}
+
+	#cpu {
+	    color: #${config.lib.stylix.colors.base0A};
+	}
+
+	#memory {
+	    color: #${config.lib.stylix.colors.base0B};
+	}
+
+	#temperature {
+	    color: #${config.lib.stylix.colors.base0C};
+	}
+
+	#clock.date {
+	    color: #${config.lib.stylix.colors.base0E};
 	}
 
 	'';
