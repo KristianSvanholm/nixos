@@ -21,9 +21,13 @@
 		};
 		bluetooth = {
 		    on-click = "blueman-manager";
+		    format-on = "󰂯";
+		    format-off = "󰂲";
+		    format-disabled = "󰂲";
+		    format-connected = "󰂱 {num_connections}";
 		};
 		cpu = {
-		    format = "cpu: {usage}%";
+		    format = "󰍛 {usage}%";
 		};
 		memory = {
 		   format = "mem: {percentage}%";
@@ -64,8 +68,12 @@
 	}
 
 	.modules-right * {
-	    padding-left: 3px;
-	    padding-right: 3px;
+	    margin-left: 3px;
+	    margin-right: 3px;
+	}
+
+	#pulseaudio, #bluetooth, #cpu, #memory, #temperature, #clock.date {
+	    border-bottom: 1px solid #e4e4e4;
 	}
 
 	'';
