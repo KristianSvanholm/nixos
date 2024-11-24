@@ -1,9 +1,8 @@
-{ pkgs, username, home, lib, ... }:
+{ pkgs, username, home, ... }:
 {
     imports = [ 
 	../../modules/home/git.nix
 	../../modules/home/hyprland.nix
-	../../modules/home/rofi.nix
 	../../modules/home/nixvim.nix
 	../../modules/home/zsh.nix
     ];
@@ -51,6 +50,7 @@
 	spotify
 	ganttproject-bin
 	wakeonlan
+	qbittorrent
     ];
 
     home.stateVersion = "24.05"; # Dont touch

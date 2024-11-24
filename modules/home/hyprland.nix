@@ -5,6 +5,7 @@
 	./hyprlock.nix
 	./hyprpaper.nix
 	./waybar.nix
+	./rofi.nix
     ];
 
     stylix.targets.hyprland.enable = false;

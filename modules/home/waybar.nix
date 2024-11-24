@@ -11,10 +11,6 @@
 		modules-center = [ "clock" ];
 		modules-right = [ "pulseaudio" "bluetooth" "cpu" "memory" "temperature" "clock#date" ];
 
-		"hyprland/workspaces" = {
-
-		};
-
 		pulseaudio = {
 		    format = "vol: {volume}%";
 		    on-click = "pavucontrol";
