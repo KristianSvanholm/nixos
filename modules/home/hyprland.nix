@@ -21,9 +21,7 @@
 
 	settings = {
 	    
-	    env = [
-		"WEBKIT_DISABLE_DMABUF_RENDERER,1"
-	    ];
+	    env = [ "WEBKIT_DISABLE_DMABUF_RENDERER,1" ];
 
 	    input = {
 		kb_layout = "no";
@@ -91,6 +89,7 @@
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
 		"SUPER, E, exec, thunar"
+		"SUPER, L, exec, hyprlock"
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
 		"SUPER, W, exec, rofi -show window"
