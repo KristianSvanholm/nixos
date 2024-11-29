@@ -65,7 +65,6 @@
 
 	plugins = { 
 	    lualine.enable = true;
-	    telescope.enable = true;
 	    web-devicons.enable = true;
 	    /*mini = {
 		enable = true;
@@ -74,6 +73,17 @@
 		    style = "glyph";
 		};
 	    };*/
+	    telescope = {
+		enable = true;
+		settings.pickers.current_buffer_fuzzy_find = {
+		    previewer = false;
+		    sorting_strategy = "ascending";
+		    layout_config = {
+			prompt_position = "top";
+			height = 0.5;
+		    };
+		};
+	    };
 	    treesitter = {
 		enable = true;
 		settings.highlight.enable = true;
@@ -124,6 +134,10 @@
 	    {
 		action = "<cmd>Telescope find_files<CR>";
 		key = "<leader>sf";
+	    }
+	    {
+		action= "<cmd>Telescope current_buffer_fuzzy_find<CR>";
+		key = "<leader>ss";
 	    }
 	];
 	
