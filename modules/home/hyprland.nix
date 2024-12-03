@@ -31,7 +31,7 @@
 	    general = {
 		gaps_in = 0;
 		gaps_out = 0;
-		"col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
+		"col.active_border" = "rgb(${config.lib.stylix.colors.base09})";
 	    };
 
 	    misc = {
