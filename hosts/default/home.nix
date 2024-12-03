@@ -51,6 +51,7 @@
 	ganttproject-bin
 	wakeonlan
 	qbittorrent
+	vesktop
     ];
 
     home.stateVersion = "24.05"; # Dont touch
