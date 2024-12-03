@@ -2,6 +2,7 @@
 {
     imports = [
 	inputs.nixvim.homeManagerModules.nixvim
+	./latex.nix
     ];
 
     home.packages = with pkgs; [ 
@@ -24,6 +25,9 @@
 	    enable = true;
 
 	    servers = {
+		ltex.enable = true;
+		texlab.enable = true;
+
 		gopls.enable = true;
 		
 		nixd = {
@@ -66,6 +70,14 @@
 	plugins = { 
 	    lualine.enable = true;
 	    web-devicons.enable = true;
+	    vimtex = {
+		enable = true;
+		texlivePackage = pkgs.texliveFull;
+		settings = {
+		    compiler_method = "pdflatex -shell-escape";
+		    viewmethod = "zathura";
+		};
+	    };
 	    /*mini = {
 		enable = true;
 		mockDevIcons = true;
