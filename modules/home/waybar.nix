@@ -33,6 +33,12 @@
 		};
 		"clock#date" = {
 		    format = "{:%d.%m.%Y}"; 
+		    tooltip-format = "{calendar}";
+		    calendar = {
+			mode = "month";
+			weeks-pos = "left";
+			on-scroll = 1;
+		    };
 		};
 	    };
 	};
