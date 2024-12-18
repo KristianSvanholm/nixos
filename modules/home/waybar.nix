@@ -35,9 +35,17 @@
 		    format = "{:%d.%m.%Y}"; 
 		    tooltip-format = "{calendar}";
 		    calendar = {
-			mode = "month";
-			weeks-pos = "left";
+			mode = "year";
+			mode-mon-col = 3;
+			weeks-pos = "right";
 			on-scroll = 1;
+			format = {
+                              months = "<span color='#ffead3'><b>{}</b></span>";
+                              days = "<span color='#ffead3'><b>{}</b></span>";
+                              weeks = "<span color='#${config.lib.stylix.colors.base0C}'><b>W{}</b></span>";
+                              weekdays = "<span color='#${config.lib.stylix.colors.base09}'><b>{}</b></span>";
+                              today = "<span color='#${config.lib.stylix.colors.base0B}'><b><u>{}</u></b></span>";
+			};
 		    };
 		};
 	    };
@@ -45,12 +53,17 @@
 	style = ''
 	
 	* {
+	    font-family: ${config.stylix.fonts.monospace.name};
 	    border: none;
 	    border-radius: 0;
 	    min-height: 0;
 	    margin: 0px;
 	}
 
+	tooltip {
+	    opacity: 0.75
+	}
+	
 	#window {
 	    color: #e4e4e4;
 	}
