@@ -89,7 +89,7 @@
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
 		"SUPER, E, exec, thunar"
-		"SUPER, L, exec, hyprlock"
+		"SUPER, X, exec, hyprlock"
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
 		"SUPER, W, exec, rofi -show window"
@@ -132,11 +132,21 @@
 		"SUPER, up, movefocus, u"
 		"SUPER, down, movefocus, d"
 
+		"SUPER, H, movefocus, l"
+		"SUPER, L, movefocus, r"
+		"SUPER, K, movefocus, u"
+		"SUPER, J, movefocus, d"
+		
 		# Move window
 		"SUPER SHIFT, left, movewindow, l"
 		"SUPER SHIFT, right, movewindow, r"
 		"SUPER SHIFT, up, movewindow, u"
 		"SUPER SHIFT, down, movewindow, d"
+
+		"SUPER SHIFT, H, movewindow, l"
+		"SUPER SHIFT, L, movewindow, r"
+		"SUPER SHIFT, K, movewindow, u"
+		"SUPER SHIFT, J, movewindow, d"
 
 		# Resize window
 		"SUPER CTRL, left, resizeactive, -50 0"
