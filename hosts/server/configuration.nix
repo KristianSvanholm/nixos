@@ -1,4 +1,4 @@
-{ pkgs, inputs, username, ... }:
+{ pkgs, inputs, username, home, ... }:
 {
 
     # Activate flakes
@@ -62,7 +62,7 @@
 
     home-manager = {
 	useGlobalPkgs = true;
-	extraSpecialArgs = { inherit inputs; };
+	extraSpecialArgs = { inherit inputs username home; };
 	users = { 
 	    ${username} = import ./home.nix;
 	};

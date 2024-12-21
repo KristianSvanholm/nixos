@@ -42,6 +42,7 @@
 	  specialArgs = {inherit inputs username home;};
 	    modules = [
 	      ./hosts/server/configuration.nix
+	      inputs.stylix.nixosModules.stylix
 	      inputs.home-manager.nixosModules.default
 	    ];
 	};
