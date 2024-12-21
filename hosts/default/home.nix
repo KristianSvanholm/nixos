@@ -36,22 +36,17 @@
 	fzf
 	modrinth-app
 	unzip
-	zoom-us
 	networkmanagerapplet
 	mullvad-vpn
 	vlc
 	libreoffice
-	teams-for-linux
 	neofetch
 	lf
 	imv
 	postman
-	obsidian
 	spotify
-	ganttproject-bin
 	wakeonlan
 	qbittorrent
-	vesktop
     ];
 
     home.stateVersion = "24.05"; # Dont touch
