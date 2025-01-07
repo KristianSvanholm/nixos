@@ -3,7 +3,7 @@
     imports = [ 
 	../../modules/home/git.nix
 	../../modules/home/hyprland.nix
-	../../modules/home/nixvim.nix
+	../../modules/home/nvf.nix
 	../../modules/home/zsh.nix
     ];
  
@@ -47,6 +47,7 @@
 	spotify
 	wakeonlan
 	qbittorrent
+	zoom-us
     ];
 
     home.stateVersion = "24.05"; # Dont touch

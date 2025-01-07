@@ -23,6 +23,7 @@
 	../../modules/nixos/steam.nix
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/ly.nix
+	../../modules/nixos/1pass.nix
     ];
 
     networking = {
