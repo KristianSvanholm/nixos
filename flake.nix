@@ -5,6 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nvf.url = "github:notashelf/nvf";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -36,6 +37,7 @@
 	      ./hosts/default/configuration.nix
 	      inputs.stylix.nixosModules.stylix
 	      inputs.home-manager.nixosModules.default
+	      inputs.nvf.nixosModules.default
 	    ];
 	};
 	server = nixpkgs.lib.nixosSystem {
