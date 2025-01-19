@@ -11,11 +11,9 @@
 	../../modules/nixos/boot.nix
 	../../modules/nixos/localization.nix
 	../../modules/nixos/server/ssh.nix
-	../../modules/nixos/server/jellyfin.nix
 	../../modules/nixos/server/plex.nix
 	../../modules/nixos/server/yarr.nix
 	../../modules/nixos/server/qbittorrent-nox.nix
-	#../../modules/nixos/server/nfs.nix
 	../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
@@ -30,6 +28,7 @@
 	firewall = {
 	    enable = true;
 	    allowedTCPPorts = [
+		8095 # jellyfinn http
 		22 # SSH
 		111 2049 4000 4001 4002 20048 # NFS
 		6969 # Qbittorrent-nox
