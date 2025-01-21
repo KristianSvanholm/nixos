@@ -11,9 +11,9 @@
 	../../modules/nixos/boot.nix
 	../../modules/nixos/localization.nix
 	../../modules/nixos/server/ssh.nix
-	../../modules/nixos/server/plex.nix
+	../../modules/nixos/server/intel.nix
+	../../modules/nixos/server/nginx.nix
 	../../modules/nixos/server/yarr.nix
-	../../modules/nixos/server/qbittorrent-nox.nix
 	../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
@@ -28,7 +28,7 @@
 	firewall = {
 	    enable = true;
 	    allowedTCPPorts = [
-		8095 # jellyfinn http
+		80 81 443 # nginx
 		22 # SSH
 		111 2049 4000 4001 4002 20048 # NFS
 		6969 # Qbittorrent-nox
@@ -36,7 +36,6 @@
 	    ];
 	    allowedUDPPorts = [ 
 		111 2049 4000 4001 4002 20048 # NFS
-		6969 # Qbittorrent-nox
 		19132 24454 # Minecraft (default + proxchat)
 	    ];
 	};
@@ -68,9 +67,8 @@
 	};
     };
 
-    virtualisation.docker.rootless = {
+    virtualisation.docker = {
 	enable = true;
-	setSocketVariable = true;
     };
 
     nixpkgs.config.allowUnfree = true;

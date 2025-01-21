@@ -22,6 +22,7 @@
 	enable = true;
 	openFirewall = true; # 5055
     };
+
     services.qbittorrent = {
 	enable = true;
 	openFirewall = true;
