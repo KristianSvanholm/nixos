@@ -1,16 +1,23 @@
 { pkgs, ... }:
 {
-    
+
+    nixpkgs.config.packageOverrides = pkgs: {
+	vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
+    };
+
     environment.systemPackages = with pkgs; [ intel-gpu-tools ];
-    /*hardware.opengl = {
+    hardware.opengl = {
 	enable = true;
 	extraPackages = with pkgs; [
-	    #vpl-gpu-rt          # for newer GPUs on NixOS >24.05 or unstable
-	    onevpl-intel-gpu  # for newer GPUs on NixOS <= 24.05
-	    intel-media-sdk   # for older GPUs
+	    intel-media-driver
+	    intel-vaapi-driver
+	    vaapiVdpau
+	    intel-compute-runtime # OpenCL filter support (hardware tonemapping and subtitle burn-in)
+	    vpl-gpu-rt # QSV on 11th gen or newer
+	    intel-media-sdk # QSV up to 11th gen
 	];
-    };*/
+    };
 
-    hardware.graphics.extraPackages = with pkgs; [ vaapiIntel intel-media-driver ];
+    hardware.graphics.extraPackages = with pkgs; [ intel-media-driver intel-compute-runtime ];
 
 }
