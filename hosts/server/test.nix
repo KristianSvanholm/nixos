@@ -8,7 +8,7 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
@@ -18,19 +18,51 @@
       fsType = "ext4";
     };
 
+  fileSystems."/boot" =
+    { device = "systemd-1";
+      fsType = "autofs";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/202A-5D13";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
+
+  fileSystems."/var/lib/containers/storage/overlay" =
+    { device = "/var/lib/containers/storage/overlay";
+      fsType = "none";
+      options = [ "bind" ];
+    };
+
+  fileSystems."/var/lib/containers/storage/overlay-containers/15c026cf01845636d1f71a9fdacd56296b886c2cf36d27e4770a861f74fa3953/userdata/shm" =
+    { device = "shm";
+      fsType = "tmpfs";
+    };
+
+  fileSystems."/var/lib/containers/storage/overlay/a835b0850ab9f9a705e410747d7422e02805c7be1f075138dd421f03b634fad7/merged" =
+    { device = "overlay";
+      fsType = "overlay";
+    };
+
   fileSystems."/mnt/hdd" =
     { device = "/dev/disk/by-uuid/907c331d-d726-496e-90f3-30deeecdf1d3";
       fsType = "ext4";
     };
 
-  swapDevices = [ ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/e20c997d-331e-4985-87f9-0ce966013bfc"; }
+    ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  # networking.interfaces.podman0.useDHCP = lib.mkDefault true;
+  # networking.interfaces.veth0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

@@ -6,7 +6,7 @@
     };
 
     environment.systemPackages = with pkgs; [ intel-gpu-tools ];
-    hardware.opengl = {
+    hardware.graphics = {
 	enable = true;
 	extraPackages = with pkgs; [
 	    intel-media-driver
@@ -17,7 +17,5 @@
 	    intel-media-sdk # QSV up to 11th gen
 	];
     };
-
-    hardware.graphics.extraPackages = with pkgs; [ intel-media-driver intel-compute-runtime ];
 
 }

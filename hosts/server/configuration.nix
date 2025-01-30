@@ -3,7 +3,6 @@
 
     # Activate flakes
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
     imports =
     [ # Include the results of the hardware scan.
 	./hardware-configuration.nix
@@ -14,7 +13,7 @@
 	../../modules/nixos/server/intel.nix
 	../../modules/nixos/server/nginx.nix
 	../../modules/nixos/server/yarr.nix
-	../../modules/nixos/server/minecraft/minecraft.nix
+	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
     # Networking setup
@@ -84,6 +83,8 @@
 	mullvad
 	ripgrep
 	ethtool
+	gptfdisk
+	smartmontools
     ];
 
     system.stateVersion = "24.05"; # Did you read the comment?
