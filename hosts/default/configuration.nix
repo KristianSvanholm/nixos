@@ -24,6 +24,7 @@
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/ly.nix
 	../../modules/nixos/1pass.nix
+      ../../modules/nixos/virt.nix
     ];
 
     networking = {
@@ -72,6 +73,7 @@
 	zulu17
 	maven
 	nix-prefetch-github
+    vesktop
     ];
   
     /*

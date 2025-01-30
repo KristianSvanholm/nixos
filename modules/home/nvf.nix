@@ -28,7 +28,7 @@
         };
 
         # Opts
-        showSignColumn = true;
+        options.signcolumn = "yes";
         options.shiftwidth = 4;
 
         # Lsp
