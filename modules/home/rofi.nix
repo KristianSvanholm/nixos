@@ -1,5 +1,8 @@
 { pkgs, ... }:
 {
+    
+    home.packages = with pkgs; [rofi-power-menu];
+
     programs.rofi = {
 	enable = true;
 	package = pkgs.rofi-wayland; # This works on both xorg and wayland :D

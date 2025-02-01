@@ -93,6 +93,8 @@
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
 		"SUPER, W, exec, rofi -show window"
+                "SUPER, ESCAPE, exec, rofi -show power-menu -modi \"power-menu:rofi-power-menu --choices=shutdown/reboot\""
+
 		"SUPER, B, exec, pkill waybar || waybar"
 		    
 		"SUPER, P, pseudo," # dwindle
@@ -127,33 +129,19 @@
 		"SUPER SHIFT, S, movetoworkspace, special:magic"
 
 		# Move focus
-		"SUPER, left, movefocus, l"
-		"SUPER, right, movefocus, r"
-		"SUPER, up, movefocus, u"
-		"SUPER, down, movefocus, d"
-
-		"SUPER, H, movefocus, l"
+                "SUPER, H, movefocus, l"
 		"SUPER, L, movefocus, r"
 		"SUPER, K, movefocus, u"
 		"SUPER, J, movefocus, d"
 		
 		# Move window
-		"SUPER SHIFT, left, movewindow, l"
-		"SUPER SHIFT, right, movewindow, r"
-		"SUPER SHIFT, up, movewindow, u"
-		"SUPER SHIFT, down, movewindow, d"
-
-		"SUPER SHIFT, H, movewindow, l"
+    		"SUPER SHIFT, H, movewindow, l"
 		"SUPER SHIFT, L, movewindow, r"
 		"SUPER SHIFT, K, movewindow, u"
 		"SUPER SHIFT, J, movewindow, d"
 
 		# Resize window
-		"SUPER CTRL, left, resizeactive, -50 0"
-		"SUPER CTRL, right, resizeactive, 50 0"
-		"SUPER CTRL, up, resizeactive, 0 -50"
-		"SUPER CTRL, down, resizeactive, 0 50"
-		"SUPER CTRL, L, resizeactive, 50 0"
+        	"SUPER CTRL, L, resizeactive, 50 0"
 		"SUPER CTRL, H, resizeactive, -50 0"
 		"SUPER CTRL, K, resizeactive, 0 -50"
 		"SUPER CTRL, J, resizeactive, 0 50"
