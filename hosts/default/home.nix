@@ -5,6 +5,7 @@
 	../../modules/home/hyprland.nix
 	../../modules/home/nvf.nix
 	../../modules/home/zsh.nix
+        ../../modules/home/modrinth.nix
     ];
  
     # Important
@@ -34,7 +35,6 @@
 	discord
 	arandr
 	fzf
-	modrinth-app
 	unzip
 	networkmanagerapplet
 	mullvad-vpn
