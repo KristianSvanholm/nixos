@@ -24,7 +24,7 @@
         "rofi-calc" = {
             name = "Calc";
             icon = "Rofi";
-            exec = "rofi -show calc -modi calc -no-show-match -no-sort";
+            exec = "rofi -show calc -modi calc -no-show-match -no-persist-history -no-sort";
         };
     };
 }
