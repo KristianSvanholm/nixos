@@ -93,7 +93,6 @@
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
 		"SUPER, W, exec, rofi -show window"
-                "SUPER, ESCAPE, exec, rofi -show power-menu -modi \"power-menu:rofi-power-menu --choices=shutdown/reboot\""
 
 		"SUPER, B, exec, pkill waybar || waybar"
 		    

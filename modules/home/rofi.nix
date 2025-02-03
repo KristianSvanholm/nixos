@@ -15,4 +15,10 @@
 	    window-display-format = "{icon} {name}";
 	};
     };
+
+    xdg.desktopEntries."rofi-power" = {
+        name = "Power options";
+        icon = "Rofi";
+        exec = "rofi -show power-menu -modi \"power-menu:rofi-power-menu --choices=shutdown/reboot\"";
+    };
 }
