@@ -73,7 +73,6 @@
 	zulu17
 	maven
 	nix-prefetch-github
-    vesktop
     ];
   
     /*

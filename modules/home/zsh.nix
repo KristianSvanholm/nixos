@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 
     imports = [ ./eza.nix ./zoxide.nix ./btop.nix ];
@@ -45,5 +45,18 @@
 	    theme = "fishy";
 	};
     };
+
+    # General terminal packages here
+    home.packages = with pkgs; [
+        neofetch
+        lf
+        nitch
+        bat
+        fzf
+        unzip
+        wget
+        ripgrep
+        tmux
+    ];
 
 }

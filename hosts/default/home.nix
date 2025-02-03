@@ -30,24 +30,18 @@
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
 	firefox 
-	pavucontrol 
-	bat
 	discord
-	arandr
-	fzf
-	unzip
 	networkmanagerapplet
 	mullvad-vpn
 	vlc
 	libreoffice
-	neofetch
-	lf
 	imv
 	postman
 	spotify
 	wakeonlan
 	qbittorrent
 	zoom-us
+        vesktop
     ];
 
     home.stateVersion = "24.05"; # Dont touch
