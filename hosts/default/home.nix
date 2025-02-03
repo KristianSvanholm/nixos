@@ -29,7 +29,6 @@
     
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
-	firefox 
 	discord
 	networkmanagerapplet
 	mullvad-vpn
@@ -39,8 +38,6 @@
 	postman
 	spotify
 	wakeonlan
-	qbittorrent
-	zoom-us
         vesktop
     ];
 
