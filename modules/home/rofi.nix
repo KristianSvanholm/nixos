@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-    
+     
+    home.packages = with pkgs; [rofi-power-menu];
+
     programs.rofi = {
 	enable = true;
 	package = pkgs.rofi-wayland; # This works on both xorg and wayland :D
@@ -12,7 +14,7 @@
 	    drun-display-format = "{icon} {name}";
 	    window-display-format = "{icon} {name}";
 	};
-        plugins = with pkgs; [ rofi-power-menu rofi-calc ];
+        plugins = with pkgs; [ rofi-calc ];
     };
 
     xdg.desktopEntries = {
