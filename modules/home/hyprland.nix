@@ -1,4 +1,4 @@
-{ config, ... }: 
+{pkgs, config, ... }: 
 {
 
     imports = [
@@ -59,7 +59,7 @@
 		enabled = false;
 	    };
     
-	    exec-once = [ "waybar" "hyprpaper" ];
+	    exec-once = [ "waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
 	    monitor = [
 		"DP-1, 2560x1440@144, 0x0, 1"
