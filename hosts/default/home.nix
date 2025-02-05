@@ -1,4 +1,4 @@
-{ pkgs, username, home, ... }:
+{ inputs, pkgs, username, home, ... }:
 {
     imports = [ 
 	../../modules/home/git.nix
@@ -39,6 +39,7 @@
 	spotify
 	wakeonlan
         vesktop
+        inputs.zen-browser.packages."${system}".default
     ];
 
     home.stateVersion = "24.05"; # Dont touch
