@@ -35,7 +35,7 @@
     };
 
     programs = {
-	firefox.enable = true;
+	firefox.enable = false;
 	zsh.enable = true;
     };
     
