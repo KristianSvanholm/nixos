@@ -14,6 +14,10 @@
 
     programs.home-manager.enable = true;
 
+    stylix.targets = {
+	btop.enable = false;
+    };
+
     home.stateVersion = "24.05";
 
 }

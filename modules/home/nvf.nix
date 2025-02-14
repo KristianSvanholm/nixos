@@ -30,6 +30,7 @@
                 # Opts
                 options.signcolumn = "yes";
                 options.shiftwidth = 4;
+                options.wrap = false;
 
                 # Lsp
 	        languages = {

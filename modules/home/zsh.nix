@@ -50,7 +50,6 @@
     home.packages = with pkgs; [
         neofetch
         lf
-        nitch
         bat
         fzf
         unzip

@@ -15,7 +15,7 @@
 	sessionVariables = {
 	    EDITOR = "nvim";
 	    WEBKIT_DISABLE_DMABUF_RENDERER = 1;
-	};
+        };
     };
 
     programs = { 
@@ -39,8 +39,14 @@
 	spotify
 	wakeonlan
         vesktop
+	nitch
         inputs.zen-browser.packages."${system}".default
     ];
+
+    stylix.targets = {
+	btop.enable = false;
+
+    };
 
     home.stateVersion = "24.05"; # Dont touch
 

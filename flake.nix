@@ -23,12 +23,19 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Darwin
+    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { nixpkgs, ... }@inputs:
+  outputs = { nixpkgs, nix-darwin, nix-homebrew, ... }@inputs:
   let 
     username = "krs";
     home = "/home/krs";
+    home_d = /users/krs ;
   in
     {
       nixosConfigurations = {
@@ -49,6 +56,23 @@
 	      inputs.home-manager.nixosModules.default
 	    ];
 	};
+      };
+      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+	specialArgs = {inherit inputs username home_d;};
+	modules = [
+	    ./hosts/mac/configuration.nix
+	    inputs.home-manager.darwinModules.default
+	    inputs.nvf.nixosModules.default
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+                nix-homebrew = {
+                    enable = true;
+                    enableRosetta = true;
+                    user = username;
+                    autoMigrate = true;
+                };        
+            }
+	];
       };
     };
 }
