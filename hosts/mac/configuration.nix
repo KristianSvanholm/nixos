@@ -10,10 +10,18 @@
     imports = [
         ../../modules/darwin/spotlight.nix
         ../../modules/darwin/settings.nix
+        ../../modules/darwin/yabai.nix
+        ../../modules/darwin/skhd.nix
     ];
 
     homebrew = {
         enable = true;
+        casks = [
+            "rstudio"
+        ];
+        brews = [
+            "r"
+        ];
         onActivation.cleanup = "zap";
     };
 
