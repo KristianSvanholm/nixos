@@ -8,25 +8,22 @@
 
             # [Yabai]
             # change window focus within space
-            alt - j : yabai -m window --focus south
-            alt - k : yabai -m window --focus north
-            alt - h : yabai -m window --focus west
-            alt - l : yabai -m window --focus east
+            alt - j : yabai -m window --focus south || yabai -m display --focus south
+            alt - k : yabai -m window --focus north || yabai -m display --focus north
+            alt - h : yabai -m window --focus west || yabai -m display --focus west
+            alt - l : yabai -m window --focus east || yabai -m display --focus east
 
             # swap windows
-            shift + alt - j : yabai -m window --swap south
-            shift + alt - k : yabai -m window --swap north
-            shift + alt - h : yabai -m window --swap west
-            shift + alt - l : yabai -m window --swap east
+            alt + shift - h : yabai -m window --swap west || $(yabai m window --display west; yabai -m display --focus west)
+            alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+            alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+            alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
             # move window to space #
-            shift + alt - 1 : yabai -m window --space 1 && switchspace 1
-            shift + alt - 2 : yabai -m window --space 2 && switchspace 2
-            shift + alt - 3 : yabai -m window --space 3 && switchspace 3
-            shift + alt - 4 : yabai -m window --space 4 && switchspace 4
-            shift + alt - 5 : yabai -m window --space 5 && switchspace 5
-            shift + alt - 6 : yabai -m window --space 6 && switchspace 6
-            shift + alt - 7 : yabai -m window --space 7 && switchspace 7
+            shift + alt - 1 : yabai -m window --space 1 && yabai -m space --foucs 1
+            shift + alt - 2 : yabai -m window --space 2 && yabai -m space --foucs 2
+            shift + alt - 3 : yabai -m window --space 3 && yabai -m space --foucs 3
+            shift + alt - 4 : yabai -m window --space 4 && yabai -m space --focus 4
 
             # resize window
             ctrl + alt - h : yabai -m window --resize right:-20:0 2> /dev/null || yabai -m window --resize left:-20:0 2> /dev/null
