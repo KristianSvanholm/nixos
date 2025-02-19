@@ -4,6 +4,7 @@
         ../../modules/home/git.nix
         ../../modules/home/nvf.nix
         ../../modules/home/zsh.nix
+        ../../modules/home/alacritty.nix
     ];
 
     home = {

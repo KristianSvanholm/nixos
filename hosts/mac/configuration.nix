@@ -18,6 +18,7 @@
         enable = true;
         casks = [
             "rstudio"
+            "signal"
         ];
         brews = [
             "r"
@@ -46,9 +47,7 @@
         zsh.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [
-        alacritty
-    ];
+    environment.systemPackages = with pkgs; [];
 
     system.stateVersion = 6;
 }
