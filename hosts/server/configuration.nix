@@ -13,6 +13,7 @@
 	../../modules/nixos/server/intel.nix
 	../../modules/nixos/server/nginx.nix
 	../../modules/nixos/server/yarr.nix
+	../../modules/nixos/server/immich.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
