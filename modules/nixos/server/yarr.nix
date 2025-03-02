@@ -42,6 +42,12 @@
 	group = "media";
     };
 
+    services.bazarr = {
+	enable = true;
+	openFirewall = true;
+	group = "media";
+    };
+
     services.prowlarr = {
 	enable = true;
 	openFirewall = true; # 9696
