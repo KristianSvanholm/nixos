@@ -1,10 +1,11 @@
-{ pkgs, username, home, ... }:
+{ inputs, pkgs, username, home, ... }:
 {
     imports = [ 
 	../../modules/home/git.nix
 	../../modules/home/hyprland.nix
 	../../modules/home/nvf.nix
 	../../modules/home/zsh.nix
+        ../../modules/home/modrinth.nix
     ];
  
     # Important
@@ -28,26 +29,17 @@
     
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
-	firefox 
-	pavucontrol 
-	bat
 	discord
-	arandr
-	fzf
-	modrinth-app
-	unzip
 	networkmanagerapplet
 	mullvad-vpn
 	vlc
 	libreoffice
-	neofetch
-	lf
 	imv
 	postman
 	spotify
 	wakeonlan
-	qbittorrent
-	zoom-us
+        vesktop
+        inputs.zen-browser.packages."${system}".default
     ];
 
     home.stateVersion = "24.05"; # Dont touch

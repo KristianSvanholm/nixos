@@ -35,7 +35,7 @@
     };
 
     programs = {
-	firefox.enable = true;
+	firefox.enable = false;
 	zsh.enable = true;
     };
     
@@ -73,7 +73,6 @@
 	zulu17
 	maven
 	nix-prefetch-github
-    vesktop
     ];
   
     /*

@@ -74,8 +74,6 @@
 
     environment.systemPackages = with pkgs; [
 	vim 
-   	wget
-	tmux
 	docker
 	binutils
 	gcc

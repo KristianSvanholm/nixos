@@ -6,6 +6,7 @@
     stylix.url = "github:danth/stylix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nvf.url = "github:notashelf/nvf";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {

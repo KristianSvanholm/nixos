@@ -1,4 +1,4 @@
-{ pkgs, username, home, ... }:
+{ username, home, ... }:
 {
     imports = [
 	../../modules/home/git.nix
@@ -13,12 +13,6 @@
     };
 
     programs.home-manager.enable = true;
-
-    home.packages = with pkgs; [
-	bat
-	fzf
-	unzip
-    ];
 
     home.stateVersion = "24.05";
 
