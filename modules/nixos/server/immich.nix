@@ -5,7 +5,7 @@
 	enable = true;
 	openFirewall = true;
 	mediaLocation = "/mnt/hdd/immich";
-	host = "192.168.3.112";
+	host = "0.0.0.0";
 	#accelerationDevices = null;
     };
 
