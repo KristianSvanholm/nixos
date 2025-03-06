@@ -13,6 +13,7 @@
 	../../modules/nixos/server/intel.nix
 	../../modules/nixos/server/nginx.nix
 	../../modules/nixos/server/yarr.nix
+	../../modules/nixos/server/adguard.nix
 	../../modules/nixos/server/immich.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
@@ -28,7 +29,6 @@
 	firewall = {
 	    enable = true;
 	    allowedTCPPorts = [
-		80 81 443 # nginx
 		22 # SSH
 		111 2049 4000 4001 4002 20048 # NFS
 		6969 # Qbittorrent-nox
