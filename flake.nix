@@ -41,6 +41,15 @@
 	      inputs.nvf.nixosModules.default
 	    ];
 	};
+	mini = nixpkgs.lib.nixosSystem {
+	  specialArgs = {inherit inputs username home;};
+	    modules = [
+	      ./hosts/mini/configuration.nix
+	      inputs.stylix.nixosModules.stylix
+	      inputs.home-manager.nixosModules.default
+	      inputs.nvf.nixosModules.default
+	    ];
+	};
 	server = nixpkgs.lib.nixosSystem {
 	  specialArgs = {inherit inputs username home;};
 	    modules = [
