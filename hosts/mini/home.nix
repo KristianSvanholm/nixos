@@ -21,6 +21,13 @@
 	alacritty.enable = true;
 	fastfetch.enable = true;
 	home-manager.enable = true; # Let Home Manager manage itself
+        ssh = {
+            enable = true;
+            extraConfig = ''
+                Host *
+                    IdentityAgent ~/.1password/agent.sock
+            '';
+        };
     };
 
     # Bluetooth media controls
