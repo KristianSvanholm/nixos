@@ -15,6 +15,7 @@
 	../../modules/nixos/server/yarr.nix
 	../../modules/nixos/server/adguard.nix
 	../../modules/nixos/server/immich.nix
+	../../modules/nixos/server/home-assistant.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
