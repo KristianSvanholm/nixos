@@ -4,6 +4,8 @@
         enable = true;
         shell = "${pkgs.zsh}/bin/zsh";
         disableConfirmationPrompt = true;
+        newSession = true;
+        clock24 = true;
         extraConfig = ''
             bind -r h select-pane -L
             bind -r j select-pane -D
