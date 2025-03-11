@@ -1,8 +1,6 @@
 { username, home, ... }:
 {
     imports = [
-	../../modules/home/git.nix
-	../../modules/home/nixvim.nix
 	../../modules/home/zsh.nix
     ];
 

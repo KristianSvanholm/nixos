@@ -1,10 +1,9 @@
-{ pkgs, username, home_d, ...}:
+{ username, home_d, ...}:
 {
     imports = [
-        ../../modules/home/git.nix
-        ../../modules/home/nvf.nix
         ../../modules/home/zsh.nix
         ../../modules/home/alacritty.nix
+        ../../modules/home/common.nix
     ];
 
     home = {
@@ -17,8 +16,5 @@
         home-manager.enable = true;
     };
     
-    home.packages = with pkgs; [
-    ];
-
     home.stateVersion = "24.05"; # Dont touch
 }

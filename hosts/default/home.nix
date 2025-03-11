@@ -1,10 +1,9 @@
 { inputs, pkgs, username, home, ... }:
 {
     imports = [ 
-	../../modules/home/git.nix
 	../../modules/home/hyprland.nix
-	../../modules/home/nvf.nix
 	../../modules/home/zsh.nix
+        ../../modules/home/common.nix
         ../../modules/home/modrinth.nix
     ];
  
@@ -20,7 +19,6 @@
 
     programs = { 
 	alacritty.enable = true;
-	fastfetch.enable = true;
 	home-manager.enable = true; # Let Home Manager manage itself
     };
 
@@ -29,24 +27,13 @@
     
     # The home.packages option allows you to install Nix packages into your environment.
     home.packages = with pkgs; [ 
-	discord
 	networkmanagerapplet
 	mullvad-vpn
-	vlc
-	libreoffice
-	imv
-	postman
-	spotify
 	wakeonlan
-        vesktop
-	nitch
-        element-desktop
-        inputs.zen-browser.packages."${system}".default
     ];
 
     stylix.targets = {
 	btop.enable = false;
-
     };
 
     home.stateVersion = "24.05"; # Dont touch
