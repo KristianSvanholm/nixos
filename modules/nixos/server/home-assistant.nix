@@ -25,7 +25,7 @@
 	    };
 	    http = {
 		use_x_forwarded_for = true;
-		trusted_proxies = [ "10.88.0.4" ];
+		trusted_proxies = [ "10.88.0.0/24" ];
 	    };
 	};
     };
