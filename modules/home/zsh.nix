@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ./btop.nix ];
+    imports = [ ./tmux.nix ./eza.nix ./zoxide.nix ./btop.nix ];
 
     programs.zsh = {
 	enable = true;
@@ -56,7 +56,6 @@
         unzip
         wget
         ripgrep
-        tmux
     ];
 
 }
