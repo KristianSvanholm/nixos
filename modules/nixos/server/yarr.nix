@@ -53,11 +53,6 @@
 	openFirewall = true; # 9696
     };
 
-    nixpkgs.config.permittedInsecurePackages = [
-        "dotnet-sdk-6.0.428"
-	"aspnetcore-runtime-6.0.36"
-    ];
-
     #virtualisation.oci-containers.containers = {
     #    kapowarr = {
     #        image = "mrcas/kapowarr";
