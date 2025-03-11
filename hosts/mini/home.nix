@@ -36,6 +36,7 @@
 	networkmanagerapplet
 	libreoffice
 	wakeonlan
+        aseprite
     ];
 
     stylix.targets = {
