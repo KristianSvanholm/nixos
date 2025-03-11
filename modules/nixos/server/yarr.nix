@@ -42,14 +42,27 @@
 	group = "media";
     };
 
+    services.bazarr = {
+	enable = true;
+	openFirewall = true;
+	group = "media";
+    };
+
     services.prowlarr = {
 	enable = true;
 	openFirewall = true; # 9696
     };
 
-    nixpkgs.config.permittedInsecurePackages = [
-        "dotnet-sdk-6.0.428"
-	"aspnetcore-runtime-6.0.36"
-    ];
+    #virtualisation.oci-containers.containers = {
+    #    kapowarr = {
+    #        image = "mrcas/kapowarr";
+    #        ports = [ "5656:5656" ];
+    #        volumes = [ 
+    #    	"/var/lib/kapowarr-db:/app/db"
+    #    	"/mnt/hdd/jelly/torrents/comics:/app/temp_downloads"
+    #    	"/mnt/hdd/jelly/media/comics:/comics-1"
+    #        ];
+    #    };
+    #};
 
 }

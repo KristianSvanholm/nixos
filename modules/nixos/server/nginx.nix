@@ -9,6 +9,8 @@
 	};	
     }; 
 
+    networking.firewall.allowedTCPPorts = [ 80 81 443 ];
+
     services.traefik = {
 	enable = false;
 	staticConfigOptions = {

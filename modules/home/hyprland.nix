@@ -83,12 +83,13 @@
 		# See https://wiki.hyprland.org/Configuring/Keywords/
 		# Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
 		"SUPER, RETURN, exec, alacritty"
-		"SUPER SHIFT, Q, killactive,"
+		"SUPER, Q, killactive,"
 		"SUPER, M, exit,"
 		"SUPER,F,fullscreen"
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
 		"SUPER, E, exec, thunar"
+                "SUPER, Z, exec, zen"
 		"SUPER, X, exec, hyprlock"
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"

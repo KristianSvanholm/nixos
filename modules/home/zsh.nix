@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 
-    imports = [ ./eza.nix ./zoxide.nix ./btop.nix ];
+    imports = [ ./tmux.nix ./eza.nix ./zoxide.nix ./btop.nix ];
 
     programs.zsh = {
 	enable = true;
@@ -48,6 +48,7 @@
 
     # General terminal packages here
     home.packages = with pkgs; [
+        stow
         neofetch
         lf
         bat
@@ -55,7 +56,6 @@
         unzip
         wget
         ripgrep
-        tmux
     ];
 
 }

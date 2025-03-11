@@ -12,17 +12,13 @@
         ../../modules/darwin/settings.nix
         ../../modules/darwin/yabai.nix
         ../../modules/darwin/skhd.nix
+        ../../modules/nixos/r.nix
     ];
 
     homebrew = {
         enable = true;
-        casks = [
-            "rstudio"
-            "signal"
-        ];
-        brews = [
-            "r"
-        ];
+        casks = [];
+        brews = [];
         onActivation.cleanup = "zap";
     };
 

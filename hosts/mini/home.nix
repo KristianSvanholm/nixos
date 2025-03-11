@@ -5,7 +5,6 @@
 	../../modules/home/hyprland.nix
 	../../modules/home/nvf.nix
 	../../modules/home/zsh.nix
-        ../../modules/home/modrinth.nix
     ];
  
     # Important
@@ -15,13 +14,20 @@
 	sessionVariables = {
 	    EDITOR = "nvim";
 	    WEBKIT_DISABLE_DMABUF_RENDERER = 1;
-        };
+	};
     };
 
     programs = { 
 	alacritty.enable = true;
 	fastfetch.enable = true;
 	home-manager.enable = true; # Let Home Manager manage itself
+        ssh = {
+            enable = true;
+            extraConfig = ''
+                Host *
+                    IdentityAgent ~/.1password/agent.sock
+            '';
+        };
     };
 
     # Bluetooth media controls
@@ -31,7 +37,6 @@
     home.packages = with pkgs; [ 
 	discord
 	networkmanagerapplet
-	mullvad-vpn
 	vlc
 	libreoffice
 	imv
@@ -39,15 +44,11 @@
 	spotify
 	wakeonlan
         vesktop
-	nitch
         element-desktop
         inputs.zen-browser.packages."${system}".default
     ];
 
-    stylix.targets = {
-	btop.enable = false;
-
-    };
+    stylix.targets.nvf.enable = false;
 
     home.stateVersion = "24.05"; # Dont touch
 
