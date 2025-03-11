@@ -7,6 +7,7 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nvf.url = "github:notashelf/nvf";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -55,6 +56,7 @@
 	      inputs.stylix.nixosModules.stylix
 	      inputs.home-manager.nixosModules.default
 	      inputs.nvf.nixosModules.default
+              inputs.spicetify-nix.nixosModules.spicetify
 	    ];
 	};
 	server = nixpkgs.lib.nixosSystem {

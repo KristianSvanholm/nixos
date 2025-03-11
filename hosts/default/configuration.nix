@@ -24,7 +24,8 @@
 	../../modules/nixos/thunar.nix
 	../../modules/nixos/ly.nix
 	../../modules/nixos/1pass.nix
-      ../../modules/nixos/virt.nix
+        ../../modules/nixos/virt.nix
+        ../../modules/nixos/spicetify.nix
     ];
 
     networking = {
