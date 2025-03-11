@@ -47,7 +47,5 @@
         zsh.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [];
-
     system.stateVersion = 6;
 }

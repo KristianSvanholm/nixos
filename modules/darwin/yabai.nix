@@ -2,6 +2,7 @@
 {
     services.yabai = {
         enable = true;
+        enableScriptingAddition = true;
         config = {
             # Layout
             layout = "bsp";
@@ -12,10 +13,11 @@
             bottom_padding = 0;
             left_padding = 0;
             right_padding = 0;
-            window_gap = 0;
+            window_gap = 5;
             
             # Mouse
             mouse_follows_focus = "on";
+            focus_follows_mouse = "autofocus";
 
             # Clickdrag
             mouse_modifier = "alt";

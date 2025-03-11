@@ -18,8 +18,6 @@
     };
     
     home.packages = with pkgs; [
-        yabai
-        skhd
     ];
 
     home.stateVersion = "24.05"; # Dont touch
