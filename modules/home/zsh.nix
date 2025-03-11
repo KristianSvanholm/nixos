@@ -48,6 +48,7 @@
 
     # General terminal packages here
     home.packages = with pkgs; [
+        stow
         neofetch
         lf
         nitch

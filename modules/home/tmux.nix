@@ -4,6 +4,7 @@
         enable = true;
         shell = "${pkgs.zsh}/bin/zsh";
         disableConfirmationPrompt = true;
+        shortcut = "a";
         newSession = true;
         clock24 = true;
         extraConfig = ''
