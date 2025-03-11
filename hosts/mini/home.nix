@@ -44,8 +44,11 @@
 	spotify
 	wakeonlan
         vesktop
+        element-desktop
         inputs.zen-browser.packages."${system}".default
     ];
+
+    stylix.targets.nvf.enable = false;
 
     home.stateVersion = "24.05"; # Dont touch
 

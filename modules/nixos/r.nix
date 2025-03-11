@@ -1,8 +1,8 @@
 { pkgs, ... }:
 with pkgs;
 let
-    R-with-pkgs = rWrapper.override { packages = with rPackages; [ggplot2 dplyr]; };
-    Rstudio-with-pkgs = rstudioWrapper.override { packages = with rPackages; [ggplot2 dplyr]; };
+    R-with-pkgs = rWrapper.override { packages = with rPackages; [ggplot2 dplyr svglite]; };
+    Rstudio-with-pkgs = rstudioWrapper.override { packages = with rPackages; [ggplot2 dplyr svglite]; };
 in
 {
     environment.systemPackages = [

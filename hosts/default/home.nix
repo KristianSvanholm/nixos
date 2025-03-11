@@ -39,6 +39,7 @@
 	spotify
 	wakeonlan
         vesktop
+        element-desktop
         inputs.zen-browser.packages."${system}".default
     ];
 
