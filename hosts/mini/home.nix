@@ -48,7 +48,10 @@
         inputs.zen-browser.packages."${system}".default
     ];
 
-    stylix.targets.nvf.enable = false;
+    stylix.targets = {
+        nvf.enable = false;
+        btop.enable = false;
+    };
 
     home.stateVersion = "24.05"; # Dont touch
 
