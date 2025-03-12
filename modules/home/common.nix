@@ -8,6 +8,8 @@
         imv
         element-desktop
         inputs.zen-browser.packages."${system}".default
+        kdePackages.dolphin
+        kdePackages.qtsvg
     ];
     
 }
