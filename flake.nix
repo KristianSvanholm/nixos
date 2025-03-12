@@ -47,6 +47,7 @@
 	      inputs.stylix.nixosModules.stylix
 	      inputs.home-manager.nixosModules.default
 	      inputs.nvf.nixosModules.default
+              inputs.spicetify-nix.nixosModules.spicetify
 	    ];
 	};
 	mini = nixpkgs.lib.nixosSystem {
@@ -75,6 +76,7 @@
 	    inputs.home-manager.darwinModules.default
 	    inputs.nvf.nixosModules.default
             nix-homebrew.darwinModules.nix-homebrew
+            inputs.spicetify-nix.darwinModules.spicetify
             {
                 nix-homebrew = {
                     enable = true;
