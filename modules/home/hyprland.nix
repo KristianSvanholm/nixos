@@ -88,7 +88,7 @@
 		"SUPER,F,fullscreen"
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
-		"SUPER, E, exec, thunar"
+		"SUPER, E, exec, dolphin"
                 "SUPER, Z, exec, zen"
 		"SUPER, X, exec, hyprlock"
 		"SUPER, V, togglefloating,"

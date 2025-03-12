@@ -21,7 +21,6 @@
 	../../modules/nixos/audio.nix
 	../../modules/nixos/hyprland.nix
 	../../modules/nixos/steam.nix
-	../../modules/nixos/thunar.nix
 	../../modules/nixos/ly.nix
 	../../modules/nixos/1pass.nix
         ../../modules/nixos/virt.nix
