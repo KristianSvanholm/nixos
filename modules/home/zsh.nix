@@ -62,7 +62,6 @@
         unzip
         wget
         ripgrep
-        nitch
     ];
 
 }

@@ -12,6 +12,7 @@
         ../../modules/darwin/yabai.nix
         ../../modules/darwin/skhd.nix
         ../../modules/nixos/r.nix
+        ../../modules/nixos/spicetify.nix
     ];
 
     homebrew = {
