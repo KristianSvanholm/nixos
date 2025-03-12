@@ -30,6 +30,7 @@
 	networkmanagerapplet
 	mullvad-vpn
 	wakeonlan
+        nitch
     ];
 
     stylix.targets = {

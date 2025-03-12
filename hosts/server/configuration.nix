@@ -75,13 +75,11 @@
     nixpkgs.config.allowUnfree = true;
 
     environment.systemPackages = with pkgs; [
-	vim 
 	docker
 	binutils
 	gcc
 	docker-compose
 	mullvad
-	ripgrep
 	ethtool
 	gptfdisk
 	smartmontools

@@ -1,9 +1,8 @@
-{ username, home_d, ...}:
+{ pkgs, username, home_d, ...}:
 {
     imports = [
         ../../modules/home/zsh.nix
         ../../modules/home/alacritty.nix
-        ../../modules/home/common.nix
     ];
 
     home = {
@@ -15,6 +14,13 @@
     programs = {
         home-manager.enable = true;
     };
+
+    home.packages = with pkgs; [
+        discord
+        spotify
+        postman
+        element-desktop
+    ];
     
     home.stateVersion = "24.05"; # Dont touch
 }

@@ -37,6 +37,7 @@
 	libreoffice
 	wakeonlan
         aseprite
+        nitch
     ];
 
     stylix.targets = {
