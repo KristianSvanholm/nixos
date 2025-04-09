@@ -62,6 +62,9 @@
         unzip
         wget
         ripgrep
+        gh
+        rustup
+        go
     ];
 
 }

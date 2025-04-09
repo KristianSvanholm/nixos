@@ -94,6 +94,7 @@
 		"SUPER, V, togglefloating,"
 		"SUPER, D, exec, rofi -show drun"
 		"SUPER, W, exec, rofi -show window"
+                "SUPER, C, exec, rofi -show calc -modi calc -no-show-match -no-persist-history -no-sort"
 
 		"SUPER, B, exec, pkill waybar || waybar"
 		    
