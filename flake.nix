@@ -8,6 +8,7 @@
     nvf.url = "github:notashelf/nvf";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -65,6 +66,7 @@
 	    modules = [
 	      ./hosts/server/configuration.nix
 	      inputs.stylix.nixosModules.stylix
+              inputs.proxmox-nixos.nixosModules.proxmox-ve 
 	      inputs.home-manager.nixosModules.default
 	    ];
 	};
