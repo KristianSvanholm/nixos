@@ -1,4 +1,4 @@
-{ inputs, system, pkgs, lib, ... }:
+{ inputs, ... }:
 {
 
     services.proxmox-ve = {
