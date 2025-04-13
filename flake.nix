@@ -10,6 +10,11 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
+    crowdsec = {
+        url = "git+https://codeberg.org/kampka/nix-flake-crowdsec.git";
+        inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
 	url = "github:hyprwm/hyprland-plugins";
@@ -67,6 +72,8 @@
 	      ./hosts/server/configuration.nix
 	      inputs.stylix.nixosModules.stylix
               inputs.proxmox-nixos.nixosModules.proxmox-ve 
+              inputs.crowdsec.nixosModules.crowdsec
+              inputs.crowdsec.nixosModules.crowdsec-firewall-bouncer
 	      inputs.home-manager.nixosModules.default
 	    ];
 	};

@@ -17,6 +17,7 @@
 	../../modules/nixos/server/immich.nix
 	../../modules/nixos/server/home-assistant.nix
         ../../modules/nixos/server/proxmox.nix
+        ../../modules/nixos/server/crowdsec.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
@@ -55,7 +56,7 @@
     users = {
 	users.${username} = {
 	    isNormalUser = true;
-	    extraGroups = [ "networkmanager" "docker" "wheel" ];
+	    extraGroups = [ "networkmanager" "docker" "wheel" "crowdsec" "jellyfin" ];
 	};
 
 	defaultUserShell = pkgs.zsh;
