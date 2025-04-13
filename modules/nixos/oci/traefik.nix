@@ -18,12 +18,12 @@
             labels = {
                 "traefik.enable"="true";                                                     
                 "traefik.http.routers.traefik.entrypoints"="http";
-                "traefik.http.routers.traefik.rule"="Host(`traefik.kristian.rs`)";
+                "traefik.http.routers.traefik.rule"="Host(`proxy.kristian.rs`)";
                 "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme"="https";
                 "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto"="https";
                 "traefik.http.routers.traefik.middlewares"="traefik-https-redirect";
                 "traefik.http.routers.traefik-secure.entrypoints"="https";
-                "traefik.http.routers.traefik-secure.rule"="Host(`traefik.kristian.rs`)";
+                "traefik.http.routers.traefik-secure.rule"="Host(`proxy.kristian.rs`)";
                 "traefik.http.routers.traefik-secure.tls"="true";
                 "traefik.http.routers.traefik-secure.tls.certresolver"="cloudflare";
                 "traefik.http.routers.traefik-secure.tls.domains[0].main"="kristian.rs";
