@@ -1,9 +1,18 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, config, ... }:
+let
+    inherit (config.lib.stylix) colors;
+in
 {
 
     imports = [ 
         inputs.nvf.homeManagerModules.default
         ./latex.nix 
+    ];
+
+    home.packages = with pkgs; [
+        fd
+        nodejs_23
+        tree-sitter
     ];
 
     programs.nvf = {
@@ -17,10 +26,11 @@
 
 		theme = {
 		    enable = true;
-		    name = "gruvbox";
-		    style = "dark";
+                    base16-colors = {
+                        inherit (colors) base00 base01 base02 base03 base04 base05 base06 base07;
+                        inherit (colors) base08 base09 base0A base0B base0C base0D base0E base0F;
+                    };
 		};
-            
 
                 # Plugins
 		statusline.lualine.enable = true;
@@ -60,6 +70,20 @@
 	        languages = {
 	            enableLSP = true;
 	            enableTreesitter = true;
+
+                    typst = {
+                        enable = true;
+                        format.enable = true;
+                        extensions.typst-preview-nvim = {
+                            enable = true;
+                            setupOpts = {
+                                extra_args = [
+                                    "--input=ver=draft"
+                                    "--ignore-system-fonts"
+                                ];
+                            };
+                        };
+                    };
 
 	            nix.enable = true;
                     nix.format.enable = true;

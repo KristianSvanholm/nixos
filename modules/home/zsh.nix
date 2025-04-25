@@ -63,6 +63,8 @@
         wget
         ripgrep
         gh
+        rustup
+        go
     ];
 
 }

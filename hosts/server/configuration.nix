@@ -16,6 +16,7 @@
 	../../modules/nixos/server/adguard.nix
 	../../modules/nixos/server/immich.nix
 	../../modules/nixos/server/home-assistant.nix
+        ../../modules/nixos/server/proxmox.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
