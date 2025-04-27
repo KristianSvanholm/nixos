@@ -38,6 +38,7 @@
 	wakeonlan
         aseprite
         nitch
+        typst
     ];
 
     stylix.targets = {
