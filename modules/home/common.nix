@@ -2,6 +2,8 @@
 {
 
     home.packages = with pkgs; [
+        protonmail-desktop
+        drawio
         discord 
         vlc
         postman

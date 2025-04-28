@@ -4,7 +4,6 @@ let
 in
 {
 
-     
     programs.spicetify = {
 	enable = true;
 	enabledExtensions = with spicePkgs.extensions; [
@@ -12,6 +11,7 @@ in
 	    shuffle
 	];
         theme = lib.mkForce spicePkgs.themes.text;
-        colorScheme = lib.mkForce "gruvbox";
+        colorScheme = lib.mkForce "spotify";
     };
+
 }

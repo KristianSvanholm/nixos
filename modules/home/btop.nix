@@ -3,7 +3,7 @@
     programs.btop = {
 	enable = true;
 	settings = {
-	    color_theme = "gruvbox_dark_v2";
+	    color_theme = "ayu";
 	    theme_background = false;
 	    rounded_corners = true;
 	    graph_symbol = "braille";

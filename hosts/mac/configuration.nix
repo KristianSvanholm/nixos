@@ -43,5 +43,7 @@
         zsh.enable = true;
     };
 
+    services.openssh.enable = true;
+
     system.stateVersion = 6;
 }

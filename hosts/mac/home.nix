@@ -20,6 +20,7 @@
         spotify
         postman
         element-desktop
+        cargo
     ];
     
     home.stateVersion = "24.05"; # Dont touch

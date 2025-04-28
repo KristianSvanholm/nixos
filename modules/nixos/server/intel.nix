@@ -5,6 +5,8 @@
 	vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
     };
 
+    hardware.cpu.intel.updateMicrocode = true;
+
     environment.systemPackages = with pkgs; [ intel-gpu-tools ];
     hardware.graphics = {
 	enable = true;
