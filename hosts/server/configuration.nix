@@ -15,8 +15,9 @@
 	../../modules/nixos/server/yarr.nix
 	../../modules/nixos/server/adguard.nix
 	../../modules/nixos/server/immich.nix
-	../../modules/nixos/server/home-assistant.nix
-        ../../modules/nixos/server/proxmox.nix
+        #../../modules/nixos/server/home-assistant.nix
+        #../../modules/nixos/server/proxmox.nix
+        ../../modules/nixos/server/uptime-kuma.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
@@ -24,7 +25,7 @@
     networking = {
 	hostName = "srv";
 	networkmanager.enable = true;
-	
+
 	# Remember to update interface name for new devices
 	interfaces.eno1.wakeOnLan.enable = true;
 
@@ -32,12 +33,12 @@
 	    enable = true;
 	    allowedTCPPorts = [
 		22 # SSH
-		111 2049 4000 4001 4002 20048 # NFS
+                #111 2049 4000 4001 4002 20048 # NFS
 		6969 # Qbittorrent-nox
 		25565 # Minecraft
 	    ];
 	    allowedUDPPorts = [ 
-		111 2049 4000 4001 4002 20048 # NFS
+                #111 2049 4000 4001 4002 20048 # NFS
 		19132 24454 # Minecraft (default + proxchat)
 	    ];
 	};
