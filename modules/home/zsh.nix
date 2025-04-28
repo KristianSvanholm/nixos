@@ -17,7 +17,6 @@
 	syntaxHighlighting.enable = true;
 
 	shellAliases = {
-	    srv = "ssh -A krs@192.168.3.112";
 	    # ping -c 1 [ip] && arp -n, to find mac addr
 	    wake = "wakeonlan -i 192.168.3.112 6c:2b:59:cf:cf:50";
 	    switch = "sudo nixos-rebuild switch";
