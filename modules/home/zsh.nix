@@ -21,8 +21,8 @@
             ga  = "git add";
             gc  = "git commit -m";
             gcl = "git clone";
-            gd  = "git diff";
-            gl  = "git log";
+            gd  = "git diff --output-indicator-new=' ' --output-indicator-old=' '";
+            gl  = "git log --all --graph";
             gp  = "git push";
             gr  = "git reset";
             grs = "git restore";

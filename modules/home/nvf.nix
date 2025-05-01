@@ -19,6 +19,7 @@ in
         enable = true;
 	  settings = {
 	    vim = {
+                useSystemClipboard =  true; 
 
                 globals = {
                     maplocalleader = " ";

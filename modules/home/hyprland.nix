@@ -63,8 +63,9 @@
 
             windowrulev2 = [
                 "float, class:1Password"
-                "size 70% 70%, class:1Password"
+                "maxsize 70% 70%, class:1Password"
                 "center, class:1Password"
+                "move cursor -50% -50%, title:Quick Access — 1Password"
             ];
 
 	    monitor = [
@@ -107,6 +108,7 @@
 		"SUPER,F,fullscreen"
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
+                "SUPER, SPACE, exec, 1password --quick-access"
 		"SUPER, E, exec, dolphin"
                 "SUPER, Z, exec, zen"
 		"SUPER, X, exec, hyprlock"
