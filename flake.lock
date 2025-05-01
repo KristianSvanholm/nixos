@@ -1284,6 +1284,26 @@
         "type": "github"
       }
     },
+    "nur-packages": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746134844,
+        "narHash": "sha256-Yhnn6q3zHnBtFXoRyVMX3lpyhIkpNSWYiqyqy9bjwQo=",
+        "owner": "KristianSvanholm",
+        "repo": "nur-packages",
+        "rev": "a998956bf8a78e1e43fe10c274e707ac9bd333ca",
+        "type": "github"
+      },
+      "original": {
+        "owner": "KristianSvanholm",
+        "repo": "nur-packages",
+        "type": "github"
+      }
+    },
     "nuschtosSearch": {
       "inputs": {
         "flake-utils": "flake-utils_2",
@@ -1386,6 +1406,7 @@
         "nix-minecraft": "nix-minecraft",
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
+        "nur-packages": "nur-packages",
         "nvf": "nvf",
         "proxmox-nixos": "proxmox-nixos",
         "spicetify-nix": "spicetify-nix",
