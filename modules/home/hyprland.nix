@@ -61,6 +61,12 @@
     
 	    exec-once = [ "waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
+            windowrulev2 = [
+                "float, class:1Password"
+                "size 70% 70%, class:1Password"
+                "center, class:1Password"
+            ];
+
 	    monitor = [
                 "HDMI-A-1, 2560x1440, 0x0, 1"
                 "HDMI-A-2, 1920x1080, 2560x0, 1, transform, 3"
