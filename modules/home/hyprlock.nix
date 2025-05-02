@@ -17,7 +17,7 @@
 	    };
 
 	    input-field = {
-		monitor = "DP-1";
+		monitor = ["DP-1" "HDMI-A-1"];
 		size = "150, 30";
 		position = "0, -500";
 		font_family = config.stylix.fonts.sansSerif.name;

@@ -31,7 +31,7 @@
 	    general = {
 		gaps_in = 0;
 		gaps_out = 0;
-		"col.active_border" = "rgb(${config.lib.stylix.colors.base0D})";
+		"col.active_border" = "rgb(${config.lib.stylix.colors.base0E})";
 	    };
 
 	    misc = {
@@ -61,12 +61,32 @@
     
 	    exec-once = [ "waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
+            windowrulev2 = [
+                "float, class:1Password"
+                "maxsize 70% 70%, class:1Password"
+                "center, class:1Password"
+                "move cursor -50% -50%, title:Quick Access — 1Password"
+            ];
+
 	    monitor = [
-		"DP-1, 2560x1440@144, 0x0, 1"
-		"DP-2, 1920x1080@144, 2560x0, 1"
+                "HDMI-A-1, 2560x1440, 0x0, 1"
+                "HDMI-A-2, 1920x1080, 2560x0, 1, transform, 3"
+                "DP-1, 2560x1440@144, 0x0, 1"
+                "DP-2, 1920x1080@144, 2560x0, 1"
 	    ];
 
 	    workspace = [
+		"1,monitor:HDMI-A-1"
+		"2,monitor:HDMI-A-2"
+		"3,monitor:HDMI-A-1"
+		"4,monitor:HDMI-A-2"
+		"5,monitor:HDMI-A-1"
+		"6,monitor:HDMI-A-2"
+		"7,monitor:HDMI-A-1"
+		"8,monitor:HDMI-A-2"
+		"9,monitor:HDMI-A-1"
+		"0,monitor:HDMI-A-2"
+
 		"1,monitor:DP-1"
 		"2,monitor:DP-2"
 		"3,monitor:DP-1"
@@ -88,6 +108,7 @@
 		"SUPER,F,fullscreen"
 		"ALT, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
 		"SUPER, TAB, exec, wayshot -s \"$(slurp)\""
+                "SUPER, SPACE, exec, 1password --quick-access"
 		"SUPER, E, exec, dolphin"
                 "SUPER, Z, exec, zen"
 		"SUPER, X, exec, hyprlock"

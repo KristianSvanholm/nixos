@@ -27,6 +27,7 @@
 
     networking = {
 	hostName = "nixos";
+        nameservers = ["192.168.3.112"];
 	firewall.enable = true;
 	enableIPv6 = true;
 	networkmanager.enable = true;
@@ -71,6 +72,7 @@
 	zulu17
 	maven
 	nix-prefetch-github
+        inputs.nur-packages.packages.${pkgs.hostPlatform.system}.zz
     ];
   
     system.stateVersion = "24.05"; # Don't touch
