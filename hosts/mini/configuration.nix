@@ -72,6 +72,7 @@
 	zulu17
 	maven
 	nix-prefetch-github
+        inputs.nur-packages.packages.${pkgs.hostPlatform.system}.zz
     ];
   
     system.stateVersion = "24.05"; # Don't touch
