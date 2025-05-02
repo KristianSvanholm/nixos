@@ -77,6 +77,7 @@ in
                         extensions.typst-preview-nvim = {
                             enable = true;
                             setupOpts = {
+                                invert_colors = "always";
                                 extra_args = [
                                     "--input=ver=draft"
                                     "--ignore-system-fonts"
