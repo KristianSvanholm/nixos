@@ -19,6 +19,7 @@
         #../../modules/nixos/server/proxmox.nix
         ../../modules/nixos/server/uptime-kuma.nix
         ../../modules/nixos/server/microbin.nix
+        ../../modules/nixos/server/paperless.nix
 	#../../modules/nixos/server/minecraft/minecraft.nix
     ];
 	
