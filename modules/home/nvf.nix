@@ -23,10 +23,6 @@ in {
       vim = {
         useSystemClipboard = true;
 
-        globals = {
-          maplocalleader = " ";
-        };
-
         theme = {
           enable = true;
           base16-colors = {
@@ -46,23 +42,6 @@ in {
             findFiles = "<leader>sf";
             liveGrep = "<leader>sg";
           };
-        };
-
-        lazy.plugins.vimtex = {
-          enabled = true;
-          package = pkgs.vimPlugins.vimtex;
-          lazy = true;
-          ft = "tex";
-          setupOpts = {
-            init = ''
-              vim.g.vimtex_view_method = "${pkgs.zathura}"
-              vim.g.vimtex_compiler_method = "pdflatex"
-            '';
-          };
-          after = ''
-            vim.api.nvim_command('unlet b:did_ftplugin')
-            vim.api.nvim_command('call vimtex#init()')
-          '';
         };
 
         # Opts
