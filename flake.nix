@@ -12,13 +12,13 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
-	url = "github:hyprwm/hyprland-plugins";
-	inputs.hyprland.follows = "hyprland";
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
     };
 
     nur-packages = {
-        url = "github:KristianSvanholm/nur-packages";
-        inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:KristianSvanholm/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixvim = {
@@ -38,61 +38,64 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { nixpkgs, nix-darwin, nix-homebrew, ... }@inputs:
-  let 
+  outputs = {
+    nixpkgs,
+    nix-darwin,
+    nix-homebrew,
+    ...
+  } @ inputs: let
     username = "krs";
     home = "/home/krs";
-    home_d = /users/krs ;
-  in
-    {
-      nixosConfigurations = {
-	default = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs username home;};
-	    modules = [
-	      ./hosts/default/configuration.nix
-	      inputs.stylix.nixosModules.stylix
-	      inputs.home-manager.nixosModules.default
-	      inputs.nvf.nixosModules.default
-              inputs.spicetify-nix.nixosModules.spicetify
-	    ];
-	};
-	mini = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs username home;};
-	    modules = [
-	      ./hosts/mini/configuration.nix
-	      inputs.stylix.nixosModules.stylix
-	      inputs.home-manager.nixosModules.default
-	      inputs.nvf.nixosModules.default
-              inputs.spicetify-nix.nixosModules.spicetify
-	    ];
-	};
-	server = nixpkgs.lib.nixosSystem {
-	  specialArgs = {inherit inputs username home;};
-	    modules = [
-	      ./hosts/server/configuration.nix
-	      inputs.stylix.nixosModules.stylix
-              inputs.proxmox-nixos.nixosModules.proxmox-ve 
-	      inputs.home-manager.nixosModules.default
-	    ];
-	};
+    home_d = /users/krs;
+  in {
+    nixosConfigurations = {
+      default = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username home;};
+        modules = [
+          ./hosts/default/configuration.nix
+          inputs.stylix.nixosModules.stylix
+          inputs.home-manager.nixosModules.default
+          inputs.nvf.nixosModules.default
+          inputs.spicetify-nix.nixosModules.spicetify
+        ];
       };
-      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
-	specialArgs = {inherit inputs username home_d;};
-	modules = [
-	    ./hosts/mac/configuration.nix
-	    inputs.home-manager.darwinModules.default
-	    inputs.nvf.nixosModules.default
-            nix-homebrew.darwinModules.nix-homebrew
-            inputs.spicetify-nix.darwinModules.spicetify
-            {
-                nix-homebrew = {
-                    enable = true;
-                    enableRosetta = true;
-                    user = username;
-                    autoMigrate = true;
-                };        
-            }
-	];
+      mini = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username home;};
+        modules = [
+          ./hosts/mini/configuration.nix
+          inputs.stylix.nixosModules.stylix
+          inputs.home-manager.nixosModules.default
+          inputs.nvf.nixosModules.default
+          inputs.spicetify-nix.nixosModules.spicetify
+        ];
+      };
+      server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs username home;};
+        modules = [
+          ./hosts/server/configuration.nix
+          inputs.stylix.nixosModules.stylix
+          inputs.proxmox-nixos.nixosModules.proxmox-ve
+          inputs.home-manager.nixosModules.default
+        ];
       };
     };
+    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs username home_d;};
+      modules = [
+        ./hosts/mac/configuration.nix
+        inputs.home-manager.darwinModules.default
+        inputs.nvf.nixosModules.default
+        nix-homebrew.darwinModules.nix-homebrew
+        inputs.spicetify-nix.darwinModules.spicetify
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            user = username;
+            autoMigrate = true;
+          };
+        }
+      ];
+    };
+  };
 }

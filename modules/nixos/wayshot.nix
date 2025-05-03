@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
-    environment.systemPackages = with pkgs; [
-	wayshot
-	slurp
-	wl-clipboard
-    ];
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    wayshot
+    slurp
+    wl-clipboard
+  ];
 }

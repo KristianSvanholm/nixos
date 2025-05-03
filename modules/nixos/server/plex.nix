@@ -1,8 +1,6 @@
-{ ... }:
-{
-    services.plex = {
-	enable = true;
-	openFirewall = true;
-    };
-
+{...}: {
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+  };
 }

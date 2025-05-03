@@ -1,14 +1,16 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    ../../modules/nixos/wayshot.nix
+  ];
 
-    imports = [
-	../../modules/nixos/wayshot.nix
-    ];
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+  };
 
-    programs.hyprland = {
-	enable = true;
-	package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-    };
-
-    security.pam.services.hyprlock = {}; # Enable PAM for hyprlock
+  security.pam.services.hyprlock = {}; # Enable PAM for hyprlock
 }
