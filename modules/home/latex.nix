@@ -32,10 +32,6 @@
         package = pkgs.vimPlugins.vimtex;
         lazy = true;
         ft = "tex";
-        after = ''
-          vim.api.nvim_command('unlet b:did_ftplugin')
-          vim.api.nvim_command('call vimtex#init()')
-        '';
       };
     };
   };

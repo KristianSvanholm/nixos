@@ -882,15 +882,16 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1738852285,
-        "narHash": "sha256-8Y1uyE6gGHxdU0Vcx2CMg/dAmDSxJw19aAl3TKbbo54=",
-        "owner": "Gerg-L",
+        "lastModified": 1737638592,
+        "narHash": "sha256-z2Oah4C3qDOV1x1opk1a+lrUY7QVt2IOZcioz646wSA=",
+        "owner": "horriblename",
         "repo": "mnw",
-        "rev": "6ae73dc9cb72cea17bcc2e3d4670825f483e80e8",
+        "rev": "d7b8d4c54f19e09983b1316bb1e69ad29a408179",
         "type": "github"
       },
       "original": {
-        "owner": "Gerg-L",
+        "owner": "horriblename",
+        "ref": "prepend-rtp",
         "repo": "mnw",
         "type": "github"
       }
@@ -1331,7 +1332,9 @@
       "inputs": {
         "flake-parts": "flake-parts_2",
         "flake-utils": "flake-utils_3",
-        "mnw": "mnw",
+        "mnw": [
+          "mnw"
+        ],
         "nil": "nil",
         "nixpkgs": "nixpkgs_6",
         "nmd": "nmd",
@@ -1401,6 +1404,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-plugins": "hyprland-plugins",
+        "mnw": "mnw",
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-minecraft": "nix-minecraft",

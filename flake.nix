@@ -5,7 +5,12 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+
+    # NVF with #566 MWN patch
+    mnw.url = "github:horriblename/mnw/prepend-rtp";
     nvf.url = "github:notashelf/nvf";
+    nvf.inputs.mnw.follows = "mnw";
+
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
