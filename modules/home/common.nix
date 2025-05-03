@@ -12,6 +12,7 @@
         inputs.zen-browser.packages."${system}".default
         kdePackages.dolphin
         kdePackages.qtsvg
+        nurl
     ];
     
 }

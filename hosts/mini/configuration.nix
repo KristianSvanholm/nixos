@@ -73,6 +73,7 @@
 	maven
 	nix-prefetch-github
         inputs.nur-packages.packages.${pkgs.hostPlatform.system}.zz
+        inputs.nur-packages.packages.${pkgs.hostPlatform.system}.p2ptui
     ];
   
     system.stateVersion = "24.05"; # Don't touch

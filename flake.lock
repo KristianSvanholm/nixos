@@ -1291,11 +1291,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746134844,
-        "narHash": "sha256-Yhnn6q3zHnBtFXoRyVMX3lpyhIkpNSWYiqyqy9bjwQo=",
+        "lastModified": 1746279951,
+        "narHash": "sha256-cbqOvdE5j6Kb/gzJvl1yXej1N/07f+MtDyRpAY+LJdE=",
         "owner": "KristianSvanholm",
         "repo": "nur-packages",
-        "rev": "a998956bf8a78e1e43fe10c274e707ac9bd333ca",
+        "rev": "da336776db07226208a2faef1ef1b40ecfb7d7d2",
         "type": "github"
       },
       "original": {
