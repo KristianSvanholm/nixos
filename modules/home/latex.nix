@@ -1,6 +1,7 @@
 {pkgs, ...}: {
+  imports = [./zathura.nix];
+
   home.packages = with pkgs; [
-    zathura
     texliveFull
     inkscape
   ];
