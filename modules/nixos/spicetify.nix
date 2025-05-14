@@ -13,6 +13,6 @@ in {
       shuffle
     ];
     theme = lib.mkForce spicePkgs.themes.text;
-    colorScheme = lib.mkForce "spotify";
+    colorScheme = lib.mkForce "Spotify";
   };
 }
