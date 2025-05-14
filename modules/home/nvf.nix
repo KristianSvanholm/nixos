@@ -49,11 +49,11 @@ in {
         options.shiftwidth = 4;
         options.wrap = false;
 
+        lsp.enable = true;
         lsp.formatOnSave = true;
 
         # Lsp
         languages = {
-          enableLSP = true;
           enableTreesitter = true;
           enableFormat = true;
 
