@@ -3,6 +3,7 @@
 
   home.packages = with pkgs; [
     texliveFull
+    texlab
     inkscape
   ];
 
@@ -33,6 +34,17 @@
         package = pkgs.vimPlugins.vimtex;
         lazy = true;
         ft = "tex";
+      };
+
+      lsp = {
+        servers = {
+          texlab = {
+            enable = true;
+            #package = pkgs.texlab;
+            cmd = ["${pkgs.texlab}/bin/texlab"];
+            filetypes = ["tex"];
+          };
+        };
       };
     };
   };
