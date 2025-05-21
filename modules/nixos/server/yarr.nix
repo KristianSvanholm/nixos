@@ -32,6 +32,12 @@
     group = "media";
   };
 
+  services.sabnzbd = {
+    enable = true;
+    openFirewall = true; # 8080
+    group = "media";
+  };
+
   services.radarr = {
     enable = true;
     openFirewall = true; # 7878
@@ -46,7 +52,7 @@
 
   services.bazarr = {
     enable = true;
-    openFirewall = true;
+    openFirewall = true; # 6767
     group = "media";
   };
 
