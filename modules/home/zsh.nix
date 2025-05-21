@@ -74,5 +74,6 @@
     gh
     rustup
     go
+    sesh
   ];
 }
