@@ -39,6 +39,7 @@
       enable = true;
       allowedTCPPorts = [
         22 # SSH
+        9090 # Overleaf
         #111 2049 4000 4001 4002 20048 # NFS
         6969 # Qbittorrent-nox
         25565 # Minecraft
@@ -93,6 +94,8 @@
     gptfdisk
     smartmontools
     nitch
+    texliveFull
+    inkscape
   ];
 
   system.stateVersion = "24.05"; # Did you read the comment?
