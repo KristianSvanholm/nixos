@@ -8,10 +8,10 @@
     clock24 = true;
     baseIndex = 1;
     extraConfig = ''
-      bind -r h select-pane -L
-      bind -r j select-pane -D
-      bind -r k select-pane -U
-      bind -r l select-pane -R
+      bind h select-pane -L
+      bind j select-pane -D
+      bind k select-pane -U
+      bind l select-pane -R
 
       bind v split-window -h
       bind s split-window -v
