@@ -74,5 +74,13 @@
     gh
     rustup
     go
+    sesh
+    duf # Better df
+    ncdu # Better du
+    progress # Monitor status of long-running commands
+    lsof
+    unp # unpack archive
+    asciinema # Record terminal
+    asciinema-agg # Convert Ascii record to gif
   ];
 }

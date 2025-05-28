@@ -16,5 +16,6 @@
     kdePackages.dolphin
     kdePackages.qtsvg
     nurl
+    obsidian
   ];
 }

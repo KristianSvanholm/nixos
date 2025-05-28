@@ -52,6 +52,8 @@ in {
         lsp.enable = true;
         lsp.formatOnSave = true;
 
+        # Utility
+        utility.oil-nvim.enable = true;
         # Lsp
         languages = {
           enableTreesitter = true;

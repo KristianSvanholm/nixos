@@ -8,6 +8,7 @@
     ../../modules/home/hyprland.nix
     ../../modules/home/zsh.nix
     ../../modules/home/common.nix
+    ../../modules/home/modrinth.nix
   ];
 
   # Important
