@@ -82,5 +82,6 @@
     unp # unpack archive
     asciinema # Record terminal
     asciinema-agg # Convert Ascii record to gif
+    ncspot
   ];
 }
