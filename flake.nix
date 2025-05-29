@@ -39,6 +39,9 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    nix-index-database.url = "github:nix-community/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -60,6 +63,7 @@
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.spicetify-nix.nixosModules.spicetify
+          inputs.nix-index-database.nixosModules.nix-index
         ];
       };
       mini = nixpkgs.lib.nixosSystem {
@@ -70,6 +74,7 @@
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.spicetify-nix.nixosModules.spicetify
+          inputs.nix-index-database.nixosModules.nix-index
         ];
       };
       server = nixpkgs.lib.nixosSystem {
@@ -79,6 +84,7 @@
           inputs.stylix.nixosModules.stylix
           inputs.proxmox-nixos.nixosModules.proxmox-ve
           inputs.home-manager.nixosModules.default
+          inputs.nix-index-database.nixosModules.nix-index
         ];
       };
     };
@@ -90,6 +96,7 @@
         inputs.nvf.nixosModules.default
         nix-homebrew.darwinModules.nix-homebrew
         inputs.spicetify-nix.darwinModules.spicetify
+        inputs.nix-index-database.darwinModules.nix-index
         {
           nix-homebrew = {
             enable = true;
