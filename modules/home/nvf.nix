@@ -51,6 +51,7 @@ in {
 
         lsp.enable = true;
         lsp.formatOnSave = true;
+        lsp.trouble.enable = true;
 
         # Utility
         utility.oil-nvim.enable = true;
