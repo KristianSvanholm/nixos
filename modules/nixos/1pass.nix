@@ -1,9 +1,4 @@
-{
-  inputs,
-  username,
-  pkgs,
-  ...
-}: {
+{username, ...}: {
   # Enable CLI
   programs._1password = {
     enable = true;
