@@ -61,6 +61,8 @@
         enabled = false;
       };
 
+      input.natural_scroll = true;
+
       exec-once = ["waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
       windowrulev2 = [
@@ -71,6 +73,7 @@
       ];
 
       monitor = [
+        "eDP-1, 1920x1080@60, 0x0, 1"
         "HDMI-A-1, 2560x1440, 0x0, 1"
         "HDMI-A-2, 1920x1080, 2560x0, 1, transform, 3"
         "DP-1, 2560x1440@144, 0x0, 1"
@@ -99,6 +102,17 @@
         "8,monitor:DP-2"
         "9,monitor:DP-1"
         "0,monitor:DP-2"
+
+        "1,monitor:eDP-1"
+        "2,monitor:eDP-1"
+        "3,monitor:eDP-1"
+        "4,monitor:eDP-1"
+        "5,monitor:eDP-1"
+        "6,monitor:eDP-1"
+        "7,monitor:eDP-1"
+        "8,monitor:eDP-1"
+        "9,monitor:eDP-1"
+        "0,monitor:eDP-1"
       ];
 
       bind = [

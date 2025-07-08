@@ -6,8 +6,11 @@
       mainBar = {
         modules-left = ["hyprland/workspaces"];
         modules-center = ["clock"];
-        modules-right = ["pulseaudio" "bluetooth" "cpu" "memory" "temperature" "clock#date"];
+        modules-right = ["battery" "pulseaudio" "bluetooth" "cpu" "memory" "temperature" "clock#date"];
 
+        battery = {
+          format = "{capacity}%";
+        };
         pulseaudio = {
           format = "vol: {volume}%";
           on-click = "pavucontrol";
@@ -84,28 +87,32 @@
           margin-right: 3px;
       }
 
-      #pulseaudio, #bluetooth, #cpu, #memory, #temperature, #clock.date {
+      #battery, #pulseaudio, #bluetooth, #cpu, #memory, #temperature, #clock.date {
           border-bottom: 1px solid;
       }
 
-      #pulseaudio {
+      #battery {
           color: #${config.lib.stylix.colors.base08};
       }
 
-      #bluetooth {
+      #pulseaudio {
           color: #${config.lib.stylix.colors.base09};
       }
 
-      #cpu {
+      #bluetooth {
           color: #${config.lib.stylix.colors.base0A};
       }
 
-      #memory {
+      #cpu {
           color: #${config.lib.stylix.colors.base0B};
       }
 
-      #temperature {
+      #memory {
           color: #${config.lib.stylix.colors.base0C};
+      }
+
+      #temperature {
+          color: #${config.lib.stylix.colors.base0D};
       }
 
       #clock.date {

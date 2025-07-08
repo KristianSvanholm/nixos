@@ -1,4 +1,9 @@
-{username, ...}: {
+{
+  inputs,
+  username,
+  pkgs,
+  ...
+}: {
   # Enable CLI
   programs._1password = {
     enable = true;
@@ -14,7 +19,7 @@
   environment.etc = {
     "1password/custom_allowed_browsers" = {
       text = ''
-        .zen-wrapped
+        zen
       '';
       mode = "0755";
     };
