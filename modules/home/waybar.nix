@@ -6,13 +6,17 @@
       mainBar = {
         modules-left = ["hyprland/workspaces"];
         modules-center = ["clock"];
-        modules-right = ["battery" "pulseaudio" "bluetooth" "cpu" "memory" "temperature" "clock#date"];
+        modules-right = ["battery" "pulseaudio" "bluetooth" "network" "clock#date"];
 
         battery = {
-          format = "{capacity}%";
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          format-icons = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
         };
         pulseaudio = {
-          format = "vol: {volume}%";
+          format = "{icon} {volume}%";
+          format-muted = "󰝟 {volume}";
+          format-icons = ["󰕿" "󰖀" "󰕾"];
           on-click = "pavucontrol";
         };
         bluetooth = {
@@ -22,11 +26,11 @@
           format-disabled = "󰂲";
           format-connected = "󰂱 {num_connections}";
         };
-        cpu = {
-          format = "󰍛 {usage}%";
-        };
-        memory = {
-          format = "mem: {percentage}%";
+        network = {
+          format-wifi = "{icon} {ipaddr}";
+          format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
+          format-ethernet = "󰈀 {ipaddr}";
+          on-click = "nm-connection-editor";
         };
         clock = {
           format = "{:%H:%M}";
@@ -51,6 +55,10 @@
       };
     };
     style = ''
+
+      .modules-right >* > * {
+          border-bottom: 1px solid;
+      }
 
       * {
           font-family: ${config.stylix.fonts.monospace.name};
@@ -87,10 +95,6 @@
           margin-right: 3px;
       }
 
-      #battery, #pulseaudio, #bluetooth, #cpu, #memory, #temperature, #clock.date {
-          border-bottom: 1px solid;
-      }
-
       #battery {
           color: #${config.lib.stylix.colors.base08};
       }
@@ -103,20 +107,16 @@
           color: #${config.lib.stylix.colors.base0A};
       }
 
-      #cpu {
+      #network {
           color: #${config.lib.stylix.colors.base0B};
       }
 
-      #memory {
+      #temperature {
           color: #${config.lib.stylix.colors.base0C};
       }
 
-      #temperature {
-          color: #${config.lib.stylix.colors.base0D};
-      }
-
       #clock.date {
-          color: #${config.lib.stylix.colors.base0E};
+          color: #${config.lib.stylix.colors.base0D};
       }
 
     '';
