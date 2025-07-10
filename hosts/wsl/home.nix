@@ -8,6 +8,8 @@
     ../../modules/home/zsh.nix
   ];
 
+  git.email = "kristian-roren.svanholm@gjensidige.no";
+
   # Important
   home = {
     username = username;

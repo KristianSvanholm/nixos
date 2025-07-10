@@ -35,7 +35,7 @@
     binutils
     gcc
     maven
-    zulu17
+    jdk17
     nodejs
   ];
 

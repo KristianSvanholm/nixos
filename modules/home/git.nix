@@ -1,23 +1,44 @@
-{...}: {
-  # git
-  programs.git = {
-    enable = true;
-    userName = "KristianSvanholm";
-    userEmail = "KristianRorenSvanholm@gmail.com";
-    extraConfig = {
-      init.defaultBranch = "main";
-      push.autoSetupRemote = true;
-      pull.rebase = true;
-      rebase.autoStash = true;
-      log.abbrevCommit = true;
-      url = {
-        "git@github.com:".insteadOf = ["gh:"];
-        "git@github.com:kristiansvanholm/".insteadOf = ["me:"];
-      };
-      status = {
-        branch = true;
-        showStash = true;
-        showUntrackedFiles = "all";
+{
+  lib,
+  config,
+  ...
+}:
+with lib; {
+  options.git = {
+    email = mkOption {
+      type = types.str;
+      description = "github user email";
+      default = "kristianrorensvanholm@gmail.com";
+    };
+
+    username = mkOption {
+      type = types.str;
+      description = "github username";
+      default = "KristianSvanholm";
+    };
+  };
+
+  config = {
+    # git
+    programs.git = {
+      enable = true;
+      userName = config.git.username;
+      userEmail = config.git.email;
+      extraConfig = {
+        init.defaultBranch = "main";
+        push.autoSetupRemote = true;
+        pull.rebase = true;
+        rebase.autoStash = true;
+        log.abbrevCommit = true;
+        url = {
+          "git@github.com:".insteadOf = ["gh:"];
+          "git@github.com:${config.git.username}/".insteadOf = ["me:"];
+        };
+        status = {
+          branch = true;
+          showStash = true;
+          showUntrackedFiles = "all";
+        };
       };
     };
   };
