@@ -17,6 +17,12 @@ with lib; {
       description = "github username";
       default = "KristianSvanholm";
     };
+
+    signing = mkOption {
+      type = types.bool;
+      description = "enable git commit signing";
+      default = false;
+    };
   };
 
   config = {
@@ -28,7 +34,7 @@ with lib; {
       signing = {
         format = "ssh";
         key = "${home}/.ssh/id_ed25519";
-        signByDefault = true;
+        signByDefault = config.git.signing;
       };
       extraConfig = {
         init.defaultBranch = "main";
