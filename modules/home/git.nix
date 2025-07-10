@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  home,
   ...
 }:
 with lib; {
@@ -24,6 +25,11 @@ with lib; {
       enable = true;
       userName = config.git.username;
       userEmail = config.git.email;
+      signing = {
+        format = "ssh";
+        key = "${home}/.ssh/id_ed25519";
+        signByDefault = true;
+      };
       extraConfig = {
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
