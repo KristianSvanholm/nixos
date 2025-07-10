@@ -34,6 +34,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
     # Darwin
     nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
@@ -74,6 +76,16 @@
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.spicetify-nix.nixosModules.spicetify
+          inputs.nix-index-database.nixosModules.nix-index
+        ];
+      };
+      wsl = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs username home;};
+        modules = [
+          ./hosts/wsl/configuration.nix
+          inputs.home-manager.nixosModules.default
+          inputs.nvf.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
         ];
       };
