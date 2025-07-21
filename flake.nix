@@ -4,15 +4,10 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
-
     nvf.url = "github:notashelf/nvf";
-
-    textfox.url = "github:adriankarlen/textfox";
-
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-plugins = {
@@ -25,26 +20,25 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+    #textfox.url = "github:adriankarlen/textfox";
+    #nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    #proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
 
     # Darwin
-    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    /*
+      nix-darwin.url = "github:LnL7/nix-darwin/master";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
 
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
+    */
   };
 
   outputs = {
@@ -62,7 +56,6 @@
         specialArgs = {inherit inputs username home;};
         modules = [
           ./hosts/default/configuration.nix
-          inputs.stylix.nixosModules.stylix
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.spicetify-nix.nixosModules.spicetify
@@ -73,7 +66,6 @@
         specialArgs = {inherit inputs username home;};
         modules = [
           ./hosts/mini/configuration.nix
-          inputs.stylix.nixosModules.stylix
           inputs.home-manager.nixosModules.default
           inputs.nvf.nixosModules.default
           inputs.spicetify-nix.nixosModules.spicetify
@@ -94,7 +86,6 @@
         specialArgs = {inherit inputs username home;};
         modules = [
           ./hosts/server/configuration.nix
-          inputs.stylix.nixosModules.stylix
           inputs.proxmox-nixos.nixosModules.proxmox-ve
           inputs.home-manager.nixosModules.default
           inputs.nix-index-database.nixosModules.nix-index
