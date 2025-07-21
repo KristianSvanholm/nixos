@@ -6,8 +6,9 @@
     stylix.url = "github:danth/stylix";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
 
-    # NVF with #566 MWN patch
     nvf.url = "github:notashelf/nvf";
+
+    textfox.url = "github:adriankarlen/textfox";
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
