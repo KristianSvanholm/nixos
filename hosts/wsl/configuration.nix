@@ -7,8 +7,8 @@
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   imports = [
-    # include NixOS-WSL modules
     inputs.nixos-wsl.nixosModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
   wsl.enable = true;
