@@ -2,7 +2,6 @@
   pkgs,
   inputs,
   username,
-  home,
   ...
 }: {
   # Activate flakes
@@ -19,12 +18,9 @@
     ../../modules/nixos/server/yarr.nix
     ../../modules/nixos/server/adguard.nix
     ../../modules/nixos/server/immich.nix
-    #../../modules/nixos/server/home-assistant.nix
-    #../../modules/nixos/server/proxmox.nix
     ../../modules/nixos/server/uptime-kuma.nix
     ../../modules/nixos/server/microbin.nix
     ../../modules/nixos/server/paperless.nix
-    #../../modules/nixos/server/minecraft/minecraft.nix
   ];
 
   # Networking setup
@@ -72,7 +68,7 @@
 
   home-manager = {
     useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs username home;};
+    extraSpecialArgs = {inherit inputs username;};
     users = {
       ${username} = import ./home.nix;
     };

@@ -1,20 +1,19 @@
 {
   pkgs,
   username,
-  home,
   ...
 }: {
   imports = [
     ../../modules/home/hyprland.nix
     ../../modules/home/zsh.nix
     ../../modules/home/common.nix
-    ../../modules/home/modrinth.nix
+    #../../modules/home/modrinth.nix
   ];
 
   # Important
   home = {
     username = username;
-    homeDirectory = home;
+    homeDirectory = "/home/${username}";
     sessionVariables = {
       EDITOR = "nvim";
       WEBKIT_DISABLE_DMABUF_RENDERER = 1;

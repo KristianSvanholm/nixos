@@ -1,7 +1,6 @@
 {
   pkgs,
   username,
-  home,
   ...
 }: {
   imports = [
@@ -14,7 +13,7 @@
   # Important
   home = {
     username = username;
-    homeDirectory = home;
+    homeDirectory = "/home/${username}";
     sessionVariables = {
       EDITOR = "nvim";
     };

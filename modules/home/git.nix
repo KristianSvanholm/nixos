@@ -1,7 +1,7 @@
 {
   lib,
   config,
-  home,
+  username,
   ...
 }:
 with lib; {
@@ -33,7 +33,7 @@ with lib; {
       userEmail = config.git.email;
       signing = {
         format = "ssh";
-        key = "${home}/.ssh/id_ed25519";
+        key = "/home/${username}/.ssh/id_ed25519";
         signByDefault = config.git.signing;
       };
       extraConfig = {

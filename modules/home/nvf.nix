@@ -13,7 +13,7 @@ in {
 
   home.packages = with pkgs; [
     fd
-    nodejs_23
+    nodejs
     tree-sitter
   ];
 
@@ -21,8 +21,10 @@ in {
     enable = true;
     settings = {
       vim = {
-        useSystemClipboard = true;
-
+        clipboard = {
+          enable = true;
+          registers = "unnamedplus";
+        };
         theme = {
           enable = true;
           base16-colors = {

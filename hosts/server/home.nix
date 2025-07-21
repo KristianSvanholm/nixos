@@ -1,15 +1,11 @@
-{
-  username,
-  home,
-  ...
-}: {
+{username, ...}: {
   imports = [
     ../../modules/home/zsh.nix
   ];
 
   home = {
     username = username;
-    homeDirectory = home;
+    homeDirectory = "/home/${username}";
     sessionVariables = {EDITOR = "nvim";};
   };
 
