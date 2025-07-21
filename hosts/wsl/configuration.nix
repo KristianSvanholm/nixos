@@ -1,32 +1,14 @@
 {
-  inputs,
-  username,
+  config,
   pkgs,
   ...
 }: {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  imports = [
-    inputs.nixos-wsl.nixosModules.default
-    inputs.home-manager.nixosModules.default
-  ];
+  imports = [../configuration.nix];
 
   wsl.enable = true;
-  wsl.defaultUser = username;
+  wsl.defaultUser = config.user.name;
 
-  programs = {
-    zsh.enable = true;
-  };
-
-  home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs username;};
-    users = {
-      ${username} = import ./home.nix;
-    };
-  };
-
-  nixpkgs.config.allowUnfree = true;
+  home-manager.users.${config.user.name} = import ./home.nix;
 
   environment.systemPackages = with pkgs; [
     binutils
@@ -35,6 +17,4 @@
     jdk17
     nodejs
   ];
-
-  system.stateVersion = "24.11";
 }

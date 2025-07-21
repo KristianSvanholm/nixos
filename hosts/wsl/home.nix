@@ -1,6 +1,7 @@
-{...}: {
+{inputs, ...}: {
   imports = [
-    ../../modules/home/home.nix
+    inputs.home-manager.nixosModules.default
+    ../home.nix
   ];
 
   git.email = "kristian-roren.svanholm@gjensidige.no";

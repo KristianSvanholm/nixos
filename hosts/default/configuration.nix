@@ -3,8 +3,7 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   pkgs,
-  inputs,
-  username,
+  config,
   ...
 }: {
   # Activate flakes
@@ -13,7 +12,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    ../configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/stylix.nix
@@ -35,18 +34,13 @@
     networkmanager.enable = true;
   };
 
-  programs = {
-    firefox.enable = false;
-    zsh.enable = true;
-  };
-
   services = {
     mullvad-vpn.enable = true;
     printing.enable = true;
   };
 
   users = {
-    users.${username} = {
+    users.${config.user.name} = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "libvirtd"];
     };
@@ -54,18 +48,8 @@
     defaultUserShell = pkgs.zsh;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs username;};
-    users = {
-      ${username} = import ./home.nix;
-    };
-  };
+  home-manager.users.${config.user.name} = import ./home.nix;
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
     go
@@ -75,14 +59,4 @@
     maven
     nix-prefetch-github
   ];
-
-  /*
-     fileSystems."/jellyfin" = {
-  device = "192.168.3.112:/jellyfin";
-  fsType = "nfs";
-  options = [ "x-systemd.automount" "noauto" "x-systemd.idle-timeout=600" "user"];
-     };
-  */
-
-  system.stateVersion = "24.05"; # Don't touch
 }

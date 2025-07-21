@@ -24,38 +24,20 @@
     #nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
-  outputs = {nixpkgs, ...} @ inputs: let
-    username = "krs";
-  in {
+  outputs = {nixpkgs, ...} @ inputs: {
     nixosConfigurations = {
-      default = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/default/configuration.nix
-          inputs.nix-index-database.nixosModules.nix-index
-        ];
-      };
       mini = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/mini/configuration.nix
-          inputs.nix-index-database.nixosModules.nix-index
-        ];
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/mini/configuration.nix];
+      };
+      server = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/server/configuration.nix];
       };
       wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/wsl/configuration.nix
-          inputs.nix-index-database.nixosModules.nix-index
-        ];
-      };
-      server = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs username;};
-        modules = [
-          ./hosts/server/configuration.nix
-          inputs.nix-index-database.nixosModules.nix-index
-        ];
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/wsl/configuration.nix];
       };
     };
   };

@@ -1,15 +1,12 @@
 {
+  config,
   pkgs,
-  inputs,
-  username,
   ...
 }: {
-  # Activate flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    ../configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/server/ssh.nix
@@ -48,17 +45,13 @@
     };
   };
 
-  programs = {
-    zsh.enable = true;
-  };
-
   services = {
-    getty.autologinUser = username;
+    getty.autologinUser = config.user.name;
     mullvad-vpn.enable = true;
   };
 
   users = {
-    users.${username} = {
+    users.${config.user.name} = {
       isNormalUser = true;
       extraGroups = ["networkmanager" "docker" "wheel"];
     };
@@ -66,19 +59,11 @@
     defaultUserShell = pkgs.zsh;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    extraSpecialArgs = {inherit inputs username;};
-    users = {
-      ${username} = import ./home.nix;
-    };
-  };
+  home-manager.users.${config.user.name} = import ./home.nix;
 
   virtualisation.docker = {
     enable = true;
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   environment.systemPackages = with pkgs; [
     docker
@@ -93,6 +78,4 @@
     texliveFull
     inkscape
   ];
-
-  system.stateVersion = "24.05"; # Did you read the comment?
 }

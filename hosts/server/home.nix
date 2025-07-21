@@ -1,5 +1,5 @@
 {...}: {
   imports = [
-    ../../modules/home/home.nix
+    ../home.nix
   ];
 }

@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
+    ../home.nix
     ../../modules/home/hyprland.nix
-    ../../modules/home/home.nix
     ../../modules/home/common.nix
     ../../modules/home/modrinth.nix
   ];

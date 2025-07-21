@@ -1,13 +1,13 @@
 {
   pkgs,
-  username,
+  config,
   ...
 }: {
   imports = [
     ./qbittorrent-nox.nix
   ];
 
-  users.groups.media.members = [username "sonarr" "radarr" "qbittorrent"];
+  users.groups.media.members = [config.user.name "sonarr" "radarr" "qbittorrent"];
 
   environment.systemPackages = with pkgs; [
     jellyfin
