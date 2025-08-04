@@ -61,8 +61,6 @@
         enabled = false;
       };
 
-      input.natural_scroll = true;
-
       exec-once = ["waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
       windowrulev2 = [
