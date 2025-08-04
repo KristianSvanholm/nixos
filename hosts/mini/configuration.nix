@@ -23,7 +23,7 @@
 
   networking = {
     hostName = "nixos";
-    nameservers = ["192.168.1.79"];
+    nameservers = ["192.168.3.112"];
     firewall.enable = true;
     enableIPv6 = true;
     networkmanager.enable = true;
