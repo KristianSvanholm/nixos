@@ -22,6 +22,5 @@
     wakeonlan
     aseprite
     nitch
-    typst
   ];
 }
