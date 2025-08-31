@@ -30,9 +30,9 @@
         specialArgs = {inherit inputs;};
         modules = [./hosts/mini/configuration.nix];
       };
-      server = nixpkgs.lib.nixosSystem {
+      homelab = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
-        modules = [./hosts/server/configuration.nix];
+        modules = [./hosts/homelab/configuration.nix];
       };
       wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";

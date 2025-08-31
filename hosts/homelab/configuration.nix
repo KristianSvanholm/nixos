@@ -9,15 +9,15 @@
     ../configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix
-    ../../modules/nixos/server/ssh.nix
-    ../../modules/nixos/server/intel.nix
-    ../../modules/nixos/server/nginx.nix
-    ../../modules/nixos/server/yarr.nix
-    ../../modules/nixos/server/adguard.nix
-    ../../modules/nixos/server/immich.nix
-    ../../modules/nixos/server/uptime-kuma.nix
-    ../../modules/nixos/server/microbin.nix
-    ../../modules/nixos/server/paperless.nix
+    ../../modules/nixos/homelab/ssh.nix
+    ../../modules/nixos/homelab/intel.nix
+    ../../modules/nixos/homelab/nginx.nix
+    ../../modules/nixos/homelab/yarr.nix
+    ../../modules/nixos/homelab/adguard.nix
+    ../../modules/nixos/homelab/immich.nix
+    ../../modules/nixos/homelab/uptime-kuma.nix
+    ../../modules/nixos/homelab/microbin.nix
+    ../../modules/nixos/homelab/paperless.nix
   ];
 
   # Networking setup
