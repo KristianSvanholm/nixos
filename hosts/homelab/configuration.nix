@@ -33,6 +33,7 @@
   home-manager.users.${config.user.name} = import ./home.nix;
 
   environment.systemPackages = with pkgs; [
+    nmcli
     binutils
     gcc
     ethtool
