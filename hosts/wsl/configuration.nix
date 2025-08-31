@@ -6,7 +6,6 @@
 }: {
   imports = [
     inputs.nixos-wsl.nixosModules.default
-    ../../modules/nixos/stylix.nix
     ../configuration.nix
   ];
 
