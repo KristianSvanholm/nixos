@@ -47,7 +47,6 @@
 
   environment.systemPackages = with pkgs; [
     nvtopPackages.full
-    go
     binutils
     gcc
     zulu17

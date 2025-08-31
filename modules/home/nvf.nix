@@ -15,6 +15,7 @@ in {
     fd
     nodejs
     tree-sitter
+    typst
   ];
 
   programs.nvf = {
