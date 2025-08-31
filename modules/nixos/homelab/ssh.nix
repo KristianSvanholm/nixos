@@ -1,4 +1,4 @@
-{...}: {
+{config, ...}: {
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
@@ -9,6 +9,6 @@
     enable = true;
     openFirewall = true; # 22
     settings.PasswordAuthentication = false;
-    knownHosts.krs.publicKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK8RufgRPvoPDRovOxteHN5ZEAXiJpXwJfVQuZsVtmj";
   };
+  users.users.${config.user.name}.openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK8RufgRPvoPDRovOxteHN5ZEAXiJpXwJfVQuZsVtmj"];
 }
