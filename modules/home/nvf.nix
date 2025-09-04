@@ -81,6 +81,12 @@ in {
           nix.enable = true;
           nix.format.enable = true;
           yaml.enable = true;
+          kotlin = {
+            enable = true;
+            lsp.enable = true;
+          };
+          ts.enable = true;
+          ts.format.enable = true;
           rust.enable = true;
           go.enable = true;
         };
