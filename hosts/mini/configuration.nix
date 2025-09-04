@@ -38,8 +38,6 @@
       isNormalUser = true;
       extraGroups = ["networkmanager" "wheel" "libvirtd"];
     };
-
-    defaultUserShell = pkgs.zsh;
   };
 
   home-manager.users.${config.user.name} = import ./home.nix;
