@@ -55,8 +55,6 @@
       isNormalUser = true;
       extraGroups = ["networkmanager" "docker" "wheel"];
     };
-
-    defaultUserShell = pkgs.zsh;
   };
 
   home-manager.users.${config.user.name} = import ./home.nix;
