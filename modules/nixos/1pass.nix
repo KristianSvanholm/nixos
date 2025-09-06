@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   # Enable CLI
   programs._1password = {
     enable = true;
@@ -19,4 +23,9 @@
       mode = "0755";
     };
   };
+
+  # Turn on gnome keyring to store 2fac auth.
+  # If encounter "login password no longer match keyring password" error:
+  # rm ~/.local/share/keyrings/login.keyring
+  services.gnome.gnome-keyring.enable = true;
 }
