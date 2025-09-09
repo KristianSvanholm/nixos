@@ -16,7 +16,7 @@
 
   # Networking setup
   networking = {
-    hostName = "TestLab";
+    hostName = "HomeLab";
     firewall.enable = true;
   };
 
