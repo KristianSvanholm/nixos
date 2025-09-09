@@ -13,7 +13,6 @@
   imports = [
     inputs.home-manager.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
-    ../modules/nixos/stylix.nix
     ../modules/nixos/docker.nix
     ../modules/nixos/stylix.nix
     ./config.nix
