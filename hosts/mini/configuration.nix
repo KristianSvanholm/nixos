@@ -11,7 +11,6 @@
     ../configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix
-    ../../modules/nixos/stylix.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/audio.nix
     ../../modules/nixos/hyprland.nix

@@ -59,15 +59,9 @@
 
   home-manager.users.${config.user.name} = import ./home.nix;
 
-  virtualisation.docker = {
-    enable = true;
-  };
-
   environment.systemPackages = with pkgs; [
-    docker
     binutils
     gcc
-    docker-compose
     mullvad
     ethtool
     gptfdisk
