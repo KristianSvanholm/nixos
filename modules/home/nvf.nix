@@ -80,6 +80,7 @@ in {
 
           nix.enable = true;
           nix.format.enable = true;
+          yaml.enable = true;
           rust.enable = true;
           go.enable = true;
         };
