@@ -44,6 +44,13 @@ in {
           mappings = {
             findFiles = "<leader>sf";
             liveGrep = "<leader>sg";
+            diagnostics = "<leader>se";
+            buffers = "<leader>sb";
+            resume = "<leader>sr";
+            gitBranches = "<leader>gb";
+            gitBufferCommits = "<leader>gcb";
+            gitCommits = "<leader>gc";
+            gitStatus = "<leader>gs";
           };
         };
 
@@ -58,6 +65,7 @@ in {
 
         # Utility
         utility.oil-nvim.enable = true;
+
         # Lsp
         languages = {
           enableTreesitter = true;
@@ -81,14 +89,13 @@ in {
           nix.enable = true;
           nix.format.enable = true;
           yaml.enable = true;
-          kotlin = {
-            enable = true;
-            lsp.enable = true;
-          };
+          kotlin.enable = true;
           ts.enable = true;
           ts.format.enable = true;
           rust.enable = true;
+          rust.format.enable = true;
           go.enable = true;
+          go.format.enable = true;
         };
       };
     };
