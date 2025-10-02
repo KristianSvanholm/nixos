@@ -10,12 +10,15 @@ $ nix build nixpkgs#base16-schemes
 $ nix run nixpkgs#betterdiscordctl install
 ```
 
-## Deploy OS
 
-In whatever directory you have cloned this config into:
-
+## Generate hardware configuration
 ```
-$ sudo nixos-rebuild switch --flake .#default
+$ nixos-generate-config --show-hardware-config > hardware-configuration.nix
+```
+
+## Deploy OS
+```
+$ sudo nixos-rebuild switch --flake .#mini
 ```
 
 Then, the alias 'switch' will be available for future use:
