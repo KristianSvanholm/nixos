@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
     ../configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix

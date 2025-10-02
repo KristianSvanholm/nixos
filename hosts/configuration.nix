@@ -15,6 +15,7 @@
     inputs.nix-index-database.nixosModules.nix-index
     ../modules/nixos/docker.nix
     ../modules/nixos/stylix.nix
+    ./hardware-configuration.nix
     ./config.nix
   ];
 
