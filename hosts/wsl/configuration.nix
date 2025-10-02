@@ -19,6 +19,7 @@
     gcc
     maven
     jdk17
-    nodejs
+    bun
+    webpack-cli
   ];
 }
