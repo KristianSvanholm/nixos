@@ -41,6 +41,10 @@ in {
 
         telescope = {
           enable = true;
+          setupOpts = {
+            defaults.color_devicons = true;
+            defaults.selection_caret = "> ";
+          };
           mappings = {
             findFiles = "<leader>sf";
             liveGrep = "<leader>sg";
