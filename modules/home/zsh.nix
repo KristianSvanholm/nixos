@@ -85,5 +85,7 @@
     ncspot
     comma # nix run shorthand
     kubectl
+    fluxcd
+    kubernetes-helm
   ];
 }
