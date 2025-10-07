@@ -85,8 +85,9 @@
     ncspot
     comma # nix run shorthand
     kubectl
+    kubectx
     fluxcd
     kubernetes-helm
-    nslookup
+    dig
   ];
 }
