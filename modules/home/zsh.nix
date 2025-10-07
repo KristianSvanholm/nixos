@@ -87,5 +87,6 @@
     kubectl
     fluxcd
     kubernetes-helm
+    nslookup
   ];
 }
