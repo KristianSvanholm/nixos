@@ -21,5 +21,8 @@
     jdk17
     bun
     webpack-cli
+    azure-cli
+    kubelogin
+    kubectl
   ];
 }
