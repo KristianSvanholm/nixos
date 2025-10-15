@@ -32,7 +32,7 @@
       general = {
         gaps_in = 0;
         gaps_out = 0;
-        "col.active_border" = "rgb(${config.lib.stylix.colors.base0E})";
+        "col.active_border" = "rgb(${config.lib.stylix.colors.base09})";
       };
 
       misc = {
@@ -64,10 +64,9 @@
       exec-once = ["waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
       windowrulev2 = [
-        "float, class:1Password"
-        "maxsize 70% 70%, class:1Password"
-        "center, class:1Password"
+        "float, center, class:1Password"
         "move cursor -50% -50%, title:Quick Access — 1Password"
+        "workspace special:magic, pseudo, center, size 90% 90%, class:discord"
       ];
 
       monitor = [

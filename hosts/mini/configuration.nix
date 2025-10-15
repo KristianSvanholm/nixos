@@ -18,6 +18,7 @@
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/r.nix
     ../../modules/nixos/spicetify.nix
+    ../../modules/nixos/steam.nix
   ];
 
   networking = {
