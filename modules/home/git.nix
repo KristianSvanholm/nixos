@@ -1,4 +1,5 @@
 {
+  pkgs,
   lib,
   config,
   ...
@@ -17,9 +18,15 @@ with lib; {
       default = "KristianSvanholm";
     };
 
-    signing = mkOption {
+    localSSHKey = mkOption {
       type = types.bool;
-      description = "enable git commit signing";
+      description = "use local ssh key";
+      default = false;
+    };
+
+    opSSHKey = mkOption {
+      type = types.bool;
+      description = "use 1password ssh key through ssh agent";
       default = false;
     };
   };
@@ -30,11 +37,6 @@ with lib; {
       enable = true;
       userName = config.git.username;
       userEmail = config.git.email;
-      signing = {
-        format = "ssh";
-        key = "${config.user.home}/.ssh/id_ed25519";
-        signByDefault = config.git.signing;
-      };
       extraConfig = {
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
@@ -51,6 +53,23 @@ with lib; {
           showUntrackedFiles = "all";
         };
       };
+
+      # local ssh key
+      signing =
+        if config.git.localSSHKey
+        then {
+          format = "ssh";
+          key = "${config.user.home}/.ssh/id_ed25519";
+          signByDefault = true;
+        }
+        else if config.git.opSSHKey
+        then {
+          format = "ssh";
+          key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK8RufgRPvoPDRovOxteHN5ZEAXiJpXwJfVQuZsVtmj";
+          signByDefault = true;
+          signer = "${pkgs._1password-gui}/bin/op-ssh-sign";
+        }
+        else {};
     };
   };
 }

@@ -6,6 +6,7 @@
     ../../modules/home/modrinth.nix
   ];
 
+  git.opSSHKey = true;
   programs = {
     ssh = {
       enable = true;
