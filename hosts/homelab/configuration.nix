@@ -5,6 +5,7 @@
 }: {
   imports = [
     ../configuration.nix
+    ./hardware-configuration.nix
     ../../modules/nixos/boot.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/homelab/ssh.nix
