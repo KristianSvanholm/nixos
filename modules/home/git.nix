@@ -35,9 +35,9 @@ with lib; {
     # git
     programs.git = {
       enable = true;
-      userName = config.git.username;
-      userEmail = config.git.email;
-      extraConfig = {
+      settings = {
+        user.email = config.git.email;
+        user.name = config.git.username;
         init.defaultBranch = "main";
         push.autoSetupRemote = true;
         pull.rebase = true;

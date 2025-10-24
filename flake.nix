@@ -21,7 +21,6 @@
     };
 
     #textfox.url = "github:adriankarlen/textfox";
-    #nix-minecraft.url = "github:Infinidoge/nix-minecraft";
   };
 
   outputs = {nixpkgs, ...} @ inputs: {

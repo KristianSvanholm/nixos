@@ -16,6 +16,7 @@
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/ly.nix
     ../../modules/nixos/1pass.nix
+    ../../modules/nixos/zsa.nix
     ../../modules/nixos/r.nix
     ../../modules/nixos/spicetify.nix
     ../../modules/nixos/steam.nix
