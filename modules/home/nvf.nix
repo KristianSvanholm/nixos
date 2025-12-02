@@ -14,6 +14,7 @@ in {
   home.packages = with pkgs; [
     fd
     nodejs
+    nodePackages.eslint_d
     tree-sitter
     typst
   ];
@@ -68,7 +69,14 @@ in {
         lsp.trouble.enable = true;
 
         # Utility
-        utility.oil-nvim.enable = true;
+        utility = {
+          oil-nvim.enable = true;
+          preview.markdownPreview = {
+            enable = true;
+            autoStart = true;
+            autoClose = true;
+          };
+        };
 
         # Lsp
         languages = {
@@ -96,6 +104,8 @@ in {
           kotlin.enable = true;
           ts.enable = true;
           ts.format.enable = true;
+          ts.extraDiagnostics.enable = true;
+          markdown.enable = true;
           rust.enable = true;
           rust.format.enable = true;
           go.enable = true;
