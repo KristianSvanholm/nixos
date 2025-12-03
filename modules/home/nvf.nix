@@ -68,6 +68,7 @@ in {
         lsp.formatOnSave = true;
         lsp.trouble.enable = true;
 
+        mini.surround.enable = true;
         # Utility
         utility = {
           oil-nvim.enable = true;
