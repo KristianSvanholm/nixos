@@ -19,6 +19,13 @@
       set-option -g status-position top
       set-option -g status-justify centre
 
+      # Make nvim healthcheck happy
+      set-option -sg escape-time 10
+      set-option -g focus-events on
+      set-option -g default-terminal "tmux-256color"
+      ## xterm-256color will probably not work everywhere.
+      set -a terminal-features "xterm-256color:RGB"
+
       set -g detach-on-destroy off # Don't exit from tmux when closing a session
     '';
   };
