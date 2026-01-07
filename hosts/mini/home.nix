@@ -3,7 +3,7 @@
     ../home.nix
     ../../modules/home/hyprland.nix
     ../../modules/home/common.nix
-    ../../modules/home/modrinth.nix
+    #../../modules/home/modrinth.nix
   ];
 
   git.opSSHKey = true;
