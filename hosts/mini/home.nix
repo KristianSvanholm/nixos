@@ -20,9 +20,7 @@
   services.mpris-proxy.enable = true;
 
   home.packages = with pkgs; [
-    tetrio-desktop
     networkmanagerapplet
-    wakeonlan
     aseprite
     nitch
   ];

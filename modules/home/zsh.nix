@@ -1,11 +1,13 @@
 {pkgs, ...}: {
   imports = [
+    ./starship.nix
     ./tmux.nix
     ./eza.nix
     ./zoxide.nix
     ./btop.nix
     ./git.nix
     ./nvf.nix
+    ./helix.nix
   ];
 
   programs.zsh = {
@@ -42,24 +44,6 @@
       size = 10000;
       ignoreDups = true;
     };
-
-    # Zsh config profiling
-    #initExtraFirst = "zmodload zsh/zprof\n";
-    #initExtra = "zprof\n";
-
-    completionInit = ''
-         autoload -Uz compinit
-         for dump in ~/.zcompdump(N.mh+24); do
-      compinit
-         done
-         compinit -C
-    '';
-
-    oh-my-zsh = {
-      enable = true;
-      plugins = ["git"];
-      theme = "fishy";
-    };
   };
 
   # General terminal packages here
@@ -68,7 +52,6 @@
     lf
     bat
     fzf
-    unzip
     wget
     ripgrep
     gh
@@ -80,9 +63,6 @@
     progress # Monitor status of long-running commands
     lsof
     unp # unpack archive
-    asciinema # Record terminal
-    asciinema-agg # Convert Ascii record to gif
-    ncspot
     comma # nix run shorthand
     kubectl
     kubectx

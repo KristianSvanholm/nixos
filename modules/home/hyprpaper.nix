@@ -16,7 +16,7 @@
       ipc = "on";
       preload = ["${config.stylix.image}"];
       wallpaper = [
-        " , ${config.stylix.image}"
+        ",${config.stylix.image}"
       ];
     };
   };
