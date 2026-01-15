@@ -6,7 +6,7 @@
   imports = [
     ../configuration.nix
     ./hardware-configuration.nix
-    ../../modules/nixos/boot.nix
+    ../../modules/nixos/systemd-boot.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/homelab/ssh.nix
     ../../modules/nixos/homelab/adguard.nix
@@ -22,7 +22,7 @@
 
   services = {
     getty.autologinUser = config.user.name;
-    logind.lidSwitchExternalPower = "ignore";
+    logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
   };
 
   # For laptop hosts

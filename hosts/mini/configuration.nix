@@ -9,7 +9,7 @@
   imports = [
     ../configuration.nix
     ./hardware-configuration.nix
-    ../../modules/nixos/boot.nix
+    ../../modules/nixos/limine.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/audio.nix

@@ -18,14 +18,15 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" =
-    { device = "systemd-1";
-      fsType = "autofs";
-    };
-
   fileSystems."/mnt/hdd" =
     { device = "/dev/disk/by-uuid/907c331d-d726-496e-90f3-30deeecdf1d3";
       fsType = "ext4";
+    };
+
+  fileSystems."/boot/efi" =
+    { device = "/dev/disk/by-uuid/202A-5D13";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
     };
 
   swapDevices =
