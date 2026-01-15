@@ -29,15 +29,8 @@
       gs = "git status --short";
       gu = "git pull";
 
-      # ping -c 1 [ip] && arp -n, to find mac addr
-      wake = "wakeonlan -i 192.168.3.112 6c:2b:59:cf:cf:50";
       switch = "sudo nixos-rebuild switch";
       test = "sudo nixos-rebuild test";
-
-      # For mc server
-      tmc = "sudo tmux -S /run/minecraft/winter-gaming.sock attach";
-      mcstart = "systemctl start minecraft-server-winter-gaming.service";
-      mcstop = "systemctl stop minecraft-server-winter-gaming.service";
     };
 
     history = {
