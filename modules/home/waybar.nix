@@ -4,7 +4,7 @@
     enable = true;
     settings = {
       mainBar = {
-        modules-left = ["hyprland/workspaces"];
+        modules-left = ["niri/workspaces"];
         modules-center = ["clock"];
         modules-right = ["battery" "pulseaudio" "bluetooth" "network" "clock#date"];
 

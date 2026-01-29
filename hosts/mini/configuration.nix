@@ -21,6 +21,7 @@
     ../../modules/nixos/spicetify.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/nvidia.nix
+    ../../modules/nixos/niri.nix
   ];
 
   networking = {

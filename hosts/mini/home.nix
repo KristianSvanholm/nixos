@@ -3,6 +3,7 @@
     ../home.nix
     ../../modules/home/hyprland.nix
     ../../modules/home/common.nix
+    ../../modules/home/fuzzel.nix
     #../../modules/home/modrinth.nix
   ];
 
