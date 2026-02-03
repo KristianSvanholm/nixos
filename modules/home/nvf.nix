@@ -109,6 +109,7 @@ in {
           rust.format.enable = true;
           go.enable = true;
           go.format.enable = true;
+          java.enable = true;
         };
       };
     };
