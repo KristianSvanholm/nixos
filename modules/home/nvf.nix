@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   config,
+  lib,
   ...
 }: let
   inherit (config.lib.stylix) colors;
@@ -23,6 +24,13 @@ in {
     enable = true;
     settings = {
       vim = {
+        keymaps = [
+          {
+            key = "<leader>o";
+            mode = "n";
+            action = ":Oil --float <CR>";
+          }
+        ];
         clipboard = {
           enable = true;
           registers = "unnamedplus";
@@ -69,7 +77,19 @@ in {
         mini.surround.enable = true;
         # Utility
         utility = {
-          oil-nvim.enable = true;
+          oil-nvim = {
+            enable = true;
+            gitStatus.enable = true;
+            setupOpts = {
+              view_options = {
+                show_hidden = true;
+              };
+              float = {
+                max_width = 0.5;
+                max_height = 0.8;
+              };
+            };
+          };
           preview.markdownPreview = {
             enable = true;
             autoStart = true;
