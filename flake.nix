@@ -11,8 +11,8 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
 
     nix-darwin = {
-	    url = "github:nix-darwin/nix-darwin/master";
-    	inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nur-packages = {
@@ -28,8 +28,11 @@
     #textfox.url = "github:adriankarlen/textfox";
   };
 
-  outputs = {nixpkgs, nix-darwin, ...} @ inputs: {
-
+  outputs = {
+    nixpkgs,
+    nix-darwin,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       mini = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
@@ -49,8 +52,7 @@
     darwinConfigurations.darwin = nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = {inherit inputs;};
-      modules = [ ./hosts/darwin/configuration.nix ];
+      modules = [./hosts/darwin/configuration.nix];
     };
-
   };
 }
