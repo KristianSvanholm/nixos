@@ -21,6 +21,7 @@
   services.mpris-proxy.enable = true;
 
   home.packages = with pkgs; [
+    incus
     networkmanagerapplet
     aseprite
     nitch

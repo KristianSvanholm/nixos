@@ -4,8 +4,7 @@
   config,
   ...
 }:
-with lib;
-{
+with lib; {
   options.git = {
     email = mkOption {
       type = types.str;
@@ -30,6 +29,11 @@ with lib;
       description = "use 1password ssh key through ssh agent";
       default = false;
     };
+    signer = mkOption {
+      type = types.str;
+      description = "path to commit signer";
+      default = "${pkgs._1password-gui}/bin/op-ssh-sign";
+    };
   };
 
   config = {
@@ -45,8 +49,8 @@ with lib;
         rebase.autoStash = true;
         log.abbrevCommit = true;
         url = {
-          "git@github.com:".insteadOf = [ "gh:" ];
-          "git@github.com:${config.git.username}/".insteadOf = [ "me:" ];
+          "git@github.com:".insteadOf = ["gh:"];
+          "git@github.com:${config.git.username}/".insteadOf = ["me:"];
         };
         status = {
           branch = true;
@@ -57,21 +61,20 @@ with lib;
 
       # local ssh key
       signing =
-        if config.git.localSSHKey then
-          {
-            format = "ssh";
-            key = "${config.user.home}/.ssh/id_ed25519";
-            signByDefault = true;
-          }
-        else if config.git.opSSHKey then
-          {
-            format = "ssh";
-            key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK8RufgRPvoPDRovOxteHN5ZEAXiJpXwJfVQuZsVtmj";
-            signByDefault = true;
-            signer = "${pkgs._1password-gui}/bin/op-ssh-sign";
-          }
-        else
-          { };
+        if config.git.localSSHKey
+        then {
+          format = "ssh";
+          key = "${config.user.home}/.ssh/id_ed25519";
+          signByDefault = true;
+        }
+        else if config.git.opSSHKey
+        then {
+          format = "ssh";
+          key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOK8RufgRPvoPDRovOxteHN5ZEAXiJpXwJfVQuZsVtmj";
+          signByDefault = true;
+          signer = config.git.signer;
+        }
+        else {};
     };
   };
 }

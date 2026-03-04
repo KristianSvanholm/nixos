@@ -63,7 +63,6 @@
     fluxcd
     kubernetes-helm
     dig
-    incus
     terraform
   ];
 }
