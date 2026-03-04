@@ -31,6 +31,7 @@
 
       switch = "sudo nixos-rebuild switch";
       test = "sudo nixos-rebuild test";
+      opget = "op item get \"$(op item list | tail -n +2 | fzf --bind 'change:first' | awk '{print $1}')\" --reveal --fields password | clip.exe";
     };
 
     history = {

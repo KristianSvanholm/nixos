@@ -29,6 +29,7 @@
     sqlcmd
     adoptopenjdk-icedtea-web
     jboss
+    _1password-cli
   ];
 
   nixpkgs.config.permittedInsecurePackages = [
