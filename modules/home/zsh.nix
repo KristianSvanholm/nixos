@@ -51,7 +51,6 @@
     gh
     rustup
     go
-    sesh
     duf # Better df
     ncdu # Better du
     progress # Monitor status of long-running commands

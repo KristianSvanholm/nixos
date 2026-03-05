@@ -25,5 +25,7 @@
     networkmanagerapplet
     aseprite
     nitch
+    opencode
+    winboat
   ];
 }
