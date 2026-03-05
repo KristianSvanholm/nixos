@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/home/zsh.nix
+    ../../modules/darwin/alacritty.nix
     ../config.nix
   ];
 
@@ -24,6 +25,11 @@
   };
 
   home.packages = with pkgs; [_1password-cli];
+
+  xdg.configFile."sketchybar" = {
+    source = ../../config/sketchybar;
+    recursive = true;
+  };
 
   home.stateVersion = "24.05"; # Dont touch
 }

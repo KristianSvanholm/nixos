@@ -19,6 +19,8 @@
   imports = [
     inputs.home-manager.darwinModules.default
     ../config.nix
+    ../../modules/darwin/aerospace.nix
+    ../../modules/darwin/sketchybar.nix
   ];
 
   home-manager = {
@@ -34,7 +36,10 @@
     pkgs.dejavu_fonts
   ];
 
-  environment.systemPackages = with pkgs; [];
+  system.primaryUser = config.user.name;
+  environment.systemPackages = with pkgs; [
+    opencode
+  ];
 
   system.stateVersion = 6;
 }
