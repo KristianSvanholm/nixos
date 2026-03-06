@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/home/zsh.nix
+    ../../modules/home/alacritty.nix
     ../config.nix
   ];
 
@@ -13,7 +14,6 @@
   git.signer = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
 
   programs = {
-    alacritty.enable = true;
     ssh = {
       enable = true;
       extraConfig = ''

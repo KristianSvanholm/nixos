@@ -1,6 +1,7 @@
 {config, ...}: {
   imports = [
     ../modules/home/zsh.nix
+    ../modules/home/alacritty.nix
     ./config.nix
   ];
 

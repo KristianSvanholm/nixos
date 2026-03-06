@@ -16,8 +16,17 @@
       bind v split-window -h
       bind s split-window -v
 
+      bind | source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded"
+
       set-option -g status-position top
-      set-option -g status-justify centre
+      set-option -g status-justify left
+
+      set -g status-left ""
+      set -g status-right ""
+
+      set -g window-status-format " #I "
+      set -g window-status-current-format "#[reverse] #I #[noreverse]"
+      set -g window-status-separator ""
 
       # Make nvim healthcheck happy
       set-option -sg escape-time 10
