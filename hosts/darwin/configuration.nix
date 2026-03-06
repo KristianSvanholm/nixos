@@ -21,6 +21,7 @@
     ../config.nix
     ../../modules/darwin/aerospace.nix
     ../../modules/darwin/sketchybar.nix
+    ../../modules/darwin/stylix.nix
   ];
 
   home-manager = {
@@ -30,11 +31,6 @@
       ${config.user.name} = import ./home.nix;
     };
   };
-
-  fonts.packages = [
-    pkgs.nerd-fonts.jetbrains-mono
-    pkgs.dejavu_fonts
-  ];
 
   system.primaryUser = config.user.name;
   environment.systemPackages = with pkgs; [

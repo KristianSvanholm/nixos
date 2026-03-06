@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/home/zsh.nix
-    ../../modules/darwin/alacritty.nix
     ../config.nix
   ];
 
@@ -14,6 +13,7 @@
   git.signer = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
 
   programs = {
+    alacritty.enable = true;
     ssh = {
       enable = true;
       extraConfig = ''
@@ -29,6 +29,11 @@
   xdg.configFile."sketchybar" = {
     source = ../../config/sketchybar;
     recursive = true;
+  };
+
+  stylix.targets = {
+    nvf.enable = false;
+    btop.enable = false;
   };
 
   home.stateVersion = "24.05"; # Dont touch
