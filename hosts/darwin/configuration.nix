@@ -22,7 +22,10 @@
     ../../modules/darwin/aerospace.nix
     ../../modules/darwin/sketchybar.nix
     ../../modules/darwin/stylix.nix
+    ../../modules/darwin/ssh.nix
   ];
+
+  networking.hostName = "darwin";
 
   home-manager = {
     useGlobalPkgs = true;
