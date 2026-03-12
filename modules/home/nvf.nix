@@ -1,12 +1,8 @@
 {
   inputs,
   pkgs,
-  config,
-  lib,
   ...
-}: let
-  inherit (config.lib.stylix) colors;
-in {
+}: {
   imports = [
     inputs.nvf.homeManagerModules.default
     ./latex.nix
@@ -43,7 +39,15 @@ in {
 
         # Plugins
         statusline.lualine.enable = true;
+        statusline.lualine.theme = "gruvbox_dark";
         autocomplete.nvim-cmp.enable = true;
+        /*
+          # Produces graphical artifacts...
+          autocomplete.blink-cmp = {
+          enable = true;
+          friendly-snippets.enable = true;
+        };
+        */
         git.gitsigns.enable = true;
 
         telescope = {
@@ -81,6 +85,9 @@ in {
             enable = true;
             gitStatus.enable = true;
             setupOpts = {
+              columns = [
+                "icon"
+              ];
               view_options = {
                 show_hidden = true;
               };
