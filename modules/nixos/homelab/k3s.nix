@@ -1,11 +1,6 @@
-{pkgs, ...}: {
+{...}: {
   # Howto
   # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/networking/cluster/k3s/docs/USAGE.md
-  environment.systemPackages = with pkgs; [
-    fluxcd
-    kubernetes-helm
-    kubectl
-  ];
 
   networking.firewall = {
     allowedTCPPorts = [

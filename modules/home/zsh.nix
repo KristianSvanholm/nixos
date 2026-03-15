@@ -47,7 +47,6 @@
     stow
     lf
     bat
-    fzf
     wget
     ripgrep
     gh
@@ -58,7 +57,6 @@
     progress # Monitor status of long-running commands
     lsof
     unp # unpack archive
-    comma # nix run shorthand
     kubectl
     kubectx
     fluxcd

@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../../modules/nixos/wayshot.nix
+    ./wayshot.nix
   ];
 
   programs.hyprland.enable = true;

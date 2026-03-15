@@ -40,7 +40,7 @@
   users = {
     users.${config.user.name} = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "libvirtd"];
+      extraGroups = ["networkmanager" "wheel"];
     };
   };
 

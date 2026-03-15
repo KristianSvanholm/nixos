@@ -1,4 +1,4 @@
 {pkgs, ...}: {
   hardware.keyboard.zsa.enable = true;
-  environment.systemPackages = with pkgs; [google-chrome keymapp];
+  environment.systemPackages = with pkgs; [keymapp];
 }
