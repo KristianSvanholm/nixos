@@ -46,6 +46,11 @@
           swallow_exception_regex = "^vi.*$";
         };
 
+        ecosystem = {
+          no_update_news = true;
+          no_donation_nag = true;
+        };
+
         decoration = {
           rounding = 0;
           blur.enabled = false;
@@ -65,10 +70,21 @@
 
         exec-once = ["waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
 
-        windowrulev2 = [
-          "float, center, class:1Password"
-          "move cursor -50% -50%, title:Quick Access — 1Password"
-          "workspace special:magic, pseudo, center, size 90% 90%, class:discord"
+        windowrule = [
+          "float on, match:class 1Password"
+          "center on, match:class 1Password"
+
+          "float on, match:class .blueman-manager-wrapped"
+          "center on, match:class .blueman-manager-wrapped"
+
+          "float on, match:class org.pulseaudio.pavucontrol"
+          "center on, match:class org.pulseaudio.pavucontrol"
+
+          "float on, match:class keymapp"
+          "center on, match:class keymapp"
+
+          "workspace special:magic, match:class discord"
+          "pseudo on, match:workspace name:special:magic"
         ];
 
         monitor = [
