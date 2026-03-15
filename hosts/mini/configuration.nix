@@ -23,6 +23,7 @@
     ../../modules/nixos/nvidia.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/tailscale.nix
+    ../../modules/nixos/nautilus.nix
   ];
 
   networking = {

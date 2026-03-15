@@ -94,10 +94,6 @@
           margin: 0 2px;
       }
 
-      .modules-right >* > * {
-          color: #${config.lib.stylix.colors.${config.tint}};
-      }
-
       #window {
           color: #e4e4e4;
       }
