@@ -4,9 +4,19 @@
     enable = true;
     settings = {
       mainBar = {
+        layer = "top";
+        margin-top = 5;
+        margin-left = 10;
+        margin-right = 10;
         modules-left = ["hyprland/workspaces" "niri/workspaces"];
         modules-center = ["clock"];
         modules-right = ["battery" "pulseaudio" "bluetooth" "network" "clock#date"];
+
+        "hyprland/workspaces" = {
+          persistent-workspaces = {
+            "*" = 5;
+          };
+        };
 
         battery = {
           format = "{icon} {capacity}%";
@@ -56,10 +66,6 @@
     };
     style = ''
 
-      .modules-right >* > * {
-          border-bottom: 1px solid;
-      }
-
       * {
           font-family: ${config.stylix.fonts.monospace.name};
           border: none;
@@ -68,8 +74,28 @@
           margin: 0px;
       }
 
+      window#waybar {
+          background: transparent;
+      }
+
       tooltip {
-          opacity: 0.9
+          opacity: 0.9;
+      }
+
+      #workspaces,
+      #clock,
+      #battery,
+      #pulseaudio,
+      #bluetooth,
+      #network,
+      #clock.date {
+          background-color: #${config.lib.stylix.colors.base00};
+          padding: 0 6px;
+          margin: 0 2px;
+      }
+
+      .modules-right >* > * {
+          color: #${config.lib.stylix.colors.${config.tint}};
       }
 
       #window {
@@ -78,7 +104,6 @@
 
       #workspaces {
           padding: 0px;
-          margin: 0px;
       }
 
       #workspaces button {
@@ -87,36 +112,8 @@
       }
 
       #workspaces button.active {
-          border-bottom: 1px solid;
-      }
-
-      .modules-right * {
-          margin-left: 3px;
-          margin-right: 3px;
-      }
-
-      #battery {
-          color: #${config.lib.stylix.colors.base08};
-      }
-
-      #pulseaudio {
-          color: #${config.lib.stylix.colors.base09};
-      }
-
-      #bluetooth {
-          color: #${config.lib.stylix.colors.base0A};
-      }
-
-      #network {
-          color: #${config.lib.stylix.colors.base0B};
-      }
-
-      #temperature {
-          color: #${config.lib.stylix.colors.base0C};
-      }
-
-      #clock.date {
-          color: #${config.lib.stylix.colors.base0D};
+          background-color: #${config.lib.stylix.colors.${config.tint}};
+          color: #${config.lib.stylix.colors.base00};
       }
 
     '';
