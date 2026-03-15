@@ -9,13 +9,6 @@ _Homelab_ -- My k3s box\
 _Darwin_ -- Work laptop\
 _wsl_ -- Old work config
 
-## Structure
-
-hosts/ -- Jost configurations and shared modules.\
-modules/nixos -- NixOS native modules\
-modules/home -- Home-manager modules\
-modules/darwin -- Darwin modules
-
 ## Deploy OS
 
 ```
