@@ -72,6 +72,8 @@
         exec-once = ["waybar" "${pkgs._1password-gui}/bin/1password --silent"];
 
         windowrule = [
+          "border_size 0, match:float 0, match:workspace w[tv1]"
+
           "float on, match:class 1password"
           "center on, match:class 1password"
 
