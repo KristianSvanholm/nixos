@@ -72,8 +72,8 @@
         exec-once = ["waybar" "${pkgs._1password-gui}/bin/1password --silent"];
 
         windowrule = [
-          "float on, match:class 1Password"
-          "center on, match:class 1Password"
+          "float on, match:class 1password"
+          "center on, match:class 1password"
 
           "float on, match:class .blueman-manager-wrapped"
           "center on, match:class .blueman-manager-wrapped"
@@ -102,7 +102,7 @@
           "SUPER, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
           "SUPER, SPACE, exec, 1password --quick-access"
           "SUPER, E, exec, nautilus"
-          "SUPER, Z, exec, zen-beta"
+          "SUPER, Z, exec, firefox"
           "SUPER, X, exec, hyprlock"
           "SUPER, V, togglefloating,"
           "SUPER, D, exec, rofi -show drun"

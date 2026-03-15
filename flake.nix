@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    #zen-browser.url = "github:0xc000022070/zen-browser-flake";
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nix-index-database.url = "github:nix-community/nix-index-database";
@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    #textfox.url = "github:adriankarlen/textfox";
+    textfox.url = "github:adriankarlen/textfox";
   };
 
   outputs = {
