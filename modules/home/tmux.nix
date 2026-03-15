@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{pkgs, config, ...}: {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -28,7 +28,7 @@
       set -g status-right ""
 
       set -g window-status-format " #I "
-      set -g window-status-current-format "#[reverse] #I #[noreverse]"
+      set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.lib.stylix.colors.${config.tint}}] #I #[default]"
       set -g window-status-separator ""
 
       # Make nvim healthcheck happy

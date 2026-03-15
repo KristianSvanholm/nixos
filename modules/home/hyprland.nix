@@ -35,7 +35,7 @@
           gaps_in = 5;
           gaps_out = 10;
           border_size = 2;
-          "col.active_border" = "rgb(${config.lib.stylix.colors.base09})";
+          "col.active_border" = "rgb(${config.lib.stylix.colors.${config.tint}})";
         };
 
         misc = {

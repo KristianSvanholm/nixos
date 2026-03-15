@@ -12,4 +12,11 @@ with lib; {
       default = "krs";
     };
   };
+
+  # UI tint
+  options.tint = mkOption {
+    type = types.str;
+    description = "Base16 color token used as the accent/tint color";
+    default = "base0B";
+  };
 }
