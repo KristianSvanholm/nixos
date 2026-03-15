@@ -39,6 +39,14 @@
       set -a terminal-features "xterm-256color:RGB"
 
       set -g detach-on-destroy off # Don't exit from tmux when closing a session
+
+      # Auto-create window if it doesn't exist when selecting by number
+      bind 1 if-shell 'tmux select-window -t :1' "" 'new-window -t :1'
+      bind 2 if-shell 'tmux select-window -t :2' "" 'new-window -t :2'
+      bind 3 if-shell 'tmux select-window -t :3' "" 'new-window -t :3'
+      bind 4 if-shell 'tmux select-window -t :4' "" 'new-window -t :4'
+      bind 5 if-shell 'tmux select-window -t :5' "" 'new-window -t :5'
+
     '';
   };
 
