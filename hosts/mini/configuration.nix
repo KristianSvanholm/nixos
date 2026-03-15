@@ -22,18 +22,18 @@
     ../../modules/nixos/steam.nix
     ../../modules/nixos/nvidia.nix
     ../../modules/nixos/niri.nix
+    ../../modules/nixos/tailscale.nix
   ];
 
   networking = {
     hostName = "nixos";
-    nameservers = ["192.168.3.112"];
+
     firewall.enable = true;
     enableIPv6 = true;
     networkmanager.enable = true;
   };
 
   services = {
-    mullvad-vpn.enable = true;
     printing.enable = true;
   };
 
@@ -50,9 +50,10 @@
     nvtopPackages.full
     binutils
     gcc
-    zulu17
     maven
     nix-prefetch-github
+    virt-viewer
+    zulu11
     #inputs.nur-packages.packages.${pkgs.hostPlatform.system}.zz
     #inputs.nur-packages.packages.${pkgs.hostPlatform.system}.p2ptui
   ];

@@ -5,6 +5,9 @@
     disableConfirmationPrompt = true;
     shortcut = "a";
     newSession = true;
+    keyMode = "vi";
+    mouse = true;
+    historyLimit = 50000;
     clock24 = true;
     baseIndex = 1;
     extraConfig = ''

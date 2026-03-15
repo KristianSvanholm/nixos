@@ -7,7 +7,7 @@
     ./btop.nix
     ./git.nix
     ./nvf.nix
-    ./helix.nix
+    #./helix.nix
   ];
 
   programs.zsh = {
@@ -34,6 +34,8 @@
       opget = "op item get \"$(op item list | tail -n +2 | fzf --bind 'change:first' | awk '{print $1}')\" --reveal --fields password | clip.exe";
     };
 
+    defaultKeymap = "viins";
+
     history = {
       size = 10000;
       ignoreDups = true;
@@ -42,6 +44,7 @@
 
   # General terminal packages here
   home.packages = with pkgs; [
+    just
     stow
     lf
     bat
