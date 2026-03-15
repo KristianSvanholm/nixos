@@ -32,8 +32,9 @@
         };
 
         general = {
-          gaps_in = 0;
-          gaps_out = 0;
+          gaps_in = 5;
+          gaps_out = 10;
+          border_size = 2;
           "col.active_border" = "rgb(${config.lib.stylix.colors.base09})";
         };
 
@@ -68,7 +69,7 @@
           enabled = false;
         };
 
-        exec-once = ["waybar" "hyprpaper" "${pkgs._1password-gui}/bin/1password --silent"];
+        exec-once = ["waybar" "${pkgs._1password-gui}/bin/1password --silent"];
 
         windowrule = [
           "float on, match:class 1Password"
@@ -96,13 +97,12 @@
           # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
           "SUPER, RETURN, exec, alacritty"
           "SUPER, Q, killactive,"
-          "SUPER, M, exit,"
           "SUPER, F, fullscreen"
           "ALT, TAB, exec, wayshot -s \"$(slurp)\""
           "SUPER, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
           "SUPER, SPACE, exec, 1password --quick-access"
-          "SUPER, E, exec, dolphin"
-          "SUPER, Z, exec, zen"
+          "SUPER, E, exec, nautilus"
+          "SUPER, Z, exec, zen-beta"
           "SUPER, X, exec, hyprlock"
           "SUPER, V, togglefloating,"
           "SUPER, D, exec, rofi -show drun"
@@ -112,7 +112,6 @@
           "SUPER, B, exec, pkill waybar || waybar"
 
           "SUPER, P, pseudo," # dwindle
-          "SUPER, J, togglesplit," # dwindle
 
           # Switch workspaces with mod + [0-9]
           "SUPER, 1, workspace, 1"
