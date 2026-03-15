@@ -15,7 +15,7 @@
         color = "#${config.lib.stylix.colors.base01}";
       };
       border = {
-        color = "#${config.lib.stylix.colors.base09}";
+        #color = "#${config.lib.stylix.colors.base09}";
       };
       displaySidebarTools = false;
       tabs = {
