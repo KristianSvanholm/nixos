@@ -22,7 +22,7 @@
 
       systemd = {
         enable = true;
-        variables = ["-all"];
+        variables = ["--all"];
       };
 
       settings = {

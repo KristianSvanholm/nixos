@@ -9,8 +9,11 @@
     enable = lib.mkForce true;
     settings = {
       ipc = "on";
-      preload = ["${config.stylix.image}"];
-      wallpaper = [",${config.stylix.image}"];
+      splash = false;
+      wallpaper = {
+        monitor = "";
+        path = "${config.stylix.image}";
+      };
     };
   };
 }
