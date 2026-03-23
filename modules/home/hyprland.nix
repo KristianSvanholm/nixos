@@ -9,6 +9,7 @@
     ./waybar.nix
     ./rofi.nix
     ./gtk.nix
+    ./mako.nix
   ];
 
   options.hyprland = {};

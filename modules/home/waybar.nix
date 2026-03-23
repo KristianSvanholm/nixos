@@ -1,4 +1,4 @@
-{config, ...}: {
+{config, pkgs, ...}: {
   stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
@@ -10,7 +10,7 @@
         margin-right = 10;
         modules-left = ["hyprland/workspaces" "niri/workspaces"];
         modules-center = ["clock"];
-        modules-right = ["battery" "pulseaudio" "bluetooth" "network" "clock#date"];
+        modules-right = ["custom/tailscale" "battery" "pulseaudio" "bluetooth" "network" "clock#date"];
 
         "hyprland/workspaces" = {
           persistent-workspaces = {
@@ -35,6 +35,18 @@
           format-off = "󰂲";
           format-disabled = "󰂲";
           format-connected = "󰂱 {num_connections}";
+        };
+        "custom/tailscale" = {
+          exec = pkgs.writeShellScript "waybar-tailscale" ''
+            if ${pkgs.tailscale}/bin/tailscale status --json 2>/dev/null | ${pkgs.jq}/bin/jq -e '.Self.Online' >/dev/null 2>&1; then
+              echo '{"text": "󰕥", "tooltip": "'"$(${pkgs.tailscale}/bin/tailscale ip -4 2>/dev/null)"'"}'
+            else
+              echo '{"text": "", "tooltip": ""}'
+            fi
+          '';
+          on-click = "${pkgs.tailscale}/bin/tailscale down";
+          return-type = "json";
+          interval = 10;
         };
         network = {
           format-wifi = "{icon} {ipaddr}";
@@ -88,6 +100,7 @@
       #pulseaudio,
       #bluetooth,
       #network,
+      #custom-tailscale,
       #clock.date {
           background-color: #${config.lib.stylix.colors.base00};
           padding: 0 6px;

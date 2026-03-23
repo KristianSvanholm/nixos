@@ -24,6 +24,7 @@
     ../../modules/nixos/niri.nix
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
+    ../../modules/nixos/homelab/ssh.nix
   ];
 
   networking = {
