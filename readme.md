@@ -26,9 +26,3 @@ $ switch --flake .#default
 ```
 $ nix build nixpkgs#base16-schemes
 ```
-
-## Install BetterDiscord
-
-```
-$ nix run nixpkgs#betterdiscordctl install
-```
