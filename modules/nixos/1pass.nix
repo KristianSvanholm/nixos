@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }: {
   # Enable CLI
@@ -22,4 +23,11 @@
       mode = "0644";
     };
   };
+
+  # Symlink for 1Password SDK IPC client library
+  # The SDK hardcodes /opt/1Password/libop_sdk_ipc_client.so
+  system.activationScripts.onepassword-sdk = ''
+    mkdir -p /opt
+    ln -sfn ${pkgs._1password-gui}/share/1password /opt/1Password
+  '';
 }
