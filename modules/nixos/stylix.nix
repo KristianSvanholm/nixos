@@ -8,9 +8,11 @@
     enable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     image = ../../wallpapers/moon.jpg;
-    cursor.package = pkgs.bibata-cursors;
-    cursor.name = "Bibata-Modern-Ice";
-    cursor.size = 10;
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 10;
+    };
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.jetbrains-mono;
@@ -33,8 +35,5 @@
     };
     autoEnable = true;
     homeManagerIntegration.followSystem = true;
-
-    # Shut up build warning for thing I don't use
-    targets.gnome-text-editor.enable = false;
   };
 }
