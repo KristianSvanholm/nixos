@@ -37,6 +37,7 @@
 
   services = {
     printing.enable = true;
+    opensnitch.enable = true;
   };
 
   users = {

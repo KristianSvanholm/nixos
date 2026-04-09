@@ -20,9 +20,10 @@
   };
 
   services.mpris-proxy.enable = true;
+  services.opensnitch-ui.enable = true;
 
   home.packages = with pkgs; [
-    incus
+    opensnitch-ui
     networkmanagerapplet
     aseprite
     nitch
