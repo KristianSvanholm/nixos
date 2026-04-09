@@ -107,6 +107,7 @@
         languages = {
           enableTreesitter = true;
           enableFormat = true;
+          enableExtraDiagnostics = true;
 
           typst = {
             enable = true;
@@ -129,7 +130,6 @@
           kotlin.enable = true;
           ts.enable = true;
           ts.format.enable = true;
-          ts.extraDiagnostics.enable = true;
           markdown.enable = true;
           rust.enable = true;
           rust.format.enable = true;
