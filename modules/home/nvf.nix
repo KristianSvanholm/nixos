@@ -10,7 +10,7 @@
   home.packages = with pkgs; [
     fd
     nodejs
-    nodePackages.eslint_d
+    eslint_d
     tree-sitter
     typst
   ];

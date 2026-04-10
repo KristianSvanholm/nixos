@@ -23,11 +23,12 @@
 
       set-option -g status-position top
       set-option -g status-justify left
+      set-option -g status-style "bg=#${config.lib.stylix.colors.base01}"
 
       set -g status-left ""
       set -g status-right ""
 
-      set -g window-status-format " #I "
+      set -g window-status-format "#[bg=#${config.lib.stylix.colors.base01}] #I "
       set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.lib.stylix.colors.${config.tint}}] #I #[default]"
       set -g window-status-separator ""
 
