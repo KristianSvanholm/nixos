@@ -10,6 +10,7 @@
     ./rofi.nix
     ./gtk.nix
     ./mako.nix
+    ./grim.nix
   ];
 
   options.hyprland = {};
@@ -101,7 +102,7 @@
           "SUPER, RETURN, exec, alacritty"
           "SUPER, Q, killactive,"
           "SUPER, F, fullscreen"
-          "SUPER, TAB, exec, wayshot -s \"$(slurp)\" --stdout | wl-copy"
+          "SUPER, TAB, exec, grim -g \"$(slurp)\" - | wl-copy"
           "SUPER, SPACE, exec, 1password --quick-access"
           "SUPER, E, exec, nautilus"
           "SUPER, Z, exec, firefox"
