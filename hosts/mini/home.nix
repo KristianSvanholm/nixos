@@ -9,6 +9,8 @@
   ];
 
   git.opSSHKey = true;
+  hyprland.layout = "scrolling";
+  hyprland.animations = true;
   programs = {
     ssh = {
       enable = true;

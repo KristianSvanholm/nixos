@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   imports = [
@@ -13,7 +14,18 @@
     ./grim.nix
   ];
 
-  options.hyprland = {};
+  options.hyprland = {
+    layout = lib.mkOption {
+      type = lib.types.str;
+      description = "hyprland layout";
+      default = "dwindle";
+    };
+    animations = lib.mkOption {
+      type = lib.types.bool;
+      description = "enable or disable hyprland animations";
+      default = false;
+    };
+  };
 
   config = {
     stylix.targets.hyprland.enable = false;
@@ -38,6 +50,11 @@
           gaps_out = 10;
           border_size = 2;
           "col.active_border" = "rgb(${config.lib.stylix.colors.${config.tint}})";
+          layout = config.hyprland.layout;
+        };
+        scrolling = {
+          fullscreen_on_one_column = false;
+          column_width = 0.667;
         };
 
         misc = {
@@ -68,7 +85,39 @@
         };
 
         animations = {
-          enabled = false;
+          enabled = config.hyprland.animations;
+
+          # niri-like spring animations
+          bezier = [
+            "easeOutQuint, 0.22, 1, 0.36, 1"
+            "spring, 0.3, 0.9, 0.1, 1.05"
+            "gentleFade, 0.25, 0.8, 0.25, 1"
+          ];
+
+          animation = [
+            # workspace switch: instant
+            "workspaces, 0"
+
+            # layer surfaces (rofi, waybar, etc.): instant
+            "layers, 0"
+            "fadeLayers, 0"
+
+            # window open: quick fade + slight upscale
+            "windowsIn, 1, 4, gentleFade, popin 85%"
+
+            # window close: quick fade out + slight shrink
+            "windowsOut, 1, 3, gentleFade, popin 85%"
+
+            # window move/resize: snappy spring
+            "windowsMove, 1, 3, spring, slide"
+
+            # fade: instant
+            "fadeIn, 0"
+            "fadeOut, 0"
+
+            # border color transitions
+            "border, 1, 4, easeOutQuint"
+          ];
         };
 
         exec-once = ["waybar" "${pkgs._1password-gui}/bin/1password --silent"];
@@ -145,10 +194,14 @@
           "SUPER SHIFT, J, movewindow, d"
 
           # Resize window
+        ] ++ lib.optionals (config.hyprland.layout != "scrolling") [
           "SUPER CTRL, L, resizeactive, 50 0"
           "SUPER CTRL, H, resizeactive, -50 0"
           "SUPER CTRL, K, resizeactive, 0 -50"
           "SUPER CTRL, J, resizeactive, 0 50"
+        ] ++ lib.optionals (config.hyprland.layout == "scrolling") [
+          # Cycle column width
+          "SUPER, T, layoutmsg, colresize +conf"
         ];
 
         bindm = [
