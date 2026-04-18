@@ -12,6 +12,7 @@
   hyprland.layout = "scrolling";
   hyprland.animations = true;
   programs = {
+    obs-studio.enable = true;
     ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -26,7 +27,6 @@
   services.mpris-proxy.enable = true;
 
   home.packages = with pkgs; [
-    obs-studio
     networkmanagerapplet
     aseprite
     nitch
