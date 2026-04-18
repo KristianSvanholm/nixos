@@ -54,7 +54,6 @@
         };
         scrolling = {
           fullscreen_on_one_column = false;
-          column_width = 0.667;
         };
 
         misc = {
@@ -145,64 +144,67 @@
           ", highrr, auto, 1"
         ];
 
-        bind = [
-          # See https://wiki.hyprland.org/Configuring/Keywords/
-          # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-          "SUPER, RETURN, exec, alacritty"
-          "SUPER, Q, killactive,"
-          "SUPER, F, fullscreen"
-          "SUPER, TAB, exec, grim -g \"$(slurp)\" - | wl-copy"
-          "SUPER, SPACE, exec, 1password --quick-access"
-          "SUPER, E, exec, nautilus"
-          "SUPER, Z, exec, firefox"
-          "SUPER, X, exec, hyprlock"
-          "SUPER, V, togglefloating,"
-          "SUPER, D, exec, rofi -show drun"
+        bind =
+          [
+            # See https://wiki.hyprland.org/Configuring/Keywords/
+            # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+            "SUPER, RETURN, exec, alacritty"
+            "SUPER, Q, killactive,"
+            "SUPER, F, fullscreen"
+            "SUPER, TAB, exec, grim -g \"$(slurp)\" - | wl-copy"
+            "SUPER, SPACE, exec, 1password --quick-access"
+            "SUPER, E, exec, nautilus"
+            "SUPER, Z, exec, firefox"
+            "SUPER, X, exec, hyprlock"
+            "SUPER, V, togglefloating,"
+            "SUPER, D, exec, rofi -show drun"
 
-          "SUPER, B, exec, pkill waybar || waybar"
+            "SUPER, B, exec, pkill waybar || waybar"
 
-          "SUPER, P, pseudo," # dwindle
+            "SUPER, P, pseudo," # dwindle
 
-          # Switch workspaces with mod + [0-9]
-          "SUPER, 1, workspace, 1"
-          "SUPER, 2, workspace, 2"
-          "SUPER, 3, workspace, 3"
-          "SUPER, 4, workspace, 4"
-          "SUPER, 5, workspace, 5"
+            # Switch workspaces with mod + [0-9]
+            "SUPER, 1, workspace, 1"
+            "SUPER, 2, workspace, 2"
+            "SUPER, 3, workspace, 3"
+            "SUPER, 4, workspace, 4"
+            "SUPER, 5, workspace, 5"
 
-          # Move active window to a workspace with mod + SHIFT + [0-9]
-          "SUPER SHIFT, 1, movetoworkspace, 1"
-          "SUPER SHIFT, 2, movetoworkspace, 2"
-          "SUPER SHIFT, 3, movetoworkspace, 3"
-          "SUPER SHIFT, 4, movetoworkspace, 4"
-          "SUPER SHIFT, 5, movetoworkspace, 5"
+            # Move active window to a workspace with mod + SHIFT + [0-9]
+            "SUPER SHIFT, 1, movetoworkspace, 1"
+            "SUPER SHIFT, 2, movetoworkspace, 2"
+            "SUPER SHIFT, 3, movetoworkspace, 3"
+            "SUPER SHIFT, 4, movetoworkspace, 4"
+            "SUPER SHIFT, 5, movetoworkspace, 5"
 
-          # Example special workspace (scratchpad)
-          "SUPER, S, togglespecialworkspace, magic"
-          "SUPER SHIFT, S, movetoworkspace, special:magic"
+            # Example special workspace (scratchpad)
+            "SUPER, S, togglespecialworkspace, magic"
+            "SUPER SHIFT, S, movetoworkspace, special:magic"
 
-          # Move focus
-          "SUPER, H, movefocus, l"
-          "SUPER, L, movefocus, r"
-          "SUPER, K, movefocus, u"
-          "SUPER, J, movefocus, d"
+            # Move focus
+            "SUPER, H, movefocus, l"
+            "SUPER, L, movefocus, r"
+            "SUPER, K, movefocus, u"
+            "SUPER, J, movefocus, d"
 
-          # Move window
-          "SUPER SHIFT, H, movewindow, l"
-          "SUPER SHIFT, L, movewindow, r"
-          "SUPER SHIFT, K, movewindow, u"
-          "SUPER SHIFT, J, movewindow, d"
+            # Move window
+            "SUPER SHIFT, H, movewindow, l"
+            "SUPER SHIFT, L, movewindow, r"
+            "SUPER SHIFT, K, movewindow, u"
+            "SUPER SHIFT, J, movewindow, d"
 
-          # Resize window
-        ] ++ lib.optionals (config.hyprland.layout != "scrolling") [
-          "SUPER CTRL, L, resizeactive, 50 0"
-          "SUPER CTRL, H, resizeactive, -50 0"
-          "SUPER CTRL, K, resizeactive, 0 -50"
-          "SUPER CTRL, J, resizeactive, 0 50"
-        ] ++ lib.optionals (config.hyprland.layout == "scrolling") [
-          # Cycle column width
-          "SUPER, T, layoutmsg, colresize +conf"
-        ];
+            # Resize window
+          ]
+          ++ lib.optionals (config.hyprland.layout != "scrolling") [
+            "SUPER CTRL, L, resizeactive, 50 0"
+            "SUPER CTRL, H, resizeactive, -50 0"
+            "SUPER CTRL, K, resizeactive, 0 -50"
+            "SUPER CTRL, J, resizeactive, 0 50"
+          ]
+          ++ lib.optionals (config.hyprland.layout == "scrolling") [
+            # Cycle column width
+            "SUPER, T, layoutmsg, colresize +conf"
+          ];
 
         bindm = [
           # Move/resize windows with mod + LMB/RMB and dragging

@@ -24,10 +24,9 @@
   };
 
   services.mpris-proxy.enable = true;
-  services.opensnitch-ui.enable = true;
 
   home.packages = with pkgs; [
-    opensnitch-ui
+    obs-studio
     networkmanagerapplet
     aseprite
     nitch
