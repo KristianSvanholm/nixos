@@ -28,11 +28,6 @@
 
   home.packages = with pkgs; [_1password-cli];
 
-  xdg.configFile."sketchybar" = {
-    source = ../../config/sketchybar;
-    recursive = true;
-  };
-
   stylix.targets = {
     nvf.enable = false;
     btop.enable = false;

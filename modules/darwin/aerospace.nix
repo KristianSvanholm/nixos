@@ -6,13 +6,7 @@
       default-root-container-layout = "tiles";
       default-root-container-orientation = "auto";
       on-focus-changed = ["move-mouse window-lazy-center"];
-      after-startup-command = ["exec-and-forget sketchybar"];
       exec.env-vars.PATH = "\${HOME}/.nix-profile/bin:/run/current-system/sw/bin:/opt/homebrew/bin:/opt/homebrew/sbin:\${PATH}";
-      exec-on-workspace-change = [
-        "/bin/bash"
-        "-c"
-        "sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE"
-      ];
       persistent-workspaces = ["1" "2" "3" "4" "5"];
       workspace-to-monitor-force-assignment = {
         "1" = ["main" "secondary"];
@@ -24,7 +18,7 @@
       gaps = {
         outer.left = 8;
         outer.bottom = 8;
-        outer.top = [{monitor.secondary = 40;} 8];
+        outer.top = 8;
         outer.right = 8;
         inner.horizontal = 8;
         inner.vertical = 8;
@@ -68,7 +62,6 @@
 
         alt-shift-c = "reload-config";
         cmd-alt-h = [];
-        alt-tab = "workspace-back-and-forth";
       };
     };
   };

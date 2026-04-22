@@ -20,7 +20,6 @@
     inputs.home-manager.darwinModules.default
     ../config.nix
     ../../modules/darwin/aerospace.nix
-    ../../modules/darwin/sketchybar.nix
     ../../modules/darwin/stylix.nix
     ../../modules/darwin/ssh.nix
   ];
@@ -35,9 +34,14 @@
     };
   };
 
+  services.tailscale = {
+    enable = true;
+  };
+
   system.primaryUser = config.user.name;
   environment.systemPackages = with pkgs; [
     opencode
+    crush
   ];
 
   system.stateVersion = 6;
