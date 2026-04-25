@@ -4,7 +4,14 @@
   ...
 }: {
   imports = [inputs.textfox.homeManagerModules.default];
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    configPath = ".mozilla/firefox";
+    profiles.textfox = {
+      id = 0;
+      isDefault = true;
+    };
+  };
 
   stylix.targets.firefox.enable = false;
   textfox = {

@@ -128,8 +128,8 @@
           nix.format.enable = true;
           yaml.enable = true;
           kotlin.enable = true;
-          ts.enable = true;
-          ts.format.enable = true;
+          typescript.enable = true;
+          typescript.format.enable = true;
           markdown.enable = true;
           rust.enable = true;
           rust.format.enable = true;

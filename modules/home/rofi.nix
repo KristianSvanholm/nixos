@@ -13,7 +13,7 @@ in {
     enable = true;
     font = "${config.stylix.fonts.monospace.name} 9";
     extraConfig = {
-      modi = ["drun" "window"];
+      modi = "drun,window";
       show-icons = true;
       display-drun = "> ";
       display-window = "> ";

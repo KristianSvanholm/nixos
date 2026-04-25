@@ -204,6 +204,7 @@
           ++ lib.optionals (config.hyprland.layout == "scrolling") [
             # Cycle column width
             "SUPER, T, layoutmsg, colresize +conf"
+            "SUPER SHIFT, T, layoutmsg, colresize -conf"
           ];
 
         bindm = [
