@@ -12,6 +12,7 @@
     ../../modules/nixos/homelab/adguard.nix
     ../../modules/nixos/homelab/intel.nix
     ../../modules/nixos/homelab/k3s.nix
+    ../../modules/nixos/homelab/incus.nix
   ];
 
   # Networking setup
@@ -26,17 +27,17 @@
   };
 
   # For laptop hosts
-  systemd.sleep.extraConfig = ''
-    AllowSuspend=no
-    AllowHibernation=no
-    AllowHybridSleep=no
-    AllowSuspendThenHibernate=no
-  '';
+  systemd.sleep.settings.Sleep = {
+    AllowSuspend = false;
+    AllowHibernation = false;
+    AllowHybridSleep = false;
+    AllowSuspendThenHibernate = false;
+  };
 
   users = {
     users.${config.user.name} = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "docker" "wheel"];
+      extraGroups = ["networkmanager" "docker" "wheel" "incus-admin"];
     };
 
     defaultUserShell = pkgs.zsh;

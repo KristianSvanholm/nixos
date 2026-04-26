@@ -48,6 +48,7 @@
     k9s
     just
     stow
+    terraform
     lf
     bat
     wget

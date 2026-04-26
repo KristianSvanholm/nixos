@@ -136,6 +136,7 @@
           go.enable = true;
           go.format.enable = true;
           java.enable = true;
+          terraform.enable = true;
         };
       };
     };
