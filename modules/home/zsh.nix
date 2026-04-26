@@ -31,6 +31,7 @@
 
       switch = "sudo nixos-rebuild switch";
       test = "sudo nixos-rebuild test";
+      build = "sudo nixos-rebuild build";
     };
 
     defaultKeymap = "viins";
