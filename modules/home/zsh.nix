@@ -43,6 +43,7 @@
 
   # General terminal packages here
   home.packages = with pkgs; [
+    mosh
     k9s
     just
     stow
