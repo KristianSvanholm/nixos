@@ -9,7 +9,6 @@
     ../../modules/nixos/systemd-boot.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/homelab/ssh.nix
-    ../../modules/nixos/homelab/adguard.nix
     ../../modules/nixos/homelab/intel.nix
     ../../modules/nixos/homelab/k3s.nix
     ../../modules/nixos/homelab/incus.nix
