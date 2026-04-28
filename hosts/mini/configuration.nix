@@ -17,14 +17,13 @@
     ../../modules/nixos/ly.nix
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
-    ../../modules/nixos/r.nix
     ../../modules/nixos/spicetify.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/nvidia.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
-    ../../modules/nixos/libinput.nix
+    ../../modules/nixos/jotta.nix
     ../../modules/nixos/homelab/ssh.nix
   ];
 
