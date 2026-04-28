@@ -7,7 +7,13 @@
       default-root-container-orientation = "auto";
       on-focus-changed = ["move-mouse window-lazy-center"];
       exec.env-vars.PATH = "\${HOME}/.nix-profile/bin:/run/current-system/sw/bin:/opt/homebrew/bin:/opt/homebrew/sbin:\${PATH}";
-      persistent-workspaces = ["1" "2" "3" "4" "5"];
+      persistent-workspaces = [
+        "1"
+        "2"
+        "3"
+        "4"
+        "5"
+      ];
       workspace-to-monitor-force-assignment = {
         "1" = ["main" "secondary"];
         "2" = ["secondary" "main"];
