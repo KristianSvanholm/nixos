@@ -13,7 +13,7 @@ with lib; {
     clusterInit = mkOption {
       type = types.bool;
       description = "if init node";
-      default = "false";
+      default = false;
     };
     ip = mkOption {
       type = types.str;
@@ -50,6 +50,7 @@ with lib; {
       }
       (mkIf (!config.homelab.clusterInit) {
         tokenFile = "/var/lib/rancher/k3s/server/token";
+        serverAddr = "https://${config.homelab.ip}:6443";
       })
       (mkIf config.homelab.clusterInit {
         disable = ["traefik"];
