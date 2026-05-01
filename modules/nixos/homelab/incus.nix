@@ -1,4 +1,5 @@
-{...}: {
+{config, ...}: {
+  users.users.${config.users.name}.extraGroups = ["incus-admin"];
   virtualisation.incus = {
     enable = true;
     ui.enable = true;

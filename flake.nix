@@ -38,9 +38,13 @@
         specialArgs = {inherit inputs;};
         modules = [./hosts/mini/configuration.nix];
       };
-      homelab = nixpkgs.lib.nixosSystem {
+      homelab-0 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
-        modules = [./hosts/homelab/configuration.nix];
+        modules = [./hosts/homelab/hl-0.nix];
+      };
+      homelab-1 = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [./hosts/homelab/hl-1.nix];
       };
       wsl = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
