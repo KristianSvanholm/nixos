@@ -11,7 +11,7 @@
     ../../modules/nixos/homelab/ssh.nix
     ../../modules/nixos/homelab/intel.nix
     ../../modules/nixos/homelab/k3s.nix
-    ../../modules/nixos/jotta-cli.nix
+    ../../modules/nixos/jotta.nix
   ];
 
   # Networking setup
