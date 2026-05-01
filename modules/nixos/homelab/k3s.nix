@@ -11,7 +11,7 @@ with lib; {
       default = "agent";
     };
     clusterInit = mkOption {
-      type = types.boolean;
+      type = types.bool;
       description = "if init node";
       default = "false";
     };
@@ -45,14 +45,13 @@ with lib; {
     services.k3s = mkMerge [
       {
         enable = true;
-        inherit (config) role;
-        inherit (config) clusterInit;
+        inherit (config.homelab) role;
+        inherit (config.homelab) clusterInit;
       }
-      (mkIf (!config.clusterInit) {
+      (mkIf (!config.homelab.clusterInit) {
         tokenFile = "/var/lib/rancher/k3s/server/token";
       })
-      (mkIf config.clusterInit {
-        debug = true;
+      (mkIf config.homelab.clusterInit {
         disable = ["traefik"];
       })
     ];
