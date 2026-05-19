@@ -26,6 +26,8 @@
 
   networking.hostName = "darwin";
 
+  programs.zsh.enableCompletion = false; # handled by home-manager
+
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = {inherit inputs;};
