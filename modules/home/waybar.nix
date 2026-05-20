@@ -1,4 +1,8 @@
-{config, pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   stylix.targets.waybar.enable = false;
   programs.waybar = {
     enable = true;
@@ -8,7 +12,7 @@
         margin-top = 5;
         margin-left = 10;
         margin-right = 10;
-        modules-left = ["hyprland/workspaces" "niri/workspaces"];
+        modules-left = ["ext/workspaces" "niri/workspaces"];
         modules-center = ["clock"];
         modules-right = ["custom/tailscale" "battery" "pulseaudio" "bluetooth" "network" "clock#date"];
 

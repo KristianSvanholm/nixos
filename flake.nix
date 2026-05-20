@@ -10,6 +10,11 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nix-index-database.url = "github:nix-community/nix-index-database";
 
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
