@@ -16,6 +16,12 @@
     };
   };
 
+  system.defaults.CustomUserPreferences = {
+    "NSGlobalDomain" = {
+      ApplePressAndHoldEnabled = false;
+    };
+  };
+
   imports = [
     inputs.home-manager.darwinModules.default
     ../config.nix
