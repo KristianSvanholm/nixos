@@ -25,7 +25,9 @@
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
     ../../modules/nixos/jotta.nix
+    ../../modules/nixos/virt.nix
     ../../modules/nixos/homelab/ssh.nix
+    ../../modules/nixos/work.nix
   ];
 
   networking = {
@@ -44,7 +46,7 @@
   users = {
     users.${config.user.name} = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel"];
+      extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
     };
   };
 

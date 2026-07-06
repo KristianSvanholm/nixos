@@ -67,6 +67,7 @@
     fluxcd
     kubernetes-helm
     dig
+    ookla-speedtest
     terraform
   ];
 }

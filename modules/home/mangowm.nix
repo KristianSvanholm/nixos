@@ -13,6 +13,7 @@
     autostart_sh = ''
       waybar &
       ${pkgs._1password-gui}/bin/1password --silent &
+
     '';
     extraConfig = '''';
     settings = {
@@ -21,6 +22,7 @@
       monitorrule = "name:DP-2,width:2560,height:1440,refresh:165,scale:1";
       xkb_rules_layout = "no";
 
+      scroller_proportion_preset = "0.5,0.8,1.0";
       no_border_when_single = 1;
       borderpx = 2;
       border_radius = 2;
@@ -42,6 +44,9 @@
         curve_open = "0,0,0.58,1";
         curve_close = "0,0,0.58,1";
       };
+      mousebind = [
+        "SUPER,btn_right,moveresize,curresize"
+      ];
       bind = [
         "SUPER,r,reload_config"
 
@@ -57,6 +62,7 @@
         "SUPER,v,togglefloating"
         "SUPER,q,killclient"
         "SUPER,c,centerwin"
+        "SUPER,t,switch_proportion_preset"
 
         # focus
         "SUPER,h,focusdir,left"
