@@ -10,6 +10,11 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     hister.url = "github:asciimoo/hister";
 
+    sysc-greet = {
+      url = "github:nomadcxx/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mangowm = {
       url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";

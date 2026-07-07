@@ -29,7 +29,7 @@
       set -g status-right ""
 
       set -g window-status-format "#[bg=#${config.lib.stylix.colors.base01}] #I "
-      set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.lib.stylix.colors.${config.tint}}] #I #[default]"
+      set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.tint}] #I #[default]"
       set -g window-status-separator ""
 
       # Make nvim healthcheck happy

@@ -16,7 +16,7 @@ with lib; {
   # UI tint
   options.tint = mkOption {
     type = types.str;
-    description = "Base16 color token used as the accent/tint color";
-    default = "base0B";
+    description = "Accent/tint color (hex without #)";
+    default = "fe8019";
   };
 }

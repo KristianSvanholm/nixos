@@ -15,7 +15,7 @@
     ../../modules/nixos/audio.nix
     ../../modules/nixos/hyprland.nix
     ../../modules/nixos/mangowm.nix
-    ../../modules/nixos/ly.nix
+    ../../modules/nixos/sysc-greet.nix
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
     ../../modules/nixos/spicetify.nix

@@ -11,7 +11,7 @@
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 10;
+      size = 5;
     };
     fonts = {
       monospace = {
@@ -27,10 +27,10 @@
         name = "DejaVu Serif";
       };
       sizes = {
-        applications = 8;
+        applications = 6;
         terminal = 10;
         desktop = 8;
-        popups = 8;
+        popups = 6;
       };
     };
     autoEnable = true;

@@ -27,7 +27,7 @@
       borderpx = 2;
       border_radius = 2;
       bordercolor = "0x${config.lib.stylix.colors.base00}ff";
-      focuscolor = "0x${config.lib.stylix.colors.${config.tint}}ff";
+      focuscolor = "0x${config.tint}ff";
 
       cursor_size = 16;
       syncobj_enable = 1;

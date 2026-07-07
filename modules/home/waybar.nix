@@ -12,7 +12,7 @@
         margin-top = 5;
         margin-left = 10;
         margin-right = 10;
-        modules-left = ["ext/workspaces" "niri/workspaces"];
+        modules-left = ["niri/workspaces"];
         modules-center = ["clock"];
         modules-right = ["custom/tailscale" "battery" "pulseaudio" "bluetooth" "network" "clock#date"];
 
@@ -125,7 +125,7 @@
       }
 
       #workspaces button.active {
-          background-color: #${config.lib.stylix.colors.${config.tint}};
+          background-color: #${config.tint};
           color: #${config.lib.stylix.colors.base00};
       }
 

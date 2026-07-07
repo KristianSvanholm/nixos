@@ -22,12 +22,11 @@ in {
     };
     theme = let
       colors = config.lib.stylix.colors;
-      tint = colors.${config.tint};
     in {
       "*" = {
         bg = mkLiteral "#${colors.base00}";
         fg = mkLiteral "#${colors.base05}";
-        accent = mkLiteral "#${tint}";
+        accent = mkLiteral "#${config.tint}";
         bg-alt = mkLiteral "#${colors.base01}";
         fg-dark = mkLiteral "#${colors.base00}";
       };

@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       default-timeout = 5000;
-      border-color = lib.mkForce "#${config.lib.stylix.colors.${config.tint}}";
+      border-color = lib.mkForce "#${config.tint}";
     };
   };
 }

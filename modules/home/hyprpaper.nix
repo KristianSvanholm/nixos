@@ -10,10 +10,12 @@
     settings = {
       ipc = "on";
       splash = false;
-      wallpaper = {
-        monitor = "";
-        path = "${config.stylix.image}";
-      };
+      wallpaper = [
+        {
+          monitor = "";
+          path = "${config.stylix.image}";
+        }
+      ];
     };
   };
 }

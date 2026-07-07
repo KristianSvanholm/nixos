@@ -49,7 +49,7 @@
           gaps_in = 5;
           gaps_out = 10;
           border_size = 2;
-          "col.active_border" = "rgb(${config.lib.stylix.colors.${config.tint}})";
+          "col.active_border" = "rgb(${config.tint})";
           layout = config.hyprland.layout;
         };
         scrolling = {

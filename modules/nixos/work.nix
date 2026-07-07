@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     slack
-    teams
+    teams-for-linux
   ];
 }
