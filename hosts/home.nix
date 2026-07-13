@@ -12,6 +12,7 @@
     sessionVariables = {
       EDITOR = "nvim";
     };
+    pointerCursor.enable = true;
   };
 
   programs = {

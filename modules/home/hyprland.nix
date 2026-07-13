@@ -6,12 +6,6 @@
 }: {
   imports = [
     ./hyprlock.nix
-    ./hyprpaper.nix
-    ./waybar.nix
-    ./rofi.nix
-    ./gtk.nix
-    ./mako.nix
-    ./grim.nix
   ];
 
   options.hyprland = {
@@ -29,10 +23,10 @@
 
   config = {
     stylix.targets.hyprland.enable = false;
-
     wayland.windowManager.hyprland = {
       enable = true;
       xwayland.enable = true;
+      configType = "hyprlang";
 
       systemd = {
         enable = true;
