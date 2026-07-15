@@ -24,6 +24,7 @@
     ../../modules/nixos/jotta.nix
     ../../modules/nixos/virt.nix
     ../../modules/nixos/work.nix
+    ../../modules/nixos/flatpak.nix
   ];
 
   networking = {
