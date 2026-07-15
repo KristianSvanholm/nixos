@@ -34,7 +34,7 @@
           on-click = "pavucontrol";
         };
         bluetooth = {
-          on-click = "blueman-manager";
+          on-click = "better-control --bluetooth";
           format-on = "󰂯";
           format-off = "󰂲";
           format-disabled = "󰂲";
@@ -56,7 +56,7 @@
           format-wifi = "{icon} {ipaddr}";
           format-icons = ["󰤯" "󰤟" "󰤢" "󰤥" "󰤨"];
           format-ethernet = "󰈀 {ipaddr}";
-          on-click = "nm-connection-editor";
+          on-click = "better-control --wifi";
         };
         clock = {
           format = "{:%H:%M}";
