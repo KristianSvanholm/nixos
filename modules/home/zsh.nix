@@ -45,12 +45,10 @@
 
   # General terminal packages here
   home.packages = with pkgs; [
-    mosh
     k9s
     just
     stow
     terraform
-    lf
     bat
     wget
     ripgrep
@@ -59,7 +57,6 @@
     go
     duf # Better df
     ncdu # Better du
-    progress # Monitor status of long-running commands
     lsof
     unp # unpack archive
     kubectl
@@ -68,6 +65,5 @@
     kubernetes-helm
     dig
     ookla-speedtest
-    terraform
   ];
 }

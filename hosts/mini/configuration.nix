@@ -13,12 +13,9 @@
     ../../modules/nixos/localization.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/audio.nix
-    #../../modules/nixos/hyprland.nix
-    #../../modules/nixos/mangowm.nix
     ../../modules/nixos/sysc-greet.nix
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
-    #../../modules/nixos/spicetify.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/nvidia.nix
     ../../modules/nixos/niri.nix
@@ -26,7 +23,6 @@
     ../../modules/nixos/nautilus.nix
     ../../modules/nixos/jotta.nix
     ../../modules/nixos/virt.nix
-    #../../modules/nixos/homelab/ssh.nix
     ../../modules/nixos/work.nix
   ];
 
