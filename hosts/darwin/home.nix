@@ -2,6 +2,7 @@
   imports = [
     ../../modules/home/zsh.nix
     ../../modules/home/alacritty.nix
+    ../../modules/home/ghostty.nix
     ../config.nix
   ];
 

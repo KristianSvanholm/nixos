@@ -31,6 +31,7 @@
       };
       mode.main.binding = {
         cmd-enter = "exec-and-forget alacritty";
+        cmd-shift-enter = "exec-and-forget ghostty";
         cmd-q = "close --quit-if-last-window";
 
         cmd-h = "focus --boundaries all-monitors-outer-frame left";
