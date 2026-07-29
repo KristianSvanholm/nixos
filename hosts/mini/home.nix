@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ../home.nix
     ../../modules/home/common.nix
@@ -9,6 +13,7 @@
     ../../modules/home/grim.nix
     ../../modules/home/rofi.nix
     ../../modules/home/waybar.nix
+    ../../modules/home/ghostty.nix
   ];
 
   git.opSSHKey = true;
@@ -25,6 +30,8 @@
   services.mpris-proxy.enable = true;
 
   home.packages = with pkgs; [
+    streamlink
+    inputs.twitch-tui.packages.${pkgs.system}.default
     jotta-cli
     networkmanagerapplet
     better-control

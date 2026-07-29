@@ -37,6 +37,7 @@
     };
 
     textfox.url = "github:adriankarlen/textfox";
+    twitch-tui.url = "github:Xithrius/twitch-tui";
   };
 
   outputs = {

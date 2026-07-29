@@ -1,4 +1,8 @@
-{pkgs, config, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -23,12 +27,10 @@
 
       set-option -g status-position top
       set-option -g status-justify left
-      set-option -g status-style "bg=#${config.lib.stylix.colors.base01}"
 
       set -g status-left ""
       set -g status-right ""
 
-      set -g window-status-format "#[bg=#${config.lib.stylix.colors.base01}] #I "
       set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.tint}] #I #[default]"
       set -g window-status-separator ""
 
@@ -39,6 +41,7 @@
       ## xterm-256color will probably not work everywhere.
       set -a terminal-features "xterm-256color:RGB"
 
+      set -g window-status-format "#[bg=#${config.lib.stylix.colors.base00}] #I "
       set -g detach-on-destroy off # Don't exit from tmux when closing a session
 
       # Auto-create window if it doesn't exist when selecting by number
