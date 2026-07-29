@@ -13,7 +13,6 @@
 
   git.opSSHKey = true;
   programs = {
-    obs-studio.enable = true;
     ssh = {
       enable = true;
       enableDefaultConfig = false;
@@ -31,6 +30,7 @@
     better-control
     nitch
     opencode
+    pi-coding-agent
     winboat
   ];
 }

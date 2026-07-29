@@ -25,6 +25,7 @@
     ../../modules/nixos/virt.nix
     ../../modules/nixos/work.nix
     ../../modules/nixos/flatpak.nix
+    ../../modules/nixos/obs.nix
   ];
 
   networking = {
