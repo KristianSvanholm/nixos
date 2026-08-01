@@ -6,7 +6,7 @@
   imports = [
     ../home.nix
     ../../modules/home/common.nix
-    ../../modules/home/textfox.nix
+    #../../modules/home/textfox.nix
     ../../modules/home/hyprpaper.nix
     ../../modules/home/gtk.nix
     ../../modules/home/mako.nix
@@ -30,6 +30,7 @@
   services.mpris-proxy.enable = true;
 
   home.packages = with pkgs; [
+    prismlauncher
     streamlink
     inputs.twitch-tui.packages.${pkgs.system}.default
     jotta-cli

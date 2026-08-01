@@ -3,6 +3,10 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./nvidia.nix
+  ];
+
   nixpkgs.overlays = [inputs.proton-cachyos.overlays.default];
   programs.steam = {
     enable = true;

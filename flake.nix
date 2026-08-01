@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
     nvf.url = "github:notashelf/nvf";
-    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nix-index-database.url = "github:nix-community/nix-index-database";
     hister.url = "github:asciimoo/hister";
@@ -37,6 +36,8 @@
     };
 
     textfox.url = "github:adriankarlen/textfox";
+
+    firefox.url = "github:nix-community/flake-firefox-nightly";
     twitch-tui.url = "github:Xithrius/twitch-tui";
   };
 

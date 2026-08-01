@@ -17,7 +17,6 @@
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
     ../../modules/nixos/steam.nix
-    ../../modules/nixos/nvidia.nix
     ../../modules/nixos/niri.nix
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
@@ -26,6 +25,7 @@
     ../../modules/nixos/work.nix
     ../../modules/nixos/flatpak.nix
     ../../modules/nixos/obs.nix
+    ../../modules/nixos/firefox-nightly.nix
   ];
 
   networking = {
