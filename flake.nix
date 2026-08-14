@@ -7,7 +7,6 @@
     nvf.url = "github:notashelf/nvf";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nix-index-database.url = "github:nix-community/nix-index-database";
-    hister.url = "github:asciimoo/hister";
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
 
     sysc-greet = {

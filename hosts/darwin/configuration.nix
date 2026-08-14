@@ -24,7 +24,6 @@
 
   imports = [
     inputs.home-manager.darwinModules.default
-    inputs.hister.darwinModules.default
     ../config.nix
     ../../modules/darwin/aerospace.nix
     ../../modules/darwin/stylix.nix
@@ -56,9 +55,6 @@
 
   services = {
     tailscale.enable = true;
-    hister = {
-      enable = true;
-    };
   };
 
   system.primaryUser = config.user.name;
