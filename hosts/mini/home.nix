@@ -14,6 +14,7 @@
     ../../modules/home/rofi.nix
     ../../modules/home/waybar.nix
     ../../modules/home/ghostty.nix
+    ../../modules/home/swaylock.nix
   ];
 
   git.opSSHKey = true;
@@ -28,8 +29,10 @@
   };
 
   services.mpris-proxy.enable = true;
+  services.easyeffects.enable = true;
 
   home.packages = with pkgs; [
+    jellyfin-tui
     prismlauncher
     streamlink
     inputs.twitch-tui.packages.${pkgs.system}.default

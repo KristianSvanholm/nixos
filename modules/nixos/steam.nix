@@ -5,6 +5,7 @@
 }: {
   imports = [
     ./nvidia.nix
+    ./lact.nix
   ];
 
   nixpkgs.overlays = [inputs.proton-cachyos.overlays.default];

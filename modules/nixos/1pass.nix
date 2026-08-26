@@ -19,6 +19,7 @@
     "1password/custom_allowed_browsers" = {
       text = ''
         zen
+        firefox-nightly
       '';
       mode = "0644";
     };
