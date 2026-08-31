@@ -54,8 +54,6 @@
     gh
     rustup
     go
-    duf # Better df
-    ncdu # Better du
     lsof
     unp # unpack archive
     kubectl
@@ -64,5 +62,6 @@
     kubernetes-helm
     dig
     ookla-speedtest
+    docker-sbx
   ];
 }

@@ -19,11 +19,6 @@
     nameservers = ["1.1.1.1" "8.8.8.8"];
   };
 
-  services = {
-    getty.autologinUser = config.user.name;
-    logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
-  };
-
   # For laptop hosts
   systemd.sleep.settings.Sleep = {
     AllowSuspend = false;
