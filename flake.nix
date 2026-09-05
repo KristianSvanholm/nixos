@@ -38,6 +38,11 @@
 
     firefox.url = "github:nix-community/flake-firefox-nightly";
     twitch-tui.url = "github:Xithrius/twitch-tui";
+
+    comin = {
+      url = "github:nlewo/comin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
