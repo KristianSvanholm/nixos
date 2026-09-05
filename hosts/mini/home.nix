@@ -37,5 +37,6 @@
     opencode
     pi-coding-agent
     winboat
+    claude-code
   ];
 }
