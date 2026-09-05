@@ -36,7 +36,7 @@ jobs:
             experimental-features = nix-command flakes
             connect-timeout = 5
             fallback = true
-            substituters = https://cache.nixos.org http://attic:8080
+            substituters = https://cache.nixos.org http://attic.tailebf2dc.ts.net:8080
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= homelab:${{ vars.ATTIC_CACHE_PUBLIC_KEY }}
 
       - name: Build ${{ matrix.host }}
@@ -46,7 +46,7 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-          nix run github:zhaofengli/attic -- login homelab "http://attic:8080" "$ATTIC_PUSH_TOKEN"
+          nix run github:zhaofengli/attic -- login homelab "http://attic.tailebf2dc.ts.net:8080" "$ATTIC_PUSH_TOKEN"
           nix run github:zhaofengli/attic -- push homelab ./result
 
   promote:
