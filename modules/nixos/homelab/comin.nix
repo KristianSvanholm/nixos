@@ -1,6 +1,8 @@
 {
   pkgs,
   inputs,
+  lib,
+  config,
   ...
 }: {
   imports = [
@@ -16,6 +18,7 @@
         name = "origin";
         url = "https://github.com/KristianSvanholm/nixos.git";
         branches.main.name = "main";
+        hostname = lib.toLower config.networking.hostName;
       }
     ];
   };
