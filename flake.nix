@@ -8,14 +8,10 @@
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     nix-index-database.url = "github:nix-community/nix-index-database";
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
+    firefox.url = "github:nix-community/flake-firefox-nightly";
 
     sysc-greet = {
       url = "github:nomadcxx/sysc-greet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    mangowm = {
-      url = "github:mangowm/mango";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,11 +29,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    textfox.url = "github:adriankarlen/textfox";
-
-    firefox.url = "github:nix-community/flake-firefox-nightly";
-    twitch-tui.url = "github:Xithrius/twitch-tui";
 
     comin = {
       url = "github:nlewo/comin";
