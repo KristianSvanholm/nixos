@@ -22,6 +22,8 @@ with lib; {
     };
   };
   config = {
+    boot.kernelModules = ["ip_tables" "iptable_filter" "iptable_nat" "ip6_tables" "ip6table_filter"];
+
     networking.firewall = {
       allowedTCPPorts = [
         6443 # k3s
