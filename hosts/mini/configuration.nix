@@ -26,6 +26,7 @@
     ../../modules/nixos/flatpak.nix
     ../../modules/nixos/obs.nix
     ../../modules/nixos/firefox-nightly.nix
+    ../../modules/nix-cache.nix
   ];
 
   networking = {

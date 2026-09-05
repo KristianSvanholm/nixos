@@ -13,13 +13,41 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: 1password/load-secrets-action@v2
+        with:
+          export-env: true
+        env:
+          OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+          TS_OAUTH_CLIENT_ID: op://k3s/tailscale-ci/client_id
+          TS_OAUTH_CLIENT_SECRET: op://k3s/tailscale-ci/client_secret
+          ATTIC_PUSH_TOKEN: op://k3s/attic_secrets/push_token
+
+      - name: Connect to Tailscale (optional, best-effort)
+        continue-on-error: true
+        uses: tailscale/github-action@v3
+        with:
+          oauth-client-id: ${{ env.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ env.TS_OAUTH_CLIENT_SECRET }}
+          tags: tag:ci
+
       - uses: cachix/install-nix-action@v27
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
+            connect-timeout = 5
+            fallback = true
+            substituters = https://cache.nixos.org http://attic:8080
+            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= homelab:${{ vars.ATTIC_CACHE_PUBLIC_KEY }}
 
       - name: Build ${{ matrix.host }}
         run: nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel --print-build-logs
+
+      - name: Push build to attic cache (optional, best-effort)
+        if: always()
+        continue-on-error: true
+        run: |
+          nix run github:zhaofengli/attic -- login homelab "http://attic:8080" "$ATTIC_PUSH_TOKEN"
+          nix run github:zhaofengli/attic -- push homelab ./result
 
   promote:
     needs: build
