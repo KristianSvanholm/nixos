@@ -29,6 +29,8 @@
       gs = "git status --short";
       gu = "git pull";
 
+      k = "kubectl";
+
       switch = "sudo nixos-rebuild switch";
       test = "sudo nixos-rebuild test";
       build = "sudo nixos-rebuild build";
