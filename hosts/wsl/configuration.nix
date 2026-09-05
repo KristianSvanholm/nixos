@@ -54,6 +54,4 @@
     https://devportal.idit-europe.com
     https://idit-artifactory.sapiens.com
   '';
-
-  services.tailscale.enable = true;
 }

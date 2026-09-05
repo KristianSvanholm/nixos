@@ -53,10 +53,6 @@
     };
   };
 
-  services = {
-    tailscale.enable = true;
-  };
-
   system.primaryUser = config.user.name;
   environment.systemPackages = with pkgs; [
     opencode

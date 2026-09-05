@@ -18,7 +18,7 @@
     ../../modules/nixos/zsa.nix
     ../../modules/nixos/steam.nix
     ../../modules/nixos/niri.nix
-    ../../modules/nixos/tailscale.nix
+    #../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
     ../../modules/nixos/jotta.nix
     ../../modules/nixos/virt.nix
