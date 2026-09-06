@@ -46,8 +46,11 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-          nix run github:zhaofengli/attic -- login homelab "http://attic.tailebf2dc.ts.net:8080" "$ATTIC_PUSH_TOKEN"
-          nix run github:zhaofengli/attic -- push homelab ./result
+          set -x
+          nix run nixpkgs#attic-client -- login homelab "http://attic.tailebf2dc.ts.net:8080" "$ATTIC_PUSH_TOKEN"
+          echo "login exit code: $?"
+          nix run nixpkgs#attic-client -- push homelab ./result
+          echo "push exit code: $?"
 
   promote:
     needs: build
