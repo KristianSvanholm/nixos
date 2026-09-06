@@ -30,20 +30,10 @@ jobs:
           oauth-secret: ${{ env.TS_OAUTH_CLIENT_SECRET }}
           tags: tag:ci
 
-      - name: Tailscale status (debug)
-        continue-on-error: true
-        run: |
-          tailscale status
-          tailscale ping -c 3 attic
-
       - uses: cachix/install-nix-action@v27
         with:
           extra_nix_config: |
             experimental-features = nix-command flakes
-            connect-timeout = 5
-            fallback = true
-            substituters = https://cache.nixos.org http://attic.tailebf2dc.ts.net:8080/homelab
-            trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= homelab:${{ vars.ATTIC_CACHE_PUBLIC_KEY }}
 
       - name: Build ${{ matrix.host }}
         run: nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel --print-build-logs
@@ -52,11 +42,8 @@ jobs:
         if: always()
         continue-on-error: true
         run: |
-          set -x
           nix run nixpkgs#attic-client -- login homelab "http://attic.tailebf2dc.ts.net:8080" "$ATTIC_PUSH_TOKEN"
-          echo "login exit code: $?"
           nix run nixpkgs#attic-client -- push homelab ./result
-          echo "push exit code: $?"
 
   promote:
     needs: build
