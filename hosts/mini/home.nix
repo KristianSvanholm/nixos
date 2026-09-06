@@ -35,6 +35,7 @@
     better-control
     nitch
     opencode
+    claude-code
     pi-coding-agent
     winboat
   ];
