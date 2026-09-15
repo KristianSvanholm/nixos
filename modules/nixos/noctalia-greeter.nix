@@ -1,6 +1,9 @@
 {inputs, ...}: {
   imports = [inputs.noctalia-greeter.nixosModules.default];
 
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
   programs.noctalia-greeter = {
     enable = true;
 
