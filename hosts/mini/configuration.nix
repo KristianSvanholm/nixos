@@ -13,19 +13,21 @@
     ../../modules/nixos/localization.nix
     ../../modules/nixos/bluetooth.nix
     ../../modules/nixos/audio.nix
-    ../../modules/nixos/sysc-greet.nix
+    #../../modules/nixos/sysc-greet.nix
+    ../../modules/nixos/noctalia-greeter.nix
+    ../../modules/nixos/umbriel.nix
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
     ../../modules/nixos/steam.nix
-    ../../modules/nixos/niri.nix
     ../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
     ../../modules/nixos/jotta.nix
     ../../modules/nixos/virt.nix
     ../../modules/nixos/work.nix
-    ../../modules/nixos/flatpak.nix
+    #../../modules/nixos/flatpak.nix
     ../../modules/nixos/obs.nix
     ../../modules/nixos/firefox-nightly.nix
+    ../../modules/nixos/homelab/ssh.nix
     ../../modules/nix-cache.nix
   ];
 

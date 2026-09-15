@@ -6,12 +6,13 @@
   imports = [inputs.stylix.nixosModules.stylix];
   stylix = {
     enable = true;
+    polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-material-dark-hard.yaml";
     image = ../../wallpapers/moon.jpg;
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Ice";
-      size = 5;
+      size = 16;
     };
     fonts = {
       monospace = {

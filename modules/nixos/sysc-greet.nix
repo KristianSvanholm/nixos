@@ -2,7 +2,7 @@
   imports = [inputs.sysc-greet.nixosModules.default];
   services.sysc-greet = {
     enable = true;
-    compositor = "niri";
+    compositor = "Umbriel";
   };
 
   # Turn on gnome keyring to store 2fac auth.

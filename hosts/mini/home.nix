@@ -2,14 +2,9 @@
   imports = [
     ../home.nix
     ../../modules/home/common.nix
-    ../../modules/home/hyprpaper.nix
+    ../../modules/home/noctalia
     ../../modules/home/gtk.nix
-    ../../modules/home/mako.nix
-    ../../modules/home/grim.nix
-    ../../modules/home/rofi.nix
-    ../../modules/home/waybar.nix
     ../../modules/home/ghostty.nix
-    ../../modules/home/swaylock.nix
   ];
 
   git.opSSHKey = true;
@@ -27,16 +22,11 @@
   services.easyeffects.enable = true;
 
   home.packages = with pkgs; [
-    jellyfin-tui
     prismlauncher
-    streamlink
     jotta-cli
-    networkmanagerapplet
-    better-control
     nitch
     opencode
     claude-code
-    pi-coding-agent
     winboat
   ];
 }

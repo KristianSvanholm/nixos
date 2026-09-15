@@ -9,11 +9,10 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     firefox.url = "github:nix-community/flake-firefox-nightly";
-
-    sysc-greet = {
-      url = "github:nomadcxx/sysc-greet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    sysc-greet.url = "github:nomadcxx/sysc-greet";
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    umbriel.url = "github:noctalia-dev/umbriel";
+    noctalia-greeter.url = "github:noctalia-dev/noctalia-greeter";
 
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";

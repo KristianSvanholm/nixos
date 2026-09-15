@@ -1,12 +1,14 @@
-{config, lib, pkgs, ...}: let
-  papirus-green = pkgs.papirus-icon-theme.override {color = "green";};
-in {
+{
+  config,
+  lib,
+  ...
+}: {
+  stylix.targets.gtk.enable = false;
+
   gtk = {
     enable = true;
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = papirus-green;
-    };
+    gtk3.extraCss = ''@import url("${config.home.homeDirectory}/.config/gtk-3.0/noctalia.css");'';
+    gtk4.extraCss = ''@import url("${config.home.homeDirectory}/.config/gtk-4.0/noctalia.css");'';
   };
 
   dconf.settings = {

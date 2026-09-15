@@ -1,8 +1,8 @@
-{config, lib, ...}: {
+{...}: {
+  stylix.targets.alacritty.enable = false;
+
   programs.alacritty = {
     enable = true;
-    settings = {
-      colors.primary.background = lib.mkForce "#${config.lib.stylix.colors.base01}";
-    };
+    settings.general.import = ["~/.config/alacritty/themes/noctalia.toml"];
   };
 }
