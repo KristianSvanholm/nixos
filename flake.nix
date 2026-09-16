@@ -3,10 +3,22 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    stylix.url = "github:danth/stylix";
-    nvf.url = "github:notashelf/nvf";
-    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    nix-index-database.url = "github:nix-community/nix-index-database";
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nvf = {
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
     firefox.url = "github:nix-community/flake-firefox-nightly";
     sysc-greet.url = "github:nomadcxx/sysc-greet";
