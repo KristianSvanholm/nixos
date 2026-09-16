@@ -20,14 +20,23 @@
     "NSGlobalDomain" = {
       ApplePressAndHoldEnabled = false;
     };
+    "com.apple.spaces" = {
+      "spans-displays" = true;
+    };
+    "com.apple.dock" = {
+      "workspaces-swoosh-animation-off" = true;
+    };
   };
 
   imports = [
     inputs.home-manager.darwinModules.default
     ../config.nix
-    ../../modules/darwin/aerospace.nix
+    #../../modules/darwin/aerospace.nix
     ../../modules/darwin/stylix.nix
-    ../../modules/darwin/ssh.nix
+    ../../modules/darwin/homebrew.nix
+    ../../modules/darwin/yabai.nix
+    ../../modules/darwin/skhd.nix
+    #../../modules/darwin/ssh.nix
   ];
 
   networking.hostName = "darwin";

@@ -24,7 +24,7 @@
     home-manager.enable = true; # Let Home Manager manage itself
   };
 
-  home.packages = with pkgs; [_1password-cli];
+  home.packages = with pkgs; [_1password-cli claude-code];
 
   stylix.targets = {
     nvf.enable = false;
