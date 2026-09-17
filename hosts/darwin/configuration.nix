@@ -21,7 +21,7 @@
       ApplePressAndHoldEnabled = false;
     };
     "com.apple.spaces" = {
-      "spans-displays" = true;
+      "spans-displays" = false;
     };
     "com.apple.dock" = {
       "workspaces-swoosh-animation-off" = true;
