@@ -43,5 +43,6 @@
     ethtool
     gptfdisk
     smartmontools
+    ghostty.terminfo
   ];
 }
