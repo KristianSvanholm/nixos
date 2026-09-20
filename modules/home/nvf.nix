@@ -38,7 +38,7 @@
 
         # Plugins
         statusline.lualine.enable = true;
-        statusline.lualine.theme = "gruvbox_dark";
+        statusline.lualine.setupOpts.options.theme = "gruvbox_dark";
         autocomplete.nvim-cmp.enable = true;
         /*
           # Produces graphical artifacts...

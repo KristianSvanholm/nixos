@@ -20,7 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     proton-cachyos.url = "github:powerofthe69/proton-cachyos-nix";
-    firefox.url = "github:nix-community/flake-firefox-nightly";
     sysc-greet.url = "github:nomadcxx/sysc-greet";
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     umbriel.url = "github:noctalia-dev/umbriel";

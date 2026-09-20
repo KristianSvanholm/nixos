@@ -6,7 +6,7 @@
   services.xserver.videoDrivers = ["nvidia"];
   hardware.graphics.enable = true;
   hardware.nvidia = {
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    package = config.boot.kernelPackages.nvidiaPackages.latest; # 610.57.04 — 595.99.02 regressed game perf
     modesetting.enable = true; # Wayland support
     powerManagement.enable = false; # Enable if graphical corruption
     powerManagement.finegrained = false; # Turns off gpu when not in use (EXP)

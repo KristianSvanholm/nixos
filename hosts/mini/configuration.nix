@@ -26,7 +26,6 @@
     ../../modules/nixos/work.nix
     #../../modules/nixos/flatpak.nix
     ../../modules/nixos/obs.nix
-    ../../modules/nixos/firefox-nightly.nix
     ../../modules/nixos/homelab/ssh.nix
     ../../modules/nix-cache.nix
   ];
@@ -54,6 +53,7 @@
   home-manager.users.${config.user.name} = import ./home.nix;
 
   environment.systemPackages = with pkgs; [
+    firefox
     nvtopPackages.full
   ];
 }
