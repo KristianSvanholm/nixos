@@ -16,6 +16,10 @@
     ../../modules/nixos/jotta.nix
   ];
 
+  # Lets wheel push closures with `nixos-rebuild --target-host`. Effectively
+  # root-equivalent, so only meaningful because wheel is just you.
+  nix.settings.trusted-users = ["@wheel"];
+
   # Networking setup
   networking = {
     firewall.enable = true;

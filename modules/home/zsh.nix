@@ -34,6 +34,10 @@
       switch = "sudo nixos-rebuild switch";
       test = "sudo nixos-rebuild test";
       build = "sudo nixos-rebuild build";
+
+      # remote switch; needs nix.settings.trusted-users on the target
+      switch-hl0 = "nixos-rebuild switch --flake $HOME/repos/homelab/nixos#homelab-0 --target-host homelab-0 --elevate=sudo --ask-elevate-password";
+      switch-hl1 = "nixos-rebuild switch --flake $HOME/repos/homelab/nixos#homelab-1 --target-host homelab-1 --elevate=sudo --ask-elevate-password";
     };
 
     defaultKeymap = "viins";
