@@ -37,6 +37,7 @@
   users = {
     users.${config.user.name} = {
       isNormalUser = true;
+      uid = 1000; # the nfs backups export squashes to this
       extraGroups = ["networkmanager" "docker" "wheel"];
     };
 
