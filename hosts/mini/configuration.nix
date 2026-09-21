@@ -27,6 +27,7 @@
     #../../modules/nixos/flatpak.nix
     ../../modules/nixos/obs.nix
     ../../modules/nixos/homelab/ssh.nix
+    ../../modules/nixos/homelab/nfs-client.nix
     ../../modules/nix-cache.nix
   ];
 

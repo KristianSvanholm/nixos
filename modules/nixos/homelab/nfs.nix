@@ -4,8 +4,10 @@
   ...
 }: let
   owner = config.users.users.${config.user.name};
-  # the only nfs clients; both reserved in the router
-  nodes = ["192.168.3.112" "192.168.3.91"];
+  # the only nfs clients; all reserved in the router
+  cluster = ["192.168.3.112" "192.168.3.91"];
+  mini = "192.168.1.42";
+  nodes = cluster ++ [mini];
   pods = "10.42.0.0/16";
   base = "rw,sync,no_subtree_check";
   exportTo = clients: opts: lib.concatMapStringsSep " " (c: "${c}(${opts})") clients;
@@ -26,6 +28,7 @@ in {
       /mnt/hdd/attic ${app 3}
       /mnt/hdd/test-media ${app 4}
       /mnt/hdd/backups ${exportTo (nodes ++ [pods]) squash}
+      /mnt/hdd/share ${exportTo [mini] "${base},fsid=6"}
     '';
   };
 
@@ -42,6 +45,7 @@ in {
     "d /mnt/hdd/backups/postgres 0755 ${o} -"
     "d /mnt/hdd/backups/postgres/attic 0755 ${o} -"
     "d /mnt/hdd/backups/postgres/immich 0755 ${o} -"
+    "d /mnt/hdd/share 0755 ${o} -"
   ];
 
   networking.firewall.allowedTCPPorts = [2049];
