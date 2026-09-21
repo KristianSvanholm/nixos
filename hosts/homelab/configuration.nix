@@ -10,6 +10,8 @@
     ../../modules/nixos/localization.nix
     ../../modules/nixos/homelab/ssh.nix
     ../../modules/nixos/homelab/intel.nix
+    ../../modules/nixos/homelab/longhorn.nix
+    ../../modules/nixos/homelab/service-users.nix
     ../../modules/nixos/homelab/comin.nix
     ../../modules/nixos/jotta.nix
   ];

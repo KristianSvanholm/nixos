@@ -56,10 +56,5 @@ with lib; {
         disable = ["traefik"];
       })
     ];
-
-    # Shared media volumes
-    users.groups.media = {
-      gid = 1500;
-    };
   };
 }

@@ -6,4 +6,8 @@
     ../../modules/nix-cache.nix
   ];
   networking.hostName = "HomeLab-1";
+
+  services.k3s.nodeLabel = [
+    "homelab/av1-decode=true" # N150 iGPU, jellyfin is pinned here
+  ];
 }
