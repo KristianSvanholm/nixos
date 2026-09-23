@@ -24,6 +24,8 @@
   networking = {
     firewall.enable = true;
     nameservers = ["1.1.1.1" "8.8.8.8"];
+    # else DHCP appends AdGuard and CoreDNS forwards back into the cluster
+    dhcpcd.extraConfig = "nohook resolv.conf";
   };
 
   # For laptop hosts
