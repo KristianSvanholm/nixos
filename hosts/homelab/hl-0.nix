@@ -4,7 +4,6 @@
     ./hardware-configuration-0.nix
     ../../modules/nixos/homelab/k3s.nix
     ../../modules/nixos/homelab/nfs.nix
-    ../../modules/nix-cache.nix
   ];
   homelab.clusterInit = true;
   homelab.role = "server";

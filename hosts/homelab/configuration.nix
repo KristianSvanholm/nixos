@@ -14,10 +14,10 @@
     ../../modules/nixos/homelab/service-users.nix
     ../../modules/nixos/homelab/comin.nix
     ../../modules/nixos/jotta.nix
+    ../../modules/nix-cache.nix
   ];
 
-  # Lets wheel push closures with `nixos-rebuild --target-host`. Effectively
-  # root-equivalent, so only meaningful because wheel is just you.
+  # Lets wheel push closures with `nixos-rebuild --target-host`
   nix.settings.trusted-users = ["@wheel"];
 
   # Networking setup

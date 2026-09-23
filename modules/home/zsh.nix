@@ -68,6 +68,5 @@
     kubernetes-helm
     dig
     ookla-speedtest
-    docker-sbx
   ];
 }
