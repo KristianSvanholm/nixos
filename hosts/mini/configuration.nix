@@ -16,6 +16,7 @@
     #../../modules/nixos/sysc-greet.nix
     ../../modules/nixos/noctalia-greeter.nix
     ../../modules/nixos/umbriel.nix
+    ../../modules/nixos/niri.nix
     ../../modules/nixos/1pass.nix
     ../../modules/nixos/zsa.nix
     ../../modules/nixos/steam.nix
