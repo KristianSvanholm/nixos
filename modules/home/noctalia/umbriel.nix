@@ -34,9 +34,9 @@
         mode = "scrolling";
         gap = 10;
         struts.bottom = -6;
-        width_presets = [0.33333 0.5 0.66667];
+        extent_presets = [0.33333 0.5 0.66667];
         scrolling = {
-          default_width_fraction = 0.5;
+          default_extent_fraction = 0.5;
           center_focused = "never";
         };
       };
@@ -95,12 +95,12 @@
         "Mod+Comma" = "window-consume-left";
         "Mod+Period" = "window-consume-right";
 
-        "Mod+R" = "window-cycle-width";
-        "Mod+Shift+R" = "window-cycle-width-back";
-        "Mod+Minus" = "window-modify-width:-0.1";
-        "Mod+Equal" = "window-modify-width:0.1";
-        "Mod+Shift+Minus" = "window-modify-height:-0.1";
-        "Mod+Shift+Equal" = "window-modify-height:0.1";
+        "Mod+R" = "window-cycle-primary-extent";
+        "Mod+Shift+R" = "window-cycle-primary-extent-back";
+        "Mod+Minus" = "window-modify-primary-extent:-0.1";
+        "Mod+Equal" = "window-modify-primary-extent:0.1";
+        "Mod+Shift+Minus" = "window-modify-secondary-extent:-0.1";
+        "Mod+Shift+Equal" = "window-modify-secondary-extent:0.1";
 
         "Mod+F" = "window-toggle-maximize";
         "Mod+Shift+F" = "window-toggle-fullscreen";
