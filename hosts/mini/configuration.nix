@@ -8,7 +8,7 @@
 }: {
   imports = [
     ../configuration.nix
-    ./hardware-configuration.nix
+    ./disko.nix
     ../../modules/nixos/limine.nix
     ../../modules/nixos/localization.nix
     ../../modules/nixos/bluetooth.nix
@@ -31,6 +31,10 @@
     ../../modules/nixos/homelab/nfs-client.nix
     ../../modules/nix-cache.nix
   ];
+
+  nixpkgs.hostPlatform = "x86_64-linux";
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.intel.updateMicrocode = true;
 
   networking = {
     hostName = "nixos";
