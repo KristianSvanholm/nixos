@@ -10,7 +10,7 @@
       session.default = "Umbriel";
 
       appearance = {
-        scheme = "Gruvbox";
+        scheme = "Synced";
         theme_mode = "dark";
         corner_radius_scale = 0.0;
       };
