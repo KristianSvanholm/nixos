@@ -92,8 +92,8 @@
 
         "Mod+BracketLeft" = "window-consume-left";
         "Mod+BracketRight" = "window-consume-right";
-        "Mod+Comma" = "window-consume-left";
-        "Mod+Period" = "window-consume-right";
+        "Mod+Comma" = "window-consume-or-expel-left";
+        "Mod+Period" = "window-consume-or-expel-right";
 
         "Mod+R" = "window-cycle-primary-extent";
         "Mod+Shift+R" = "window-cycle-primary-extent-back";

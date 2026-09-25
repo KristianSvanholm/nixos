@@ -1,6 +1,8 @@
 {inputs, ...}: {
   imports = [inputs.disko.nixosModules.disko];
 
+  services.btrfs.autoScrub.enable = true;
+
   disko.devices.disk.main = {
     device = "/dev/nvme0n1";
     type = "disk";

@@ -37,7 +37,7 @@
   hardware.cpu.intel.updateMicrocode = true;
 
   networking = {
-    hostName = "nixos";
+    hostName = "mini";
     nameservers = ["192.168.3.112"];
 
     firewall.enable = true;
@@ -47,6 +47,12 @@
 
   services = {
     printing.enable = true;
+  };
+
+  programs.nh = {
+    enable = true;
+    flake = "/home/${config.user.name}/repos/homelab/nixos";
+    clean.enable = true;
   };
 
   users = {
