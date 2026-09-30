@@ -66,6 +66,7 @@
         "Mod+Return" = "spawn:ghostty";
         "Mod+D" = "spawn:noctalia msg panel-toggle launcher";
         "Mod+X" = "spawn:noctalia msg session lock";
+        "Mod+Shift+X" = "spawn:noctalia msg panel-toggle session";
         "Mod+Q" = "window-close";
         "Mod+Shift+E" = "session-quit";
         "Mod+Shift+Slash" = "cheatsheet-toggle";
