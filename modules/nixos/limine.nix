@@ -21,7 +21,7 @@
         extraEntries = ''
           /Windows
               protocol: efi
-              path: guid(64aceaf0-5244-4fde-91d8-e3883894613e):/EFI/Microsoft/Boot/bootmgfw.efi
+              path: guid(d231388f-61b3-4154-b7f4-729369be9efa):/EFI/Microsoft/Boot/bootmgfw.efi
         '';
       };
     };
