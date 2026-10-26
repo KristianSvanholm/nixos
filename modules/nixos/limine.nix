@@ -9,7 +9,6 @@
     };
     consoleLogLevel = 0;
     kernelParams = ["quiet" "udev.log_level=3" "usbcore.autosuspend=-1"];
-    initrd.verbose = false;
     loader = {
       efi.canTouchEfiVariables = true;
       efi.efiSysMountPoint = "/boot";

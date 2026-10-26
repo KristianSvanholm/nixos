@@ -11,7 +11,7 @@ in {
 
   programs.rofi = {
     enable = true;
-    font = "${config.stylix.fonts.monospace.name} 9";
+    settings.font = "${config.stylix.fonts.monospace.name} 9";
     extraConfig = {
       modi = "drun,window";
       show-icons = true;
