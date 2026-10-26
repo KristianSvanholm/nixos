@@ -66,6 +66,7 @@
 
   environment.systemPackages = with pkgs; [
     firefox
+    librepods
     nvtopPackages.full
   ];
 }
