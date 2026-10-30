@@ -25,7 +25,6 @@ in {
     exports = ''
       /mnt/hdd/jelly ${app 1}
       /mnt/hdd/immich ${app 2}
-      /mnt/hdd/attic ${app 3}
       /mnt/hdd/test-media ${app 4}
       /mnt/hdd/backups ${exportTo (nodes ++ [pods]) squash}
       /mnt/hdd/share ${exportTo [mini] "${base},fsid=6"}
@@ -43,7 +42,6 @@ in {
     "d /mnt/hdd/backups 0755 ${o} -"
     "d /mnt/hdd/backups/longhorn 0755 ${o} -"
     "d /mnt/hdd/backups/postgres 0755 ${o} -"
-    "d /mnt/hdd/backups/postgres/attic 0755 ${o} -"
     "d /mnt/hdd/backups/postgres/immich 0755 ${o} -"
     "d /mnt/hdd/share 0755 ${o} -"
   ];

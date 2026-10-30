@@ -29,10 +29,6 @@ with lib; let
       gid = 1502;
       users.immich = 1630;
     };
-    attic = {
-      gid = 1503;
-      users.attic = 1640;
-    };
     files = {
       gid = 1504;
       users.filesrv = 1650;
