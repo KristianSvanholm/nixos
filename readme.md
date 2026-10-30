@@ -15,12 +15,6 @@ _wsl_ -- Old work config
 $ sudo nixos-rebuild switch --flake .#mini
 ```
 
-Then, the alias 'switch' will be available for future use:
-
-```
-$ switch --flake .#default
-```
-
 ## Generate themes folders
 
 ```
