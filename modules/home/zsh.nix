@@ -38,9 +38,6 @@
       # remote switch; needs nix.settings.trusted-users on the target
       switch-hl0 = "nh os switch -H homelab-0 --target-host homelab-0";
       switch-hl1 = "nh os switch -H homelab-1 --target-host homelab-1";
-
-      # build this host's system and push the closure to attic; needs `attic login homelab <url> <token>` once
-      push-cache = "nix build --no-link --print-out-paths \"$NH_FLAKE#nixosConfigurations.$(hostname).config.system.build.toplevel\" | xargs attic push homelab:homelab";
     };
 
     defaultKeymap = "viins";
@@ -53,7 +50,6 @@
 
   # General terminal packages here
   home.packages = with pkgs; [
-    attic-client
     k9s
     just
     stow

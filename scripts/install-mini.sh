@@ -14,6 +14,4 @@ nix --extra-experimental-features "nix-command flakes" \
   run github:nix-community/disko/latest -- \
   --mode destroy,format,mount --flake ".#$HOST"
 
-nixos-install --flake ".#$HOST" --max-jobs 2 \
-  --option extra-substituters "http://192.168.3.112:30800/homelab" \
-  --option extra-trusted-public-keys "homelab:SOrR7Lbq4eAhpglgP6XjGRzS9j5M05KT+ewCH16rwyo="
+nixos-install --flake ".#$HOST" --max-jobs 2
