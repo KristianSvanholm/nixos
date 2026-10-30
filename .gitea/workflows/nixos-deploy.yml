@@ -1,0 +1,29 @@
+name: Check and deploy NixOS build
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: nix
+    strategy:
+      matrix:
+        host: [homelab-0]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build ${{ matrix.host }}
+        run: nix build .#nixosConfigurations.${{ matrix.host }}.config.system.build.toplevel --print-build-logs
+
+  promote:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: nix
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Force deploy to match main
+        run: git push origin HEAD:deploy --force
