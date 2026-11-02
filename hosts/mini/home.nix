@@ -4,7 +4,6 @@
     ../../modules/home/common.nix
     ../../modules/home/noctalia
     ../../modules/home/gtk.nix
-    ../../modules/home/lutris.nix
     ../../modules/home/ghostty.nix
   ];
 
