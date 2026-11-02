@@ -5,7 +5,10 @@
 }: {
   imports = [inputs.umbriel.homeModules.default];
 
-  home.packages = [pkgs.xwayland-satellite];
+  home.packages = [
+    pkgs.xwayland-satellite
+    pkgs.wl-clipboard
+  ];
 
   programs.umbriel = {
     enable = true;
