@@ -20,6 +20,13 @@
   # Lets wheel push closures with `nixos-rebuild --target-host`
   nix.settings.trusted-users = ["@wheel"];
 
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+  boot.loader.systemd-boot.configurationLimit = 10;
+
   # Networking setup
   networking = {
     firewall.enable = true;
