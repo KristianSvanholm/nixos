@@ -26,8 +26,6 @@
     prismlauncher
     jotta-cli
     nitch
-    opencode
     claude-code
-    winboat
   ];
 }
