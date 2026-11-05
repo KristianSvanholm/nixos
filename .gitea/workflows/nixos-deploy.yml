@@ -24,6 +24,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Force deploy to match main
-        run: git push origin HEAD:deploy --force
+      - name: Promote main to deploy
+        run: git push origin HEAD:deploy
