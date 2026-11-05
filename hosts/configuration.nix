@@ -26,7 +26,6 @@
   imports = [
     inputs.home-manager.nixosModules.default
     inputs.nix-index-database.nixosModules.nix-index
-    ../modules/nixos/docker.nix
     ../modules/nixos/sudo-rs.nix
     ../modules/nixos/stylix.nix
     ./config.nix
