@@ -56,6 +56,10 @@ with lib; let
       gid = 1509;
       users.wg-easy = 1700;
     };
+    crowdsec = {
+      gid = 1510;
+      users.crowdsec-ui = 1710;
+    };
   };
 
   extraGroups.filesrv = ["media"]; # reads the library
