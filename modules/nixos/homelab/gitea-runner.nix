@@ -5,7 +5,7 @@
     name = "homelab-0";
     url = "https://git.krsv.no";
     # repo-scoped registration token, not managed by nix; must exist before the first switch
-    tokenFile = "/var/lib/gitea-runner-token";
+    tokenFile = "/var/lib/secrets/gitea-runner-token";
     labels = ["nix:host"];
     hostPackages = with pkgs; [
       bash

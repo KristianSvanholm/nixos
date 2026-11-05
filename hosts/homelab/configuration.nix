@@ -13,6 +13,7 @@
     ../../modules/nixos/homelab/longhorn.nix
     ../../modules/nixos/homelab/service-users.nix
     ../../modules/nixos/homelab/comin.nix
+    ../../modules/nixos/homelab/smartd.nix
     ../../modules/nixos/jotta.nix
     ../../modules/nix-cache.nix
   ];
