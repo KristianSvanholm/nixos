@@ -9,23 +9,10 @@
   nixpkgs.config.allowUnfree = true;
 
   programs.zsh.enable = true;
-  programs.nix-index-database.comma.enable = true;
-  programs.nix-ld.enable = true;
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
-    enableZshIntegration = true;
-    direnvrcExtra = ''
-      echo "loaded direnv!"
-    '';
-    settings.log_format = "-";
-    settings.log_filter = "^$";
-  };
   users.defaultUserShell = pkgs.zsh;
 
   imports = [
     inputs.home-manager.nixosModules.default
-    inputs.nix-index-database.nixosModules.nix-index
     ../modules/nixos/sudo-rs.nix
     ../modules/nixos/stylix.nix
     ./config.nix

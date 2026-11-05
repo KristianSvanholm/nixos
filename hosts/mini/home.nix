@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../home.nix
+    ../../modules/home/dev.nix
     ../../modules/home/common.nix
     ../../modules/home/noctalia
     ../../modules/home/gtk.nix

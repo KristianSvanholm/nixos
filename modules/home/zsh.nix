@@ -1,13 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./starship.nix
     ./tmux.nix
-    ./eza.nix
-    ./zoxide.nix
     ./btop.nix
     ./git.nix
-    ./nvf.nix
-    #./helix.nix
+    ./vim
   ];
 
   programs.zsh = {
@@ -30,14 +26,6 @@
       gu = "git pull";
 
       k = "kubectl";
-
-      switch = "sudo nixos-rebuild switch";
-      test = "sudo nixos-rebuild test";
-      build = "sudo nixos-rebuild build";
-
-      # remote switch; needs nix.settings.trusted-users on the target
-      switch-hl0 = "nh os switch -H homelab-0 --target-host homelab-0";
-      switch-hl1 = "nh os switch -H homelab-1 --target-host homelab-1";
     };
 
     defaultKeymap = "viins";
@@ -48,25 +36,9 @@
     };
   };
 
-  # General terminal packages here
   home.packages = with pkgs; [
-    k9s
-    just
-    stow
-    terraform
-    bat
     wget
-    ripgrep
-    gh
-    rustup
-    go
     lsof
-    unp # unpack archive
-    kubectl
-    kubectx
-    fluxcd
-    kubernetes-helm
     dig
-    ookla-speedtest
   ];
 }

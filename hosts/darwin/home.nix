@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ../../modules/home/zsh.nix
+    ../../modules/home/dev.nix
     ../../modules/home/alacritty.nix
     ../config.nix
   ];

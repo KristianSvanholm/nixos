@@ -8,6 +8,7 @@
 }: {
   imports = [
     ../configuration.nix
+    ../../modules/nixos/dev.nix
     ../../modules/nixos/docker.nix
     ./disko.nix
     ../../modules/nixos/limine.nix
