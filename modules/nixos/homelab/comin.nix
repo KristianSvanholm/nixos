@@ -8,6 +8,10 @@
   imports = [
     inputs.comin.nixosModules.comin
   ];
+
+  # the nodes resolve through public dns, which gives the wan address and doesn't hairpin
+  networking.hosts."192.168.3.112" = ["git.krsv.no"];
+
   services.comin = {
     enable = true;
     hostname = lib.toLower config.networking.hostName;
@@ -16,7 +20,12 @@
     ''}";
     remotes = [
       {
-        name = "origin";
+        name = "gitea";
+        url = "https://git.krsv.no/homelab/nixos.git";
+        branches.main.name = "deploy";
+      }
+      {
+        name = "github";
         url = "https://github.com/KristianSvanholm/nixos.git";
         branches.main.name = "deploy";
       }
