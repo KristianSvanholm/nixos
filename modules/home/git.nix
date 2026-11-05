@@ -51,6 +51,7 @@ with lib; {
         url = {
           "git@github.com:".insteadOf = ["gh:"];
           "git@github.com:${config.git.username}/".insteadOf = ["me:"];
+          "ssh://git@git.krsv.no:2222/".insteadOf = ["tea:"];
         };
         status = {
           branch = true;
