@@ -27,6 +27,8 @@
   };
   boot.loader.systemd-boot.configurationLimit = 10;
 
+  systemd.tmpfiles.rules = ["d /var/lib/secrets 0700 root root -"];
+
   # Networking setup
   networking = {
     firewall.enable = true;
