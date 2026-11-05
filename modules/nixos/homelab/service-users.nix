@@ -17,7 +17,6 @@ with lib; let
         seerr = 1609;
         jfa-go = 1610;
         slskd = 1611;
-        flaresolverr = 1612;
         configarr = 1613;
       };
     };
