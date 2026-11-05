@@ -7,7 +7,6 @@
 _Mini_ -- Daily driver\
 _Homelab_ -- My k3s box\
 _Darwin_ -- Work laptop\
-_wsl_ -- Old work config
 
 ## Deploy OS
 

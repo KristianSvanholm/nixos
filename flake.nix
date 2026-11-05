@@ -15,10 +15,6 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,11 +63,6 @@
       homelab-1 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [./hosts/homelab/hl-1.nix];
-      };
-      wsl = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = {inherit inputs;};
-        modules = [./hosts/wsl/configuration.nix];
       };
     };
 
