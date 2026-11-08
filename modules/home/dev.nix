@@ -15,6 +15,7 @@
     # remote switch; needs nix.settings.trusted-users on the target
     switch-hl0 = "nh os switch -H homelab-0 --target-host homelab-0";
     switch-hl1 = "nh os switch -H homelab-1 --target-host homelab-1";
+    switch-pi = "nh os switch -H adguard-pi --build-host homelab-0 --target-host krs@192.168.3.51";
   };
 
   home.packages = with pkgs; [

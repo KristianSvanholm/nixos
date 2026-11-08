@@ -34,6 +34,8 @@
 
   nixpkgs.hostPlatform = "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
+
+  nix.settings.trusted-users = ["@wheel"];
   hardware.cpu.intel.updateMicrocode = true;
 
   networking = {

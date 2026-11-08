@@ -9,7 +9,7 @@ jobs:
     runs-on: nix
     strategy:
       matrix:
-        host: [homelab-0, homelab-1]
+        host: [homelab-0, homelab-1, adguard-pi]
     steps:
       - uses: actions/checkout@v4
 
