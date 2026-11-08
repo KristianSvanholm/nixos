@@ -11,8 +11,6 @@
   homelab.role = "server";
   networking.hostName = "HomeLab-0";
 
-  boot.binfmt.emulatedSystems = ["aarch64-linux"];
-
   services.k3s.nodeLabel = [
     "homelab/edge=true" # holds the LAN address the router forwards to
     "homelab/hdd=true" # owns the 15T disk, exports it over NFS

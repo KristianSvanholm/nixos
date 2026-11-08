@@ -65,7 +65,6 @@
         modules = [./hosts/homelab/hl-1.nix];
       };
       adguard-pi = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
         modules = [./hosts/adguard-pi/configuration.nix];
       };
     };

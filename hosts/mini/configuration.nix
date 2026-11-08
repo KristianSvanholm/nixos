@@ -35,7 +35,7 @@
   nixpkgs.hostPlatform = "x86_64-linux";
   hardware.enableRedistributableFirmware = true;
 
-  nix.settings.trusted-users = ["@wheel"];
+  boot.binfmt.emulatedSystems = ["aarch64-linux"];
   hardware.cpu.intel.updateMicrocode = true;
 
   networking = {
@@ -59,7 +59,7 @@
   users = {
     users.${config.user.name} = {
       isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel" "docker" "libvirtd"];
+      extraGroups = ["networkmanager" "wheel"];
     };
   };
 

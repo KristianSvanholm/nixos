@@ -9,7 +9,6 @@
     (modulesPath + "/profiles/headless.nix")
     ../config.nix
     ../../modules/nixos/homelab/ssh.nix
-    ../../modules/nixos/homelab/comin.nix
   ];
 
   disabledModules = [(modulesPath + "/profiles/base.nix")];
@@ -20,10 +19,6 @@
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
     trusted-users = ["@wheel"]; # lets `--target-host` push closures
-    extra-substituters = ["http://192.168.3.112:5000"];
-    extra-trusted-public-keys = ["homelab-0:YkXXd/mBRuJwUjj706kaSzL4iBrbDEb9s6zlGLzWQLs="];
-    connect-timeout = 5;
-    fallback = true;
   };
   nix.gc = {
     automatic = true;
