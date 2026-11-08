@@ -64,6 +64,9 @@
         specialArgs = {inherit inputs;};
         modules = [./hosts/homelab/hl-1.nix];
       };
+      adguard-pi = nixpkgs.lib.nixosSystem {
+        modules = [./hosts/adguard-pi/configuration.nix];
+      };
     };
 
     darwinConfigurations.darwin = nix-darwin.lib.darwinSystem {
