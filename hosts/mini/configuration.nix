@@ -38,7 +38,6 @@
 
   networking = {
     hostName = "mini";
-    nameservers = ["192.168.3.112"];
 
     firewall.enable = true;
     enableIPv6 = true;
