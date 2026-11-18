@@ -9,13 +9,13 @@ with lib; {
     email = mkOption {
       type = types.str;
       description = "github user email";
-      default = "kristianrorensvanholm@gmail.com";
+      default = "mail@kristian.rs";
     };
 
     username = mkOption {
       type = types.str;
       description = "github username";
-      default = "KristianSvanholm";
+      default = "krs";
     };
 
     localSSHKey = mkOption {
