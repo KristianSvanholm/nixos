@@ -16,7 +16,7 @@
         wallpaper_scheme = "m3-content";
         templates = {
           enable_builtin_templates = true;
-          builtin_ids = ["umbriel" "ghostty"];
+          builtin_ids = ["umbriel" "ghostty" "luciole"];
         };
       };
 
@@ -109,7 +109,7 @@
             placement_height = 1440.0;
             rotation = 0.0;
             settings = {
-              background_color = "surface_variant";
+              background_color = "surface_container";
               background_opacity = 0.88;
               background_radius = 12.0;
               center_password_text = true;

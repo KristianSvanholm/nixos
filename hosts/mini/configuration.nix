@@ -23,6 +23,7 @@
     ../../modules/nixos/steam.nix
     #../../modules/nixos/tailscale.nix
     ../../modules/nixos/nautilus.nix
+    ../../modules/nixos/luciole.nix
     ../../modules/nixos/jotta.nix
     #../../modules/nixos/virt.nix
     ../../modules/nixos/work.nix

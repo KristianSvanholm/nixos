@@ -22,7 +22,6 @@
     k9s
     just
     stow
-    terraform
     bat
     gh
     rustup

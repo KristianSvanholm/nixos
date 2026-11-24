@@ -21,8 +21,10 @@
     gamescopeSession.enable = true;
   };
 
-  services.scx.enable = true;
-  services.scx.scheduler = "scx_lavd";
+  services.scx-loader = {
+    enable = true;
+    config.default_sched = "scx_lavd";
+  };
   programs.gamescope.enable = true;
   programs.gamemode.enable = true;
 }

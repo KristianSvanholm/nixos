@@ -6,7 +6,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    jack.enable = true;
 
     # Disable the Bluetooth handsfree/headset (HFP/HSP) roles so headsets
     # (e.g. Sony XM3) only expose high-quality A2DP output and never a
