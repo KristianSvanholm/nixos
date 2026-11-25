@@ -1,4 +1,8 @@
-{inputs, ...}: {
+{
+  config,
+  inputs,
+  ...
+}: {
   imports = [inputs.noctalia.homeModules.default];
 
   stylix.targets.noctalia.enable = false;
@@ -11,24 +15,25 @@
       theme = {
         mode = "dark";
         source = "builtin";
-        builtin = "Gruvbox";
+        builtin = "Ayu";
         community_palette = "Murasaki";
         wallpaper_scheme = "m3-content";
         templates = {
           enable_builtin_templates = true;
-          builtin_ids = ["umbriel" "ghostty" "luciole"];
+          builtin_ids = ["umbriel" "ghostty" "luciole" "gtk3" "gtk4"];
         };
       };
 
       shell = {
         corner_radius_scale = 0;
-        font_family = "JetBrainsMono Nerd Font Mono";
+        font_family = config.stylix.fonts.monospace.name;
         external_ip_enabled = true;
         password_style = "random";
         polkit_agent = true;
         screen_time_enabled = true;
         telemetry_enabled = true;
         screenshot.copy_to_clipboard = true;
+        greeter_sync.auto_sync = true;
         launcher = {
           categories = false;
           compact = true;
@@ -44,7 +49,7 @@
         capsule_padding = 3.0;
         capsule_radius = 0;
         padding = 0;
-        font_family = "JetBrainsMono Nerd Font Mono";
+        font_family = config.stylix.fonts.monospace.name;
         font_weight = 400;
         shadow = false;
         start = ["clock"];
@@ -64,9 +69,12 @@
       wallpaper = {
         enabled = true;
         directory = "${../../../wallpapers}";
-        default.path = "${../../../wallpapers}/atna-joy-final5-932BD.jpg";
+        default.path = "${../../../wallpapers}/groot-E9F73.jpg";
         transition = ["honeycomb"];
       };
+
+      plugins.enabled = ["harveywuk/airpods"];
+      plugin_settings."harveywuk/airpods".panel_position = "auto";
 
       location.auto_locate = true;
 
@@ -173,7 +181,7 @@
             rotation = 0.0;
             settings = {
               background = false;
-              font_family = "JetBrainsMono Nerd Font Mono";
+              font_family = config.stylix.fonts.monospace.name;
               show_events = false;
               show_week_numbers = true;
             };

@@ -25,7 +25,7 @@
         xwayland = true;
       };
 
-      include.optional.files = ["~/.config/umbriel/noctalia.toml"];
+      include.optional.files = ["noctalia.toml"];
 
       output."DP-2" = {
         mode = "2560x1440@165";
@@ -62,7 +62,7 @@
         };
         cursor.follows_focus = true;
         cursor.size = 16;
-        focus.follows_mouse = true;
+        focus.follows_mouse = "sloppy";
       };
 
       keybinds = {

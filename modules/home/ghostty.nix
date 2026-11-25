@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = [pkgs.timg];
 
   stylix.targets.ghostty.enable = false;
@@ -8,6 +12,7 @@
     enableZshIntegration = true;
     settings = {
       theme = "noctalia";
+      font-family = config.stylix.fonts.monospace.name;
       confirm-close-surface = false;
       gtk-single-instance = true;
       shell-integration-features = "cursor,no-sudo,title,ssh-env,ssh-terminfo,path";
