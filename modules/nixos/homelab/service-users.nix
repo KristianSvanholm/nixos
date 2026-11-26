@@ -18,6 +18,7 @@ with lib; let
         jfa-go = 1610;
         slskd = 1611;
         configarr = 1613;
+        silo = 1614;
       };
     };
     test-media = {
