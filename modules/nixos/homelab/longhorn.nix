@@ -33,19 +33,4 @@
     cryptsetup
     nfs-utils
   ];
-
-  networking.firewall = {
-    allowedTCPPorts = [
-      3260 # iSCSI
-      8500 # longhorn conversion webhook
-      8501 # longhorn admission webhook
-      10250 # kubelet
-    ];
-    allowedTCPPortRanges = [
-      {
-        from = 9500; # longhorn-manager + engine/replica instance managers
-        to = 9504;
-      }
-    ];
-  };
 }
