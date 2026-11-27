@@ -44,6 +44,8 @@ in {
     "d /mnt/hdd/backups/postgres 0755 ${o} -"
     "d /mnt/hdd/backups/postgres/immich 0755 ${o} -"
     "d /mnt/hdd/backups/postgres/silo 0755 ${o} -"
+    "d /mnt/hdd/backups/postgres/gitea 0755 ${o} -"
+    "d /mnt/hdd/backups/etcd 0755 ${o} -"
     "d /mnt/hdd/share 0755 ${o} -"
   ];
 

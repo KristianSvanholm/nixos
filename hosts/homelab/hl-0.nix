@@ -4,6 +4,7 @@
     ./hardware-configuration-0.nix
     ../../modules/nixos/homelab/k3s.nix
     ../../modules/nixos/homelab/nfs.nix
+    ../../modules/nixos/homelab/etcd-backup.nix
     ../../modules/nixos/homelab/gitea-runner.nix
     ../../modules/nixos/homelab/harmonia.nix
   ];
