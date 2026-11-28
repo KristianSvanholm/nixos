@@ -17,7 +17,7 @@
   app = fsid: exportTo nodes "${base},no_root_squash,fsid=${toString fsid}";
 
   # squashed to the local user so jottad can read what longhorn writes as root
-  squash = "${base},all_squash,anonuid=${toString owner.uid},anongid=${toString config.users.groups.${owner.group}.gid},fsid=5";
+  squash = fsid: "${base},all_squash,anonuid=${toString owner.uid},anongid=${toString config.users.groups.${owner.group}.gid},fsid=${toString fsid}";
 in {
   services.nfs.server = {
     enable = true;
@@ -26,7 +26,8 @@ in {
       /mnt/hdd/jelly ${app 1}
       /mnt/hdd/immich ${app 2}
       /mnt/hdd/test-media ${app 4}
-      /mnt/hdd/backups ${exportTo (nodes ++ [pods]) squash}
+      /mnt/hdd/backups/longhorn ${exportTo (cluster ++ [pods]) (squash 7)}
+      /mnt/hdd/backups/postgres ${exportTo cluster (squash 8)}
       /mnt/hdd/share ${exportTo [mini] "${base},fsid=6"}
     '';
   };
